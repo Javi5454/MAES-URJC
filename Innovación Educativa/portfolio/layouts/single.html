@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="post">
+  <time class="margin-date" datetime="{{ .Date.Format "2006-01-02" }}">
+    <span class="d">{{ .Date.Format "02" }}</span>
+    <span class="m">{{ .Date | time.Format "Jan" }}</span>
+    <span class="y">{{ .Date.Format "2006" }}</span>
+  </time>
+  <div class="body">
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
+    <nav class="pager">
+      {{ with .PrevInSection }}<a href="{{ .RelPermalink }}">← {{ .Title }}</a>{{ end }}
+      {{ with .NextInSection }}<a class="next" href="{{ .RelPermalink }}">{{ .Title }} →</a>{{ end }}
+    </nav>
+  </div>
+</article>
+{{ end }}

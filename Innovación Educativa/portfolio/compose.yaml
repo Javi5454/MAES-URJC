@@ -1,0 +1,18 @@
+services:
+  portfolio:
+    build: .
+    restart: unless-stopped
+    environment:
+      # Sin dominio: sirve HTTP en :80. Con dominio (DOMAIN=portfolio.ejemplo.es) Caddy saca el certificado solo.
+      DOMAIN: ${DOMAIN:-:80}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - caddy_data:/data   # certificados: no borrar
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

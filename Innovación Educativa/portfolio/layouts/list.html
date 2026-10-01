@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="course">
+  <p class="label">Asignatura</p>
+  <p class="course-name">{{ site.Params.asignatura }}</p>
+  <p class="label">Profesora</p>
+  <p class="course-prof">{{ site.Params.profesora }}</p>
+</section>
+<section class="intro">{{ .Content }}</section>
+<h2 class="index-title" id="indice">Índice</h2>
+{{ with where site.RegularPages "Section" "posts" }}
+<ol class="index">
+  {{ range .ByDate }}
+  <li>
+    <a href="{{ .RelPermalink }}">
+      <span class="t">{{ .Title }}</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "2 Jan" }}</time>
+    </a>
+  </li>
+  {{ end }}
+</ol>
+{{ else }}
+<p class="empty">Todavía no hay entradas. Crea la primera con <code>hugo new posts/AAAA-MM-DD-tema.md</code>.</p>
+{{ end }}
+{{ end }}

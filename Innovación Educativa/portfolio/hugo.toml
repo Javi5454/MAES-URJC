@@ -1,0 +1,13 @@
+baseURL = "/"
+locale = "es-es"
+defaultContentLanguage = "es"
+title = "Portafolio de Innovación Educativa"
+
+[params]
+  author = "Javier Gómez López"
+  asignatura = "Innovación educativa y TIC aplicadas a la enseñanza de las matemáticas"
+  profesora = "Raquel Garrido Abia"
+  subtitle = "Reflexiones de clase · Máster de Profesorado · URJC 2026-27"
+
+[pagination]
+  pagerSize = 30
