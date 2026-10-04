@@ -97,22 +97,21 @@ Abre el fichero `hugo.toml`, pulsa el lápiz ✏️ para editar y cambia lo que 
 Esta parte es la única "técnica" y solo se hace una vez. Necesitas un servidor (un ordenador o miniPC siempre encendido) con **Docker** y **Portainer**. Si alguien te lo ha montado, pásale esta lista:
 
 1. En Portainer: **Stacks → Add stack → Repository**.
-2. Pega la dirección del repositorio de GitHub. Si es privado, hace falta un token de GitHub.
+2. Pega la dirección del repositorio de GitHub. Tiene que ser **público**.
 3. En *Compose path* escribe: `Innovación Educativa/portfolio/compose.yaml`
-4. Activa **GitOps updates**. Así la web se actualiza sola cada vez que guardas algo en GitHub.
-5. Pulsa **Deploy the stack**.
+4. Pulsa **Deploy the stack**.
 
-Con eso la web ya funciona dentro de tu casa, entrando en la dirección del servidor desde el navegador.
+No hace falta activar nada más: la web mira GitHub cada 5 minutos y se actualiza sola. Funciona con la versión gratuita de Portainer (Community Edition).
+
+Con eso la web ya funciona dentro de tu casa: entra en `http://dirección-del-servidor:8080` desde el navegador. Si ese puerto ya lo usa otra cosa, añade en Portainer la variable `PORT` con otro número, por ejemplo `8090`.
 
 ### Que se vea desde internet (con candado 🔒)
 
-Para eso necesitas un **dominio**, es decir, un nombre como `miportfolio.duckdns.org`. DuckDNS es gratis. Después:
+Esta web no se encarga de eso, para que puedas tener varias webs en el mismo servidor. Lo hace un programa aparte, llamado **reverse proxy**, que tiene quien gestione el servidor (por ejemplo, Caddy). Hacen falta tres cosas:
 
-1. Haz que el dominio apunte a la IP de tu casa. DuckDNS te lo explica en su web.
-2. En el router, abre los puertos **80** y **443** hacia el servidor.
-3. En Portainer, en tu stack, añade la variable `DOMAIN` con tu dominio y vuelve a desplegar.
-
-El candado (HTTPS) se configura solo; no tienes que hacer nada más.
+1. Un **dominio**, es decir, un nombre como `miportfolio.duckdns.org`. DuckDNS es gratis.
+2. Que el dominio apunte a la IP de tu casa y que el router deje pasar los puertos **80** y **443** hacia el servidor.
+3. Que el reverse proxy envíe ese dominio a la web, al puerto `8080`. Pásale a quien lo gestione el apartado "HTTPS / dominio" del [README.md](README.md).
 
 ## Si algo no va
 

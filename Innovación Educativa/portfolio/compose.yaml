@@ -1,18 +1,36 @@
 services:
-  portfolio:
-    build: .
+  # Cada 5 min trae los cambios de GitHub y regenera la web en el volumen "site".
+  # Así publicar es solo hacer push, sin depender del redeploy de Portainer (que en CE no reconstruye la imagen).
+  hugo:
+    image: ghcr.io/gohugoio/hugo:v0.167.0
     restart: unless-stopped
+    user: root   # los volúmenes nuevos son de root
     environment:
-      # Sin dominio: sirve HTTP en :80. Con dominio (DOMAIN=portfolio.ejemplo.es) Caddy saca el certificado solo.
-      DOMAIN: ${DOMAIN:-:80}
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
+      REPO: ${REPO:-https://github.com/Javi5454/MAES-URJC.git}
+      SITE_DIR: Innovación Educativa/portfolio
+    entrypoint: ["sh", "-c"]
+    command:
+      - |
+        [ -d /repo/.git ] || git clone --depth 1 "$$REPO" /repo
+        while :; do
+          git -C /repo pull -q --ff-only \
+            && hugo build -s "/repo/$$SITE_DIR" -d /site --minify --cleanDestinationDir --noBuildLock --logLevel warn \
+            || echo "Fallo al actualizar o generar la web; reintento en 5 min"
+          sleep 300
+        done
     volumes:
-      - caddy_data:/data   # certificados: no borrar
-      - caddy_config:/config
+      - repo:/repo
+      - site:/site
+
+  # Sirve la web por HTTP plano. El HTTPS y el dominio los pone el reverse proxy del servidor (p. ej. Caddy).
+  web:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:80"
+    volumes:
+      - site:/usr/share/nginx/html:ro
 
 volumes:
-  caddy_data:
-  caddy_config:
+  repo:
+  site:

@@ -1,22 +1,17 @@
 # MAES-URJC
-Repositorio para el Master de Acceso a la Educación Secundaria en la URJC. Curso 2026-27
+
+Repositorio de trabajos del **Máster Universitario en Formación del Profesorado de Educación Secundaria Obligatoria y Bachillerato, Formación Profesional y Enseñanza de Idiomas** (MAES) de la Universidad Rey Juan Carlos, especialidad de **Matemáticas**. Curso 2026-27.
+
+El máster es la formación que habilita para ejercer como docente en Secundaria, Bachillerato y FP. Combina un bloque genérico (psicología del desarrollo y del aprendizaje, sociología y organización de los centros educativos) con un bloque específico de la especialidad, donde se trabaja cómo enseñar matemáticas: didáctica de la disciplina, diseño curricular, evaluación e innovación docente. El curso se completa con las prácticas en un centro educativo y el Trabajo Fin de Máster.
+
+Aquí voy recogiendo las actividades, materiales y reflexiones de cada asignatura a lo largo del curso.
 
 ## Estructura
 
 ```
 MAES-URJC/
-├── Didáctica de las Matemáticas/
-│   └── Piedad y Belén/
-│       ├── Prueba de nivel 1º ESO.md            # Actividad 1: prueba de nivel
-│       └── Justificación Prueba de nivel.md     # Justificación didáctica de la prueba
-└── Innovación Educativa/
-    └── portfolio/                               # Web del portfolio diario (Hugo + Caddy)
-        ├── README.md                            # Documentación técnica
-        ├── GUIA.md                              # Guía de uso sin tecnicismos
-        ├── content/posts/                       # Una entrada por sesión de clase
-        ├── layouts/ · static/css/               # Tema de la web
-        ├── hugo.toml                            # Configuración del sitio
-        └── Dockerfile · Caddyfile · compose.yaml  # Despliegue en Docker/Portainer
+├── Didáctica de las Matemáticas/   # Actividades de la asignatura, por bloque o profesorado
+└── Innovación Educativa/           # Portfolio de clase: web propia con una reflexión por sesión
 ```
 
-Cada asignatura tiene su carpeta; dentro, una subcarpeta por bloque o profesorado.
+Cada asignatura tiene su carpeta, y dentro de ella el material se organiza según lo que pida cada una.

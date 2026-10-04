@@ -1,6 +1,6 @@
 ---
-title: "Presentación de la asignatura"
-date: 2026-09-30
+title: "Primera sesión: Presentación de la asignatura"
+date: 2026-09-21
 draft: false
 ---
 

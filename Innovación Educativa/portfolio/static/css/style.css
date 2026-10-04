@@ -14,8 +14,9 @@
   --mono: "IBM Plex Mono", ui-monospace, monospace;
   color-scheme: light;
 }
+/* Oscuro: el del sistema salvo que se elija claro con el botón, o forzado con el botón */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #16201c;   /* pizarra */
     --grid: #22302a;
     --ink: #e6ebe4;
@@ -24,6 +25,15 @@
     --muted: #9aa8a0;
     color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+  --paper: #16201c;   /* pizarra */
+  --grid: #22302a;
+  --ink: #e6ebe4;
+  --pen: #9cc0ff;
+  --margin-red: #ff6b7a;
+  --muted: #9aa8a0;
+  color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -69,6 +79,9 @@ a:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; border-rad
 }
 .nav { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-top: 1rem; font: 500 .85rem var(--mono); }
 .nav a { text-decoration: none; }
+.theme-toggle { margin-left: auto; padding: 0; border: 0; background: none; color: var(--muted); font: inherit; cursor: pointer; }
+.theme-toggle:hover { color: var(--pen); }
+.theme-toggle:focus-visible { outline: 2px solid var(--pen); outline-offset: 3px; border-radius: 2px; }
 .nav a[aria-current] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--margin-red); text-decoration-thickness: 2px; }
 .subtitle { margin: .5rem 0 0; font: .8rem/1.4 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 
