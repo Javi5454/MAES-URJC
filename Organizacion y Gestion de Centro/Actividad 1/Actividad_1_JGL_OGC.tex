@@ -1,0 +1,478 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Datos del documento ----------
+\newcommand{\titulo}{Competencias clave, competencias específicas, objetivos, saberes básicos y situaciones de aprendizaje}
+% Título corto para el encabezado de las páginas
+\newcommand{\tituloCorto}{Actividad 1}
+\newcommand{\asignatura}{Organización y Gestión del Centro}
+\newcommand{\autor}{Javier Gómez López}
+% Texto explicativo de la tarea (déjalo vacío para que no aparezca)
+\newcommand{\enunciado}{%
+La LOMLOE (2020) incorpora una serie de competencias específicas para que se puedan trabajar con los alumnos en el contexto de las diferentes asignaturas. Por ello, para esta actividad, se deben seleccionar 4 (cuatro competencias específicas) de una de las asignaturas de la especialidad y trabajar en las siguientes cuestiones:
+\begin{enumerate}
+\item Crear una definición de competencias educativas con la finalidad de explicarlo a alumnos o padres. 
+\item Definir curso y edad del alumnado: identificar el curso en el cual se podrían impartir las mismas (ESO, Bachillerato). Especificar edad. 
+\item Redactar objetivos de aprendizaje que se pretenden lograr en el alumnado: se deben definir al menos 4 (cuatro) objetivos educativos. 
+\item Seleccionar y redactar saberes básicos o contenidos que se trabajarían con el alumnado. 
+\item Describir (no desarrollar) una situación de aprendizaje en la cual se trabajarían las competencias, objetivos y saberes básicos.
+\end{enumerate}
+  %
+}
+\newcommand{\master}{MÁSTER UNIVERSITARIO EN FORMACIÓN DEL PROFESORADO-ESPECIALIDAD EN MATEMÁTICAS -- Universidad Rey Juan Carlos}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Estilo ----------
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+
+\titleformat{\section}{\Large\bfseries\color{acento}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{gris}}{\thesubsection.}{0.6em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}\asignatura}
+\fancyhead[R]{\small\color{gris}\tituloCorto}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrule}{{\color{acento}\hrule height 0.6pt}}
+
+\begin{document}
+
+% ---------- Cabecera ----------
+\thispagestyle{empty}
+\begin{center}
+  {\small\color{gris}\MakeUppercase{\master}}\\[1.2em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[0.8em]
+  {\Huge\bfseries \titulo}\\[0.6em]
+  {\Large\color{gris} \asignatura}\\[0.6em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[1em]
+  {\large \autor}\\[0.3em]
+  {\small\color{gris}\today}
+\end{center}
+\vspace{1.5em}
+
+% ---------- Enunciado ----------
+\ifdefempty{\enunciado}{}{%
+  \begin{tcolorbox}[enhanced, breakable, colback=acento!4, colframe=acento,
+      boxrule=0pt, leftrule=3pt, arc=0pt, title=Enunciado de la tarea,
+      coltitle=acento, colbacktitle=acento!4, fonttitle=\bfseries]
+    \enunciado
+  \end{tcolorbox}
+  \vspace{1em}
+}
+
+% ---------- Contenido ----------
+\section{¿Qué son las competencias educativas?}
+Cuando hablamos de \emph{competencias} no nos referimos solo a lo que un alumno
+\emph{sabe}, sino a lo que es capaz de \emph{hacer} con lo que sabe. Una
+competencia es la capacidad de movilizar a la vez conocimientos, destrezas y
+actitudes para resolver una situación concreta, ya sea en el aula, en casa o
+en el futuro trabajo o estudios.
+
+La normativa lo expresa así: las competencias clave son los
+\begin{quote}
+\itshape <<desempeños que se consideran imprescindibles para que el alumnado
+pueda progresar con garantías de éxito en su itinerario formativo, y afrontar
+los principales retos y desafíos globales y locales>>\footnote{Real Decreto
+243/2022, de 5 de abril, por el que se establecen la ordenación y las
+enseñanzas mínimas del Bachillerato (BOE núm.~82, de 6 de abril de 2022), art.~2.~b). En la Comunidad de Madrid, el
+Decreto 64/2022, de 20 de julio, remite a estas mismas competencias (art.~18).}.
+\end{quote}
+
+Dicho de forma sencilla, para alumnos y familias:
+
+\begin{tcolorbox}[enhanced, colback=gris!6, colframe=gris!60, boxrule=0.6pt,
+    arc=2pt, left=8pt, right=8pt]
+  \textbf{Ser competente es saber usar lo que aprendes cuando lo necesitas.}
+  No basta con memorizar una fórmula: hay que entender cuándo sirve,
+  aplicarla bien y explicar por qué el resultado tiene sentido.
+\end{tcolorbox}
+
+Un ejemplo en matemáticas: saber calcular un interés es un
+\emph{conocimiento}; comparar dos préstamos para comprar un coche, ver cuál
+sale más barato en total y explicar por qué es una \emph{competencia}.
+
+En Bachillerato se distinguen dos niveles:
+\begin{itemize}
+  \item \textbf{Competencias clave}: son ocho y comunes a todas las materias
+    (comunicación lingüística, plurilingüe, matemática y en ciencia,
+    tecnología e ingeniería, digital, personal, social y de aprender a
+    aprender, ciudadana, emprendedora, y conciencia y expresión culturales).
+    Describen lo que todo alumno debería lograr al terminar la etapa.
+  \item \textbf{Competencias específicas}: son propias de cada materia y
+    concretan cómo contribuye esa asignatura a las competencias clave. Son el
+    puente entre las competencias clave, los saberes básicos (los contenidos)
+    y los criterios de evaluación.
+\end{itemize}
+
+En resumen, el objetivo no es solo aprobar un examen, sino que lo aprendido
+sea útil para comprender el mundo, tomar decisiones y seguir aprendiendo.
+
+\section{Curso y edad del alumnado}
+\begin{itemize}
+  \item \textbf{Curso:} 1.º de Bachillerato, modalidad de Ciencias y
+    Tecnología.
+  \item \textbf{Materia:} Matemáticas I.
+  \item \textbf{Edad:} entre 16 y 17 años.
+\end{itemize}
+
+\textbf{Justificación.} El Bachillerato es la etapa postobligatoria que sigue
+a la ESO y comprende dos cursos\footnote{Decreto 64/2022, de 20 de julio, del
+Consejo de Gobierno, por el que se establecen para la Comunidad de Madrid la
+ordenación y el currículo del Bachillerato, art.~3.}, por lo que el
+alumnado de primero suele tener 16 años al empezar el curso y cumple 17 a lo
+largo de él. Matemáticas I es la materia específica que todo el alumnado de
+la modalidad de Ciencias y Tecnología cursa obligatoriamente en primero
+(art.~10), y sienta las bases de Matemáticas II y de los estudios
+científicos y técnicos posteriores.
+
+Además, es una edad adecuada para estas competencias: el alumnado ya maneja
+el razonamiento abstracto, lo que le permite formular conjeturas, argumentar
+y demostrar, modelizar situaciones reales y valorar si una solución tiene
+sentido en su contexto.
+
+\section{Competencias específicas seleccionadas}
+\label{sec:competencias}
+De las nueve competencias específicas de Matemáticas I recogidas en el
+Decreto 64/2022 (anexo~II), se seleccionan las cuatro que mejor encajan con un
+taller de GeoGebra: modelizar (CE1), conjeturar con ayuda de la tecnología
+(CE3), conectar ideas matemáticas (CE5) y representarlas con herramientas
+digitales (CE7). Para cada una se indican los descriptores del perfil de
+salida con los que la conecta el decreto (explicados en el anexo~\ref{anexo:descriptores}) y sus criterios de evaluación.
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.30\linewidth}
+    >{\raggedright\arraybackslash}p{0.15\linewidth}
+    >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Competencia específica} & \textbf{Descriptores} & \textbf{Criterios de evaluación} \\
+\midrule
+\textbf{CE1.} Modelizar y resolver problemas de la vida cotidiana y de la
+ciencia y la tecnología aplicando diferentes estrategias y formas de
+razonamiento para obtener posibles soluciones.
+& STEM1, STEM2, STEM3, CD2, CD5, CPSAA4, CPSAA5, CE3
+& \textbf{1.1.} Manejar algunas estrategias y herramientas, incluidas las
+digitales, en la modelización y resolución de problemas de la vida cotidiana
+y de la ciencia y la tecnología, evaluando su eficiencia en cada caso.\newline
+\textbf{1.2.} Obtener todas las posibles soluciones matemáticas de problemas
+de la vida cotidiana y de la ciencia y la tecnología, describiendo el
+procedimiento utilizado. \\
+\midrule
+\textbf{CE3.} Formular o investigar conjeturas o problemas, utilizando el
+razonamiento, la argumentación, la creatividad y el uso de herramientas
+tecnológicas, para generar nuevo conocimiento matemático.
+& CCL1, STEM1, STEM2, CD1, CD2, CD3, CD5, CE3
+& \textbf{3.1.} Adquirir nuevo conocimiento matemático a partir de la
+formulación de conjeturas y problemas de forma guiada.\newline
+\textbf{3.2.} Emplear herramientas tecnológicas adecuadas en la formulación o
+investigación de conjeturas o problemas. \\
+\midrule
+\textbf{CE5.} Establecer, investigar y utilizar conexiones entre las
+diferentes ideas matemáticas estableciendo vínculos entre conceptos,
+procedimientos, argumentos y modelos para dar significado y estructurar el
+aprendizaje matemático.
+& STEM1, STEM3, CD2, CD3, CCEC1
+& \textbf{5.1.} Manifestar una visión matemática integrada, investigando y
+conectando las diferentes ideas matemáticas.\newline
+\textbf{5.2.} Resolver problemas en contextos matemáticos estableciendo y
+aplicando conexiones entre las diferentes ideas matemáticas. \\
+\midrule
+\textbf{CE7.} Representar conceptos, procedimientos e información matemáticos
+seleccionando diferentes tecnologías, para visualizar ideas y estructurar
+razonamientos matemáticos.
+& STEM3, CD1, CD2, CD5, CE3, CCEC4.1, CCEC4.2
+& \textbf{7.1.} Representar ideas matemáticas, estructurando diferentes
+razonamientos matemáticos y seleccionando las tecnologías más adecuadas.\newline
+\textbf{7.2.} Seleccionar y utilizar diversas formas de representación,
+valorando su utilidad para compartir información. \\
+\bottomrule
+\end{tabularx}
+}
+
+\smallskip
+{\footnotesize\color{gris} En la columna de descriptores, \emph{CE3} se
+refiere al tercer descriptor de la competencia emprendedora (Real Decreto
+243/2022, anexo~I), no a la competencia específica~3.}
+
+\section{Objetivos de aprendizaje}
+\label{sec:objetivos}
+Los objetivos están pensados para trabajarse en un taller con GeoGebra, donde
+el alumnado construye, manipula y observa antes de formalizar. Entre
+paréntesis se indica la competencia específica (CE) y el criterio de
+evaluación de Matemáticas I con el que se relaciona cada uno. Al finalizar la
+situación de aprendizaje, el alumnado será capaz de:
+
+\begin{enumerate}[label=\textbf{O\arabic*.}, leftmargin=*]
+  \item \textbf{Representar y operar con vectores} en GeoGebra (suma, producto
+    por un número y producto escalar), interpretando geométricamente cada
+    operación y calculando el módulo, el ángulo entre dos vectores y la
+    proyección ortogonal. \emph{(CE7, criterio 7.1)}
+  \item \textbf{Formular conjeturas sobre las razones trigonométricas} a partir
+    de construcciones dinámicas en la circunferencia goniométrica (por
+    ejemplo, $\sin^2\alpha+\cos^2\alpha=1$ o las fórmulas del ángulo doble) y
+    justificarlas después de forma razonada. \emph{(CE3, criterios 3.1 y 3.2)}
+  \item \textbf{Resolver triángulos} aplicando los teoremas del seno y del
+    coseno, y comprobar con GeoGebra la validez de las soluciones obtenidas,
+    incluidos los casos con dos soluciones o ninguna. \emph{(CE1, criterios
+    1.1 y 1.2)}
+  \item \textbf{Relacionar vectores, trigonometría y geometría analítica}:
+    obtener las ecuaciones de una recta a partir de un punto y un vector
+    director, estudiar la posición relativa de dos rectas y calcular ángulos y
+    distancias en el plano. \emph{(CE5, criterios 5.1 y 5.2)}
+  \item \textbf{Modelizar un problema real} con estas herramientas, como
+    calcular la altura de un edificio inaccesible o la distancia entre dos
+    puntos separados por un obstáculo, y presentar la construcción y el
+    razonamiento con el vocabulario y la notación adecuados. \emph{(CE1 y CE7,
+    criterios 1.1 y 7.2)}
+\end{enumerate}
+
+\section{Saberes básicos}
+Se seleccionan los contenidos de Matemáticas I (Decreto 64/2022, anexo~II)
+que se trabajan en el taller, agrupados por los bloques del decreto. El texto
+es literal; entre paréntesis se indica el objetivo de aprendizaje
+(sección~\ref{sec:objetivos}) al que da soporte cada uno.
+
+\subsection*{A. Números y operaciones}
+\begin{itemize}
+  \item Adición y producto escalar de vectores: propiedades y representaciones. {\color{gris}\emph{(O1)}}
+  \item Conjunto de vectores: estructura, comprensión y propiedades. {\color{gris}\emph{(O1)}}
+  \item Módulo de un vector, coordenadas de un vector con respecto a una base, ángulo entre dos vectores y proyección ortogonal. {\color{gris}\emph{(O1)}}
+  \item Estrategias para operar con números reales y vectores: cálculo mental o escrito en los casos sencillos y con herramientas tecnológicas en los casos más complicados. {\color{gris}\emph{(O1)}}
+\end{itemize}
+
+\subsection*{B. Medida y geometría}
+\begin{itemize}
+  \item Razones trigonométricas de un ángulo cualquiera medido en grados o en radianes. {\color{gris}\emph{(O2)}}
+  \item Demostración de las identidades trigonométricas. Razones trigonométricas del ángulo suma, el ángulo diferencia, el ángulo doble y el ángulo mitad. {\color{gris}\emph{(O2)}}
+  \item Aplicación de las razones trigonométricas, el teorema de los senos y el teorema del coseno en la resolución de triángulos y de problemas geométricos de contexto real. {\color{gris}\emph{(O3, O5)}}
+  \item Demostración del teorema del seno y del coseno. {\color{gris}\emph{(O3)}}
+\end{itemize}
+
+\subsection*{C. Geometría en el plano y el espacio}
+\begin{itemize}
+  \item Relaciones de objetos geométricos en el plano: representación y exploración mediante herramientas digitales. {\color{gris}\emph{(O1--O4)}}
+  \item Ecuaciones de la recta en el espacio bidimensional. {\color{gris}\emph{(O4)}}
+  \item Estudio de la posición relativa de puntos y rectas en el plano. {\color{gris}\emph{(O4)}}
+  \item Planteamiento y resolución de problemas de geometría métrica relacionados con la medida de ángulos entre rectas y la medida de distancias entre puntos y rectas. {\color{gris}\emph{(O4)}}
+  \item Conjeturas geométricas en el plano: validación por medio de la deducción y la demostración de teoremas. {\color{gris}\emph{(O2)}}
+  \item Modelos matemáticos (geométricos, algebraicos, grafos...) en la resolución de problemas en el plano. Conexiones con otras disciplinas y áreas de interés. {\color{gris}\emph{(O5)}}
+  \item Modelización de la posición y el movimiento de un objeto en el plano mediante vectores. {\color{gris}\emph{(O5)}}
+\end{itemize}
+
+\subsection*{D. Álgebra}
+\begin{itemize}
+  \item Resolución de ecuaciones trigonométricas sencillas. {\color{gris}\emph{(O2)}}
+  \item Formulación, resolución y análisis de problemas de la vida cotidiana y de la ciencia y la tecnología utilizando herramientas o programas adecuados. {\color{gris}\emph{(O5)}}
+\end{itemize}
+
+\subsection*{F. Actitudes y aprendizaje}
+\begin{itemize}
+  \item Tratamiento del error como elemento movilizador de conocimientos previos adquiridos y generador de oportunidades de aprendizaje en el aula de matemáticas. {\color{gris}\emph{(todos)}}
+  \item Técnicas y estrategias de trabajo en equipo para la resolución de problemas y tareas matemáticas, en grupos heterogéneos. {\color{gris}\emph{(O5)}}
+  \item Valoración de la contribución de las matemáticas y el papel de matemáticos a lo largo de la historia en el avance de la ciencia y la tecnología. {\color{gris}\emph{(O3, O5)}}
+\end{itemize}
+
+\section{Situación de aprendizaje}
+\subsection*{<<Medir lo que no se puede alcanzar>>: taller de GeoGebra}
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{>{\bfseries\color{acento}}l X}
+\toprule
+Curso y materia & 1.º de Bachillerato, Matemáticas I \\
+Duración & 9 sesiones de 55 minutos (unas dos semanas y media) \\
+Agrupamiento & Equipos heterogéneos de 3--4 alumnos, con trabajo individual en las sesiones de construcción \\
+Recursos & Ordenadores o tabletas con GeoGebra, aula de GeoGebra (GeoGebra Classroom), cinta métrica y clinómetro (casero o con una app del móvil) \\
+Producto final & Un libro de GeoGebra por equipo con el modelo de una medición real del centro y una breve exposición oral \\
+\bottomrule
+\end{tabularx}
+}
+
+\subsection{Presentación}
+Se plantea un reto: \emph{¿cómo podemos medir la altura del edificio del
+instituto, o la anchura del patio, sin subirnos ni cruzarlo?} El alumnado
+descubrirá que con vectores, trigonometría y geometría analítica, y con
+GeoGebra como laboratorio, puede calcular distancias inaccesibles igual que se
+hacía en topografía, astronomía o cartografía mucho antes de que existieran
+los láseres o el GPS.
+
+Algunas ideas para iniciar el trabajo:
+\begin{itemize}
+  \item Ver un vídeo breve sobre cómo Eratóstenes calculó el tamaño de la
+    Tierra midiendo un ángulo y una distancia.
+  \item Hacer una lluvia de ideas sobre qué objetos del centro o del barrio
+    no se pueden medir directamente y cómo podríamos hacerlo.
+  \item Explorar libremente GeoGebra: puntos, vectores, deslizadores y la
+    herramienta de ángulo.
+\end{itemize}
+
+\subsection{Evaluación diagnóstica}
+Un cuestionario breve en GeoGebra Classroom sobre lo trabajado en 4.º de ESO:
+razones trigonométricas en el triángulo rectángulo, teorema de Pitágoras y
+coordenadas en el plano. A partir de los resultados se forman equipos
+heterogéneos y se preparan actividades de refuerzo y de ampliación.
+
+\subsection{Planificación. Kanban}
+Cada equipo organiza en un tablero Kanban (\emph{por hacer}, \emph{en
+curso}, \emph{hecho}) todas las tareas necesarias para llegar al producto
+final: elegir qué medir, diseñar el método, tomar las medidas, construir el
+modelo y preparar la exposición. El tablero se revisa al inicio de cada
+sesión y sirve para ver cómo avanza el equipo.
+
+\subsection{Construcción y consolidación}
+Sesiones de taller en las que el alumnado construye, manipula y observa en
+GeoGebra antes de formalizar. Cada sesión parte de una construcción guiada y
+termina con una pregunta que hay que justificar:
+\begin{itemize}
+  \item \textbf{Vectores:} sumar vectores y multiplicarlos por un número
+    arrastrando sus extremos; descubrir con el producto escalar cuándo dos
+    vectores son perpendiculares y calcular ángulos y proyecciones.
+  \item \textbf{Trigonometría:} construir la circunferencia goniométrica con
+    un deslizador para el ángulo, observar cómo cambian el seno y el coseno,
+    conjeturar identidades y demostrarlas después en papel.
+  \item \textbf{Resolución de triángulos:} comprobar los teoremas del seno y
+    del coseno moviendo los vértices, e investigar cuándo un triángulo dado
+    por dos lados y un ángulo tiene dos soluciones, una o ninguna.
+  \item \textbf{Rectas en el plano:} obtener la recta a partir de un punto y
+    un vector director, y estudiar posiciones relativas, ángulos y distancias.
+\end{itemize}
+Se combinan la explicación del profesor, el trabajo individual con
+construcciones y la puesta en común de las conjeturas, en la que el error se
+trata como punto de partida para aprender.
+
+\subsection{Síntesis}
+Cada equipo elabora un mapa conceptual que relacione vectores, trigonometría
+y rectas, indicando qué herramienta usaría para cada tipo de problema.
+
+\subsection{Resolución de la tarea y elaboración del producto final}
+\paragraph{Paso 1.} Elegir el objeto que se va a medir (la altura de un
+edificio, de un árbol o de una farola, o la anchura del patio) y diseñar el
+método: qué ángulos y distancias hay que tomar y desde dónde.
+
+\paragraph{Paso 2.} Salir al patio y tomar las medidas con la cinta métrica
+y el clinómetro, anotando cada dato con su unidad y repitiendo cada medida
+para reducir el error.
+
+\begin{tcolorbox}[enhanced, colback=gris!6, colframe=gris!60, boxrule=0.6pt,
+    arc=2pt, left=8pt, right=8pt, fonttitle=\bfseries\small,
+    coltitle=gris!20!black, colbacktitle=gris!15, title=¿Qué es un clinómetro?]
+  \small Es un instrumento que mide el ángulo de inclinación de una visual
+  respecto a la horizontal; en el taller, el \emph{ángulo de elevación} con
+  el que se ve la parte alta de un objeto. Se puede fabricar con un
+  transportador, una pajita que hace de visor y un hilo con un peso (una
+  plomada): al mirar el punto más alto por la pajita, el hilo queda vertical
+  y marca en el transportador el ángulo buscado. También sirven las apps de
+  nivel o inclinómetro del móvil.
+\end{tcolorbox}
+
+\paragraph{Paso 3.} Reproducir la situación en GeoGebra a escala, resolver
+el triángulo con los teoremas del seno y del coseno, y comprobar que el
+resultado del modelo coincide con el calculado a mano. Discutir cuánto
+influye un error de un grado en el resultado.
+
+\paragraph{Paso 4.} Reunir en un libro de GeoGebra la construcción, los
+cálculos y una breve explicación del método, cuidando el diseño visual. Cada
+equipo lo presenta al resto de la clase en unos cinco minutos, y se hace una
+coevaluación con una rúbrica sencilla.
+
+\subsection{Temporización}
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{c >{\raggedright\arraybackslash}X c}
+\toprule
+\textbf{Sesión} & \textbf{Actividad} & \textbf{Objetivos} \\
+\midrule
+1 & Presentación del reto y evaluación diagnóstica & -- \\
+2 & Planificación con Kanban y primeros pasos con vectores en GeoGebra & O1 \\
+3 & Producto escalar: ángulos y proyecciones & O1 \\
+4 & Circunferencia goniométrica: conjeturas y demostración de identidades & O2 \\
+5 & Teoremas del seno y del coseno; casos con varias soluciones & O3 \\
+6 & Ecuaciones de la recta, posiciones relativas, ángulos y distancias & O4 \\
+7 & Síntesis y toma de medidas en el patio (pasos 1 y 2) & O5 \\
+8 & Modelo en GeoGebra y elaboración del libro (pasos 3 y 4) & O5 \\
+9 & Exposiciones y coevaluación & O5 \\
+\bottomrule
+\end{tabularx}
+}
+
+\clearpage
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+\section{Descriptores operativos de las competencias clave}
+\label{anexo:descriptores}
+Los descriptores operativos concretan el grado de adquisición de cada
+competencia clave al terminar la etapa. Se recoge el texto literal del Real
+Decreto 243/2022 (anexo~I, columna \emph{<<Al completar el Bachillerato, el
+alumno o la alumna\ldots>>}) de los descriptores que aparecen en la tabla de
+la sección~\ref{sec:competencias}, seguido de cómo se concretan en el taller.
+
+\subsection*{Competencia en comunicación lingüística (CCL)}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[\color{acento}CCL1] Se expresa de forma oral, escrita, signada o multimodal con fluidez, coherencia, corrección y adecuación a los diferentes contextos sociales y académicos, y participa en interacciones comunicativas con actitud cooperativa y respetuosa tanto para intercambiar información, crear conocimiento y argumentar sus opiniones como para establecer y cuidar sus relaciones interpersonales.\newline
+    {\color{gris}\textit{En el taller:} Explicar con palabras propias una conjetura y defenderla ante el grupo.}
+\end{description}
+
+\subsection*{Competencia matemática y competencia en ciencia, tecnología e ingeniería (STEM)}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[\color{acento}STEM1] Selecciona y utiliza métodos inductivos y deductivos propios del razonamiento matemático en situaciones propias de la modalidad elegida y emplea estrategias variadas para la resolución de problemas analizando críticamente las soluciones y reformulando el procedimiento, si fuera necesario.\newline
+    {\color{gris}\textit{En el taller:} Pasar de observar casos en GeoGebra (inducción) a demostrar el resultado general (deducción).}
+  \item[\color{acento}STEM2] Utiliza el pensamiento científico para entender y explicar fenómenos relacionados con la modalidad elegida, confiando en el conocimiento como motor de desarrollo, planteándose hipótesis y contrastándolas o comprobándolas mediante la observación, la experimentación y la investigación, utilizando herramientas e instrumentos adecuados, apreciando la importancia de la precisión y la veracidad y mostrando una actitud crítica acerca del alcance y limitaciones de los métodos empleados.\newline
+    {\color{gris}\textit{En el taller:} Plantear hipótesis, comprobarlas moviendo la construcción y reconocer que ver muchos casos no equivale a demostrar.}
+  \item[\color{acento}STEM3] Plantea y desarrolla proyectos diseñando y creando prototipos o modelos para generar o utilizar productos que den solución a una necesidad o problema de forma colaborativa, procurando la participación de todo el grupo, resolviendo pacíficamente los conflictos que puedan surgir, adaptándose ante la incertidumbre y evaluando el producto obtenido de acuerdo a los objetivos propuestos, la sostenibilidad y el impacto transformador en la sociedad.\newline
+    {\color{gris}\textit{En el taller:} Diseñar en equipo un modelo en GeoGebra que resuelva un problema real, como medir una altura inaccesible.}
+\end{description}
+
+\subsection*{Competencia digital (CD)}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[\color{acento}CD1] Realiza búsquedas avanzadas comprendiendo cómo funcionan los motores de búsqueda en internet aplicando criterios de validez, calidad, actualidad y fiabilidad, seleccionando los resultados de manera crítica y organizando el almacenamiento de la información de manera adecuada y segura para referenciarla y reutilizarla posteriormente.\newline
+    {\color{gris}\textit{En el taller:} Buscar y seleccionar con criterio recursos de GeoGebra ya existentes y citar su autoría.}
+  \item[\color{acento}CD2] Crea, integra y reelabora contenidos digitales de forma individual o colectiva, aplicando medidas de seguridad y respetando, en todo momento, los derechos de autoría digital para ampliar sus recursos y generar nuevo conocimiento.\newline
+    {\color{gris}\textit{En el taller:} Crear construcciones dinámicas propias o adaptar las de otros.}
+  \item[\color{acento}CD3] Selecciona, configura y utiliza dispositivos digitales, herramientas, aplicaciones y servicios en línea y los incorpora en su entorno personal de aprendizaje digital para comunicarse, trabajar colaborativamente y compartir información, gestionando de manera responsable sus acciones, presencia y visibilidad en la red y ejerciendo una ciudadanía digital activa, cívica y reflexiva.\newline
+    {\color{gris}\textit{En el taller:} Configurar GeoGebra y compartir el trabajo en un aula o libro de GeoGebra.}
+  \item[\color{acento}CD5] Desarrolla soluciones tecnológicas innovadoras y sostenibles para dar respuesta a necesidades concretas, mostrando interés y curiosidad por la evolución de las tecnologías digitales y por su desarrollo sostenible y uso ético.\newline
+    {\color{gris}\textit{En el taller:} Construir una herramienta en GeoGebra que resuelva un tipo de problema concreto.}
+\end{description}
+
+\subsection*{Competencia personal, social y de aprender a aprender (CPSAA)}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[\color{acento}CPSAA4] Compara, analiza, evalúa y sintetiza datos, información e ideas de los medios de comunicación, para obtener conclusiones lógicas de forma autónoma, valorando la fiabilidad de las fuentes.\newline
+    {\color{gris}\textit{En el taller:} Contrastar el resultado calculado a mano con el de GeoGebra y sacar conclusiones.}
+  \item[\color{acento}CPSAA5] Planifica a largo plazo evaluando los propósitos y los procesos de la construcción del conocimiento, relacionando los diferentes campos del mismo para desarrollar procesos autorregulados de aprendizaje que le permitan transmitir ese conocimiento, proponer ideas creativas y resolver problemas con autonomía.\newline
+    {\color{gris}\textit{En el taller:} Organizar su propio proceso de trabajo y resolver problemas nuevos con autonomía.}
+\end{description}
+
+\subsection*{Competencia emprendedora (CE)}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[\color{acento}CE3] Lleva a cabo el proceso de creación de ideas y soluciones innovadoras y toma decisiones, con sentido crítico y ético, aplicando conocimientos técnicos específicos y estrategias ágiles de planificación y gestión de proyectos, y reflexiona sobre el proceso realizado y el resultado obtenido, para elaborar un prototipo final de valor para los demás, considerando tanto la experiencia de éxito como de fracaso, una oportunidad para aprender.\newline
+    {\color{gris}\textit{En el taller:} Planificar el producto final del taller, revisarlo y aprender de los intentos que no funcionan.}
+\end{description}
+
+\subsection*{Competencia en conciencia y expresión culturales (CCEC)}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[\color{acento}CCEC1] Reflexiona, promueve y valora críticamente el patrimonio cultural y artístico de cualquier época, contrastando sus singularidades y partiendo de su propia identidad, para defender la libertad de expresión, la igualdad y el enriquecimiento inherente a la diversidad.\newline
+    {\color{gris}\textit{En el taller:} Valorar las matemáticas como patrimonio cultural, por ejemplo el origen de la trigonometría en la astronomía y la topografía.}
+  \item[\color{acento}CCEC4.1] Selecciona e integra con creatividad diversos medios y soportes, así como técnicas plásticas, visuales, audiovisuales, sonoras o corporales, para diseñar y producir proyectos artísticos y culturales sostenibles, analizando las oportunidades de desarrollo personal, social y laboral que ofrecen sirviéndose de la interpretación, la ejecución, la improvisación o la composición.\newline
+    {\color{gris}\textit{En el taller:} Cuidar el diseño visual de las construcciones (colores, capas, animaciones) para que comuniquen la idea.}
+  \item[\color{acento}CCEC4.2] Planifica, adapta y organiza sus conocimientos, destrezas y actitudes para responder con creatividad y eficacia a los desempeños derivados de una producción cultural o artística, individual o colectiva, utilizando diversos lenguajes, códigos, técnicas, herramientas y recursos plásticos, visuales, audiovisuales, musicales, corporales o escénicos, valorando tanto el proceso como el producto final y comprendiendo las oportunidades personales, sociales, inclusivas y económicas que ofrecen.\newline
+    {\color{gris}\textit{En el taller:} Organizar una producción visual, como un mosaico o un diseño basado en simetrías, valorando proceso y resultado.}
+\end{description}
+
+\end{document}
