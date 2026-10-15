@@ -7,7 +7,7 @@ Blog estático autoalojado para el portfolio diario de clase: entradas en Markdo
 ## Arquitectura
 
 ```
-git push ──► GitHub ◄── (cada 5 min) contenedor hugo: git pull + hugo build ──► volumen site
+git push ──► GitHub ◄── (cada 5 min) contenedor hugo: git fetch + reset + hugo build ──► volumen site
                                                                                  │
    Internet ──► tu reverse proxy (HTTPS) ──► :8080 ──► contenedor web (nginx) ◄──┘
 ```
@@ -28,7 +28,7 @@ git push ──► GitHub ◄── (cada 5 min) contenedor hugo: git pull + hug
 | `content/presentacion/index.md` | Página «Presentación»: texto en Markdown; `foto` (fichero en la misma carpeta, Hugo lo recorta a 480×600 en WebP) y `enlaces` (lista `nombre`/`url`) en el front matter. El favicon de cada enlace se descarga en el build (`resources.GetRemote` al servicio de favicons de Google) y se sirve local; si no hay red, el enlace sale sin icono. Los `mailto:` llevan un sobre SVG. |
 | `layouts/{baseof,list,single,presentacion}.html` | El tema: esqueleto con navegación, portada (índice), entrada y presentación (`layout: presentacion`). |
 | `static/css/style.css` | Estilos. Los tokens de color y tipografía están en `:root`. |
-| `compose.yaml` | Todo el despliegue: servicio `hugo` (bucle pull + build) y servicio `web` (nginx sirviendo el volumen). Variables: `PORT` (por defecto `8080`) y `REPO`. |
+| `compose.yaml` | Todo el despliegue: servicio `hugo` (bucle fetch/reset + build) y servicio `web` (nginx sirviendo el volumen). Variables: `PORT` (por defecto `8080`) y `REPO`. |
 
 ## Desarrollo local
 
@@ -97,7 +97,6 @@ portfolio.tudominio.es {
 | La entrada no aparece | Tiene `draft: true` o una `date` futura (Hugo no publica entradas con fecha futura). |
 | 502 desde el reverse proxy | El proxy no llega a `IP:PORT`. Comprueba con `curl http://IP-del-servidor:8080` desde la máquina del proxy. |
 | El push no se refleja en la web | Aún no han pasado los 5 min o el build ha fallado. Mira los logs del contenedor `hugo`: si pone «Fallo al actualizar o generar la web», el error de Hugo está justo encima. |
-| El contenedor `hugo` falla siempre en el `git pull` | Se ha reescrito el historial (force push). Borra el volumen `repo` y reinicia el stack: vuelve a clonar. |
 | Error de permisos con `hugo` en local | El uid no coincide. Usa `--user "$(id -u):$(id -g)"`. |
 
 ## Fuera de alcance (a propósito)

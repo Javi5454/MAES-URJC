@@ -13,7 +13,9 @@ services:
       - |
         [ -d /repo/.git ] || git clone --depth 1 "$$REPO" /repo
         while :; do
-          git -C /repo pull -q --ff-only \
+          # fetch + reset en vez de pull: si se reescribe el historial (force push) no se atasca
+          git -C /repo fetch -q --depth 1 \
+            && git -C /repo reset -q --hard @{u} \
             && hugo build -s "/repo/$$SITE_DIR" -d /site --minify --cleanDestinationDir --noBuildLock --logLevel warn \
             || echo "Fallo al actualizar o generar la web; reintento en 5 min"
           sleep 300
