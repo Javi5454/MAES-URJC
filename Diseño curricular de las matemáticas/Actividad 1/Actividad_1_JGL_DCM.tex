@@ -1,0 +1,147 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Datos del documento ----------
+\newcommand{\titulo}{Matriz de competencias de la situación de aprendizaje <<Medir lo que no se puede alcanzar>>}
+% Título corto para el encabezado de las páginas
+\newcommand{\tituloCorto}{Actividad 1}
+\newcommand{\asignatura}{Diseño Curricular de las Matemáticas}
+\newcommand{\autor}{Javier Gómez López}
+% Texto explicativo de la tarea (déjalo vacío para que no aparezca)
+\newcommand{\enunciado}{%
+Diseñar una situación de aprendizaje para 1.º de Bachillerato con una duración de tres semanas. Como primer paso, elaborar una matriz de competencias que relacione los contenidos que se van a trabajar con los criterios de evaluación de la normativa, operativice cada criterio adaptándolo al contenido y señale los instrumentos de evaluación con los que se evaluará cada criterio operativizado.%
+}
+\newcommand{\master}{MÁSTER UNIVERSITARIO EN FORMACIÓN DEL PROFESORADO-ESPECIALIDAD EN MATEMÁTICAS -- Universidad Rey Juan Carlos}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+\usepackage{tabularray}
+\DefTblrTemplate{contfoot-text}{default}{Continúa en la página siguiente}
+\DefTblrTemplate{conthead-text}{default}{(continuación)}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Estilo ----------
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+
+\titleformat{\section}{\Large\bfseries\color{acento}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{gris}}{\thesubsection.}{0.6em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}\asignatura}
+\fancyhead[R]{\small\color{gris}\tituloCorto}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrule}{{\color{acento}\hrule height 0.6pt}}
+
+\begin{document}
+
+% ---------- Cabecera ----------
+\thispagestyle{empty}
+\begin{center}
+  {\small\color{gris}\MakeUppercase{\master}}\\[1.2em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[0.8em]
+  {\Huge\bfseries \titulo}\\[0.6em]
+  {\Large\color{gris} \asignatura}\\[0.6em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[1em]
+  {\large \autor}\\[0.3em]
+  {\small\color{gris}\today}
+\end{center}
+\vspace{1.5em}
+
+% ---------- Enunciado ----------
+\ifdefempty{\enunciado}{}{%
+  \begin{tcolorbox}[enhanced, breakable, colback=acento!4, colframe=acento,
+      boxrule=0pt, leftrule=3pt, arc=0pt, title=Enunciado de la tarea,
+      coltitle=acento, colbacktitle=acento!4, fonttitle=\bfseries]
+    \enunciado
+  \end{tcolorbox}
+  \vspace{1em}
+}
+
+% ---------- Contenido ----------
+\section{La situación de aprendizaje}
+La situación de aprendizaje es un taller de GeoGebra en el que el alumnado
+construye, manipula y observa antes de formalizar, y aplica lo aprendido a
+una medición real del centro.
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\linewidth}{>{\bfseries\color{acento}}l X}
+\toprule
+Título & <<Medir lo que no se puede alcanzar>>: taller de GeoGebra \\
+Curso y materia & 1.º de Bachillerato (Ciencias y Tecnología), Matemáticas I \\
+Duración & 3 semanas: 12 sesiones de 55 minutos (4 sesiones semanales) \\
+Agrupamiento & Equipos heterogéneos de 3--4 alumnos, con trabajo individual en las sesiones de construcción \\
+Reto & ¿Cómo podemos medir la altura del edificio del instituto, o la anchura del patio, sin subirnos ni cruzarlo? \\
+Producto final & Un libro de GeoGebra por equipo con el modelo de una medición real del centro y una breve exposición oral \\
+\bottomrule
+\end{tabularx}
+}
+
+\section{Marco normativo}
+La matriz se construye a partir de la Ley Orgánica 3/2020, de 29 de diciembre
+(LOMLOE), que modifica la Ley Orgánica 2/2006, de Educación, y define el
+currículo como el conjunto de objetivos, competencias, contenidos, métodos
+pedagógicos y criterios de evaluación de cada enseñanza (art.~6). Su
+concreción para la Comunidad de Madrid es el Decreto 64/2022, de 20 de julio,
+cuyo anexo~II recoge las competencias específicas, los criterios de
+evaluación y los contenidos de Matemáticas I. Los contenidos y los criterios
+de la matriz se citan de forma literal de este decreto.
+
+Se trabajan siete de las nueve competencias específicas de Matemáticas~I:
+modelizar y resolver problemas (CE1), verificar las soluciones, que en el
+taller se contrastan con GeoGebra (CE2), conjeturar con ayuda de la
+tecnología (CE3), conectar ideas matemáticas (CE5), representarlas con
+herramientas digitales (CE7), comunicarlas en la exposición del producto
+final (CE8) y trabajar en equipos heterogéneos (CE9).
+
+\section{Cómo leer la matriz}
+\begin{itemize}
+  \item \textbf{Contenidos:} agrupados por los bloques del decreto según la
+    parte del taller en la que se trabajan.
+  \item \textbf{Criterio de evaluación:} el criterio de Matemáticas I con el
+    que se enlaza cada grupo de contenidos. Un mismo criterio puede aparecer
+    en varios grupos, porque se evalúa sobre contenidos distintos.
+  \item \textbf{Criterio operativizado:} el criterio redactado de nuevo,
+    tomando todo o parte de él y concretándolo en el contenido trabajado, de
+    forma que se pueda observar y evaluar.
+  \item \textbf{Instrumentos de evaluación:} se marca con una X cada
+    instrumento con el que se recoge información sobre ese criterio
+    operativizado.
+\end{itemize}
+
+\subsection*{Instrumentos de evaluación}
+\begin{description}[leftmargin=0pt, itemsep=2pt]
+  \item[Examen escrito.] Prueba individual al final de la situación de aprendizaje.
+  \item[Cuestionario (GeoGebra Classroom).] Cuestionarios breves de autocorrección al cierre de cada bloque.
+  \item[Fichas de construcción en GeoGebra.] Construcciones guiadas de cada sesión de taller, con la pregunta final justificada.
+  \item[Libro de GeoGebra.] Producto final del equipo: construcción, cálculos y explicación del método.
+  \item[Exposición oral.] Presentación de unos cinco minutos del libro de GeoGebra al resto de la clase.
+  \item[Mapa conceptual.] Síntesis en equipo que relaciona vectores, trigonometría y rectas.
+  \item[Observación sistemática.] Registro del profesor en las sesiones y seguimiento del tablero Kanban de cada equipo.
+  \item[Coevaluación y autoevaluación.] Rúbrica sencilla aplicada a las exposiciones y al trabajo en equipo.
+\end{description}
+
+\newgeometry{margin=1.5cm,headheight=14pt}
+\begin{landscape}
+\section{Matriz de competencias}
+\input{matriz_tabla.tex}
+\end{landscape}
+\restoregeometry
+
+\end{document}
