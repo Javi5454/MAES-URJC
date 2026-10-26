@@ -42,10 +42,11 @@ El script comprueba antes de generar que todos los criterios usados existen y qu
       "Contenido literal 1.",
       "Contenido literal 2.",
   ], [
-      ("1.1", "Criterio operativizado...", [EX, FI]),  # X en Examen y Fichas
+      ("1.1", "Aplicar", "El alumno ha ... (tercera persona, pretérito perfecto)", [EX, FI]),  # X en Examen y Fichas
   ]),
   ```
-  Cada tupla interior es una fila: código del criterio, texto operativizado e instrumentos marcados con X.
+  Cada tupla interior es una fila: código del criterio, nivel de Bloom, texto operativizado e instrumentos marcados con X.
+- **Nivel de Bloom**: debe ser uno de `BLOOM` (Recordar, Comprender, Aplicar, Analizar, Evaluar, Crear). El texto operativizado empieza por «El alumno ha» seguido de un verbo propio de ese nivel (p. ej. Aplicar: calcular, resolver; Analizar: examinar, relacionar; Evaluar: comprobar, justificar; Crear: diseñar, formular).
 
 ## Notas de maquetación
 

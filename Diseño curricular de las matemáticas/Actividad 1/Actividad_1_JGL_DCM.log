@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.1.11)  26 OCT 2026 17:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2025.1.11)  26 OCT 2026 19:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1096,12 +1096,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--95
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-> Step: build the whole table.
 
+Overfull \hbox (3.9013pt too wide) in paragraph at lines 27--27
+ []\T1/lmr/m/it/8 Comprender 
+ []
+
+
+Overfull \hbox (3.9013pt too wide) in paragraph at lines 27--27
+ []\T1/lmr/m/it/8 Comprender 
+ []
+
+> Step: build the whole table.
 [3
 
 
-] [4]) [5] (./Actividad_1_JGL_DCM.aux
+] [4]
+Overfull \hbox (3.9013pt too wide) in paragraph at lines 27--27
+ []\T1/lmr/m/it/8 Comprender 
+ []
+
+) [5] (./Actividad_1_JGL_DCM.aux
 LaTeX Info: Redefining \. on input line 18.
 LaTeX Info: Redefining \% on input line 18.
 )
@@ -1109,23 +1123,24 @@ Package rerunfilecheck Info: File `Actividad_1_JGL_DCM.out' has not changed.
 (rerunfilecheck)             Checksum: 3749D2408AD6C6A1C3E565A0296CF5CD;620.
  ) 
 Here is how much of TeX's memory you used:
- 33524 strings out of 476091
- 712437 string characters out of 5794081
- 1955330 words of memory out of 5000000
- 53387 multiletter control sequences out of 15000+600000
- 565789 words of font info for 62 fonts, out of 8000000 for 9000
+ 33684 strings out of 476091
+ 718322 string characters out of 5794081
+ 1964330 words of memory out of 5000000
+ 53545 multiletter control sequences out of 15000+600000
+ 574615 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 93i,12n,115p,1208b,1249s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,115p,1208b,1275s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ts1.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.p
-fb>
-Output written on Actividad_1_JGL_DCM.pdf (5 pages, 202404 bytes).
+fb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmri8.pfb>
+Output written on Actividad_1_JGL_DCM.pdf (5 pages, 235300 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 136 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  11 named destinations out of 1000 (max. 500000)
  189 words of extra memory for PDF output out of 10000 (max. 10000000)
 
