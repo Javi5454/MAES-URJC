@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[landscape,margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+
+\pagestyle{empty}
+
+\tikzset{
+  concepto/.style={ellipse, draw=acento, thick, fill=acento!6, align=center,
+    inner sep=1pt, minimum height=1.1cm, font=\normalsize},
+  central/.style={concepto, fill=acento, text=white, font=\Large\bfseries,
+    minimum height=1.8cm},
+  linea/.style={thick, gris},
+  flecha/.style={linea, -{Stealth[length=2.5mm]}},
+  % Verbo compartido: una línea llega al verbo y de él se reparten las flechas
+  nexo/.style={fill=white, inner sep=1.5pt, font=\small\itshape, text=acento!80!black},
+  verbo/.style={pos=0.55, fill=white, inner sep=1.5pt, font=\small\itshape,
+    text=acento!80!black, align=center},
+}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries\color{acento} ¿Qué es la competencia matemática en la etapa preuniversitaria?}\\[4pt]
+  {\small\color{gris} Diseño Curricular de las Matemáticas \textperiodcentered{} Javier Gómez López}
+\end{center}
+
+\vfill
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm, y=0.85cm]
+  % Se lee de izquierda a derecha, siguiendo la definición de la Recomendación 2006/962/CE.
+
+  % ---------- Origen y concepto central ----------
+  \node[concepto] (orden) at (-6.5,1) {Recomendación\\2006/962/CE};
+  \node[central]  (C)     at (0,1)    {Competencia\\matemática};
+
+  % ---------- Primer nivel ----------
+  \node[concepto] (hab)   at (5.5,8)    {Habilidad};
+  \node[concepto] (calc)  at (6.2,4.9)  {Dominio\\del cálculo};
+  \node[concepto] (proc)  at (5.6,2.3)  {Proceso y\\actividad};
+  \node[concepto] (conoc) at (6.4,-0.4) {Conocimientos};
+  \node[concepto] (capac) at (5.4,-4)   {Capacidad\\y voluntad};
+
+  % ---------- Segundo nivel ----------
+  \node[concepto] (raz)   at (11,8.6)   {Razonamiento\\matemático};
+  \node[concepto] (modos) at (11,-4.4)  {Modos\\matemáticos};
+
+  \node[concepto] (num)   at (12.5,5.6) {Números\\y medidas};
+  \node[concepto] (estr)  at (13.2,3.9) {Estructuras};
+  \node[concepto] (oper)  at (12.4,2.2) {Operaciones\\básicas};
+  \node[concepto] (term)  at (13.2,0.5) {Términos\\y conceptos};
+  \node[concepto] (preg)  at (12.2,-1.2){Preguntas};
+
+  % ---------- Tercer nivel ----------
+  \node[concepto] (prob)  at (16.5,8.8) {Problemas};
+  \node[concepto] (pens)  at (16.5,-1.6){Pensamiento};
+  \node[concepto] (repr)  at (16.5,-6.4){Representación};
+
+  % ---------- Cuarto nivel ----------
+  \node[concepto] (sit)   at (22,7)     {Situaciones\\cotidianas};
+  \node[concepto] (logesp)at (22,-1.2)  {Lógico y\\espacial};
+  \node[concepto] (form)  at (22,-4.2)  {Fórmulas\\y modelos};
+  \node[concepto] (constr)at (22.6,-6.4){Construcciones};
+  \node[concepto] (graf)  at (22,-8.6)  {Gráficos\\y diagramas};
+
+  % ---------- Enlaces ----------
+  \draw[flecha] (orden) to[out=0,   in=180] node[verbo] {define}    (C);
+
+  \draw[flecha] (C)     to[out=65,  in=180] node[verbo] {es}        (hab);
+  \draw[flecha] (C)     to[out=35,  in=180] node[verbo] {requiere}  (calc);
+  \draw[flecha] (C)     to[out=10,  in=180] node[verbo] {enfatiza}  (proc);
+  \draw[flecha] (C)     to[out=-15, in=180] node[verbo] {incluye}   (conoc);
+  \draw[flecha] (C)     to[out=-60, in=180] node[verbo] {entraña}   (capac);
+
+  \draw[flecha] (hab)   to[out=15,  in=190] node[verbo] {aplica}    (raz);
+  \draw[flecha] (raz)   to[out=10,  in=180] node[verbo] {resuelve}  (prob);
+  \draw[flecha] (prob)  to[out=-10, in=180] node[verbo] {en}        (sit);
+
+  \node[nexo] (ab) at (9.6,2.6) {abarcan};
+  \draw[linea]  (conoc.east) to[out=40, in=-90] (ab.south);
+  \draw[flecha] (ab.north)   to[out=80, in=180] (num);
+  \draw[flecha] (ab.east)    to[out=20, in=180] (estr);
+  \draw[flecha] (ab.east)    to[out=-20,in=180] (oper);
+  \draw[flecha] (conoc.east) to[out=5,   in=180] node[verbo, pos=0.5] {comprenden}  (term);
+  \draw[flecha] (conoc.east) to[out=-15, in=180] node[verbo, pos=0.45] {identifican} (preg);
+
+  \draw[flecha] (capac) to[out=-10, in=190] node[verbo] {utiliza}   (modos);
+  \node[nexo] (de) at (13.6,-4.4) {de};
+  \draw[linea]  (modos) -- (de);
+  \draw[flecha] (de) to[out=60,  in=180] (pens);
+  \draw[flecha] (de) to[out=-60, in=180] (repr);
+  \draw[flecha] (pens)  to[out=10,  in=180] node[verbo] {es}        (logesp);
+  \node[nexo] (usa) at (19.4,-6.4) {usa};
+  \draw[linea]  (repr) -- (usa);
+  \draw[flecha] (usa) to[out=60,  in=180] (form);
+  \draw[flecha] (usa) -- (constr);
+  \draw[flecha] (usa) to[out=-60, in=180] (graf);
+\end{tikzpicture}%
+}
+\end{center}
+\vfill
+
+{\footnotesize\color{gris} Fuente: Recomendación 2006/962/CE del Parlamento Europeo y del Consejo, de 18 de diciembre de 2006, sobre las competencias clave para el aprendizaje permanente. \emph{Diario Oficial de la Unión Europea}, L 394, 30-12-2006, pp. 10--18. \url{https://www.boe.es/doue/2006/394/L00010-00018.pdf}}
+
+\end{document}
