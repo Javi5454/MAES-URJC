@@ -1,0 +1,401 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Datos del documento ----------
+\newcommand{\titulo}{Caso 9. Adolescente con problemas de peso: análisis DAFO y líneas de actuación}
+\newcommand{\tituloCorto}{Caso 9}
+\newcommand{\asignatura}{Organización y Gestión del Centro}
+\newcommand{\autor}{Javier Gómez López}
+\newcommand{\enunciado}{%
+A partir del caso \emph{Adolescente con problemas de peso}:
+\begin{enumerate}
+\item Analizar el caso y elaborar un análisis DAFO.
+\item Proponer líneas de actuación que aporten soluciones para mejorar la situación de la adolescente en el centro educativo.
+\item Ordenar las actuaciones por su grado de urgencia e importancia.
+\item Clasificar las actuaciones según los órganos, departamentos o personal del centro responsables de ellas.
+\end{enumerate}
+}
+\newcommand{\master}{MÁSTER UNIVERSITARIO EN FORMACIÓN DEL PROFESORADO-ESPECIALIDAD EN MATEMÁTICAS -- Universidad Rey Juan Carlos}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Estilo ----------
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+\definecolor{verde}{RGB}{46,125,50}
+\definecolor{azul}{RGB}{21,101,192}
+\definecolor{naranja}{RGB}{230,120,0}
+
+\titleformat{\section}{\Large\bfseries\color{acento}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{gris}}{\thesubsection.}{0.6em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}\asignatura}
+\fancyhead[R]{\small\color{gris}\tituloCorto}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrule}{{\color{acento}\hrule height 0.6pt}}
+
+\newcommand{\dafobox}[3]{%
+  \begin{tcolorbox}[enhanced, colback=#1!5, colframe=#1, boxrule=0.8pt, arc=1pt,
+      title=#2, fonttitle=\bfseries, height=9.6cm, valign=top, fontupper=\small]
+    #3
+  \end{tcolorbox}}
+\newcommand{\prio}[1]{\textbf{\color{acento}#1}}
+
+\begin{document}
+
+% ---------- Cabecera ----------
+\thispagestyle{empty}
+\begin{center}
+  {\small\color{gris}\MakeUppercase{\master}}\\[1.2em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[0.8em]
+  {\Huge\bfseries \titulo}\\[0.6em]
+  {\Large\color{gris} \asignatura}\\[0.6em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[1em]
+  {\large \autor}\\[0.3em]
+  {\small\color{gris}\today}
+\end{center}
+\vspace{1.5em}
+
+% ---------- Enunciado ----------
+\ifdefempty{\enunciado}{}{%
+  \begin{tcolorbox}[enhanced, breakable, colback=acento!4, colframe=acento,
+      boxrule=0pt, leftrule=3pt, arc=0pt, title=Enunciado de la tarea,
+      coltitle=acento, colbacktitle=acento!4, fonttitle=\bfseries]
+    \enunciado
+  \end{tcolorbox}
+  \vspace{1em}
+}
+
+% ---------- Contenido ----------
+\section{Análisis del caso}
+
+\subsection{Datos relevantes}
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[Situación sanitaria] Mujer de 20 años (adolescencia tardía) que acude
+  al centro de salud con su madre por delgadez, falta de apetito y comidas a
+  deshoras. Peso de 48\,kg, talla de 160\,cm e IMC de 18,75, en el límite
+  inferior de la normalidad (18,5). Presenta palidez cutánea y el resto de la
+  exploración es normal. No toma medicación. Además, la madre solicita una
+  serología de VIH.
+  \item[Conductas de riesgo] Se marchó de casa tres días con una amiga
+  consumidora de drogas y alcohol, después de robar a su padre 60.000\,€ que el
+  grupo gastó en ese tiempo (entre otras cosas, en un coche). Según la madre,
+  hay riesgo de accidentes, de consumo de drogas y alcohol, de embarazo y de
+  delincuencia. Solo lo contó después de mucha insistencia.
+  \item[Situación escolar] Solo ha cursado hasta 2.º de ESO y no tiene el título
+  de Graduado en ESO. Hace dos años que dejó el instituto porque, en sus
+  palabras, \emph{<<no le interesaba nada de lo que se podía aprender allí>>}.
+  Es un caso de abandono escolar temprano. Como ya ha superado la edad de la
+  enseñanza obligatoria, hoy está fuera del sistema educativo.
+  \item[Contexto familiar (genograma)] El padre tiene 43 años, estudios de EGB y
+  trabaja como camionero. El genograma lo señala como alcohólico, con esguince
+  cervical y lumbalgia, y la relación con su hija aparece como distante. La
+  madre tiene 41 años, estudios universitarios y es profesora; el genograma
+  recoge la anotación <<DP>> (previsiblemente, depresión). Las relaciones de la
+  madre con el padre y con la hija se representan como conflictivas. No
+  constan hermanos.
+\end{description}
+
+\subsection{Interpretación desde el centro educativo}
+El problema que motiva la consulta es el bajo peso, pero desde el punto de vista
+educativo es un síntoma más de una situación de \textbf{riesgo psicosocial
+múltiple}. Coinciden aquí la desvinculación escolar, los hábitos de salud
+inadecuados, el consumo de sustancias en el grupo de iguales, las conductas
+antisociales y un entorno familiar con alcoholismo, posible patología depresiva
+y relaciones conflictivas.
+
+Que tenga \textbf{20 años} cambia el planteamiento de la intervención:
+\begin{itemize}
+  \item \textbf{El centro de referencia ya no es el instituto ordinario.} Es un
+  \textbf{centro de educación de personas adultas} (CEPA), o un IES que ofrezca
+  educación de adultos, al que puede incorporarse porque ya tiene 18 años
+  (art.~67.1 LOMLOE). Ahí puede cursar la Educación Secundaria para Personas
+  Adultas (ESPA), presentarse a las pruebas libres para obtener el título de
+  la ESO (art.~68.2) o acceder a un ciclo formativo de grado básico para
+  adultos (art.~68.3). La LOMLOE incluye además entre los objetivos de la
+  educación de adultos <<promover la salud y los hábitos saludables de
+  alimentación>> (art.~66.3.i).
+  \item \textbf{No hay absentismo ni protección de menores.} Su vuelta a la
+  formación es \textbf{voluntaria}: no se puede obligar, hay que motivarla.
+  Por eso la acogida y el vínculo inicial son decisivos.
+  \item \textbf{Ella decide sobre sí misma.} Es mayor de edad: la información
+  sanitaria y la implicación de la familia en el centro requieren \textbf{su
+  consentimiento}. La madre deja de ser la interlocutora formal, aunque sigue
+  siendo un apoyo muy valioso.
+  \item \textbf{Las consecuencias de sus actos son de adulta.} Un robo o un
+  delito ya no se tratan por la vía de menores, lo que hace más urgente
+  intervenir antes de que se cronifique la situación.
+\end{itemize}
+
+Por tanto, el análisis se sitúa en el \textbf{centro de adultos donde la joven
+se matricula}. En este caso, la derivación puede venir del propio centro de
+salud o de su madre.
+
+\section{Análisis DAFO}
+Los factores internos son los de la propia joven y el centro de adultos. Los
+externos, los de la familia, el grupo de iguales y los recursos del entorno.
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+\dafobox{acento}{Debilidades (internas)}{%
+\begin{itemize}[leftmargin=1em, itemsep=1pt]
+  \item Desmotivación hacia lo escolar y dos años desconectada de cualquier
+  formación.
+  \item Sin título de la ESO y con un nivel formativo bajo (2.º de ESO).
+  \item Bajo peso, inapetencia, comidas desordenadas y palidez: posible riesgo de
+  trastorno de la conducta alimentaria o de malnutrición asociada al consumo.
+  \item Conductas de riesgo: fuga, robo, posible consumo de alcohol y drogas, y
+  relaciones sexuales de riesgo (VIH, embarazo).
+  \item Baja percepción del riesgo y comunicación difícil con los adultos.
+  \item Centro: alto riesgo de que la deje pronto. El alumnado adulto se da de
+  baja con facilidad si no se siente acogido.
+\end{itemize}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\dafobox{naranja}{Amenazas (externas)}{%
+\begin{itemize}[leftmargin=1em, itemsep=1pt]
+  \item Al no ser obligatoria la escolarización, ningún mecanismo la hace
+  volver si ella no quiere.
+  \item Padre con alcoholismo y relación distante con la hija; relaciones
+  conflictivas en la familia; posible depresión materna.
+  \item Grupo de iguales consumidor de drogas y alcohol, con acceso a dinero.
+  \item Consecuencias penales como adulta, riesgo de accidentes, de embarazo no
+  deseado y de infecciones de transmisión sexual.
+  \item Con 20 años y sin título de la ESO, riesgo de exclusión laboral y de
+  empleo precario.
+\end{itemize}}
+\end{minipage}
+
+\noindent
+\begin{minipage}[t]{0.49\linewidth}
+\dafobox{verde}{Fortalezas (internas)}{%
+\begin{itemize}[leftmargin=1em, itemsep=1pt]
+  \item Buen estado físico general: consciente, orientada, colaboradora,
+  exploración normal y sin medicación.
+  \item Acude a consulta y acaba contando lo ocurrido: hay margen para el
+  vínculo y la comunicación.
+  \item Mayoría de edad: puede decidir y elegir su itinerario (ESPA, pruebas
+  libres, FP), que puede tener una orientación profesional.
+  \item Su desinterés apunta a una oferta que no conecta con ella, no
+  necesariamente a una falta de capacidad.
+  \item Centro de adultos: horarios flexibles, modalidades presencial y a
+  distancia (art.~70 bis), grupos reducidos y enseñanza organizada por ámbitos.
+\end{itemize}}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\linewidth}
+\dafobox{azul}{Oportunidades (externas)}{%
+\begin{itemize}[leftmargin=1em, itemsep=1pt]
+  \item Madre muy implicada y preocupada; además es profesora y conoce el
+  sistema educativo.
+  \item Atención primaria ya implicada: puede derivarla al centro de adultos
+  y coordinarse con él.
+  \item Recursos externos: servicios sociales, centros de atención a las
+  adicciones, salud mental y servicios públicos de empleo.
+  \item Marco LOMLOE: acceso a la educación de adultos (art.~67.1), salud y
+  alimentación (66.3.i), orientación profesional junto con empleo (67.10),
+  pruebas libres de la ESO (68.2), grado básico para adultos (68.3) y prueba de
+  acceso a FP de grado medio (art.~41).
+\end{itemize}}
+\end{minipage}
+
+\subsection*{Estrategias que se derivan del DAFO}
+\begin{itemize}
+  \item \textbf{Fortalezas + Oportunidades (ofensivas).} Aprovechar su buena
+  disposición en consulta y la derivación desde el centro de salud para que se
+  matricule en un itinerario que ella misma elija.
+  \item \textbf{Fortalezas + Amenazas (defensivas).} Usar la tutoría y la
+  flexibilidad del centro de adultos para ofrecerle un adulto de referencia y
+  un grupo alternativo al grupo consumidor.
+  \item \textbf{Debilidades + Oportunidades (reorientación).} Compensar la
+  desmotivación con una formación práctica orientada al empleo y aprovechar los
+  recursos sanitarios para el problema de peso y de consumo.
+  \item \textbf{Debilidades + Amenazas (supervivencia).} Hacer una acogida
+  inmediata y un seguimiento estrecho para evitar que lo deje, y derivarla con
+  su consentimiento a servicios sanitarios y sociales.
+\end{itemize}
+
+\section{Líneas de actuación ordenadas por urgencia e importancia}
+Las actuaciones se clasifican con la matriz \emph{urgente--importante} en tres
+niveles de prioridad:
+\begin{itemize}[itemsep=0pt]
+  \item \prio{P1. Inmediata}: urgente e importante, entre la matrícula y las
+  primeras semanas.
+  \item \prio{P2. Corto plazo}: importante y con plazo, durante el primer
+  trimestre y después de forma continuada.
+  \item \prio{P3. Medio plazo}: importante pero no urgente, durante el curso y
+  en los documentos del centro.
+\end{itemize}
+
+{\small
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{>{\bfseries}p{0.06\linewidth} p{0.47\linewidth} >{\centering\arraybackslash}p{0.09\linewidth} >{\raggedright\arraybackslash}p{0.26\linewidth}}
+\toprule
+Nº & Actuación & Prioridad & Responsable principal \\
+\midrule
+\endhead
+\multicolumn{4}{l}{\prio{P1 --- Inmediata (urgente e importante)}}\\
+A1 & \textbf{Acoger e informar.} Atender la derivación del centro de salud o de
+la madre, hacer una entrevista de acogida individual, explicarle las opciones
+(ESPA presencial o a distancia, pruebas libres de la ESO, grado básico para
+adultos, prueba de acceso a grado medio) y facilitarle la matrícula en cualquier
+momento del curso. & P1 & Jefatura de estudios; Orientador/a; Secretaría \\
+A2 & \textbf{Hacer una valoración inicial y una entrevista de orientación.}
+Valorar su nivel de competencia para situarla en el nivel y los módulos que le
+correspondan, y hacer una entrevista confidencial sobre sus intereses, su
+estado emocional, la autoestima y la relación con la comida. & P1 &
+Orientador/a; Equipo docente (ámbitos) \\
+A3 & \textbf{Coordinarse con los servicios sanitarios y sociales, con su
+consentimiento.} Coordinarse con atención primaria por el bajo peso y la salud
+sexual, ofrecerle la derivación a recursos de adicciones, salud mental o
+servicios sociales y, si aparecen indicios de violencia o explotación, aplicar
+el protocolo del centro. & P1 & Dirección; Orientador/a; Coordinador/a de
+bienestar y protección (art.~124.5) \\
+A4 & \textbf{Asignar un tutor o tutora de referencia y firmar un compromiso.}
+Un adulto de referencia y un compromiso personal firmado por ella, con
+objetivos a corto plazo alcanzables. & P1 & Jefatura de estudios; Tutor/a \\
+\midrule
+\multicolumn{4}{l}{\prio{P2 --- Corto plazo (importante, con plazo)}}\\
+A5 & \textbf{Diseñar un itinerario formativo personalizado.} Combinar la ESPA
+(o la preparación de las pruebas libres) con un objetivo profesional concreto:
+la prueba de acceso a FP de grado medio, un ciclo de grado básico o la
+orientación al empleo junto con los servicios públicos de empleo (art.~67.10).
+& P2 & Orientador/a; Tutor/a; Jefatura de estudios \\
+A6 & \textbf{Adaptar la metodología a una persona adulta.} Aprendizaje
+funcional y ligado a la vida real, proyectos relacionados con sus intereses
+y una evaluación ajustada a su punto de partida. Si lo necesita, compaginarlo
+con la modalidad a distancia (art.~70 bis). & P2 & Equipo docente;
+Departamentos de ámbito \\
+A7 & \textbf{Hacer un seguimiento para que no lo deje.} Registro de
+asistencia, contacto inmediato si falta varios días seguidos, tutorías
+individuales periódicas y reuniones del equipo docente para ajustar la
+respuesta. & P2 & Tutor/a; Equipo docente; Jefatura de estudios \\
+A8 & \textbf{Implicar a la familia, solo si ella lo autoriza.} Con su
+autorización, entrevistas con la madre para coordinar el apoyo en casa,
+mediación en el conflicto madre--hija y orientación de la familia hacia
+recursos de terapia familiar o de alcoholismo. & P2 & Tutor/a; Orientador/a \\
+\midrule
+\multicolumn{4}{l}{\prio{P3 --- Medio plazo (importante, no urgente)}}\\
+A9 & \textbf{Desarrollar educación para la salud.} Talleres de alimentación
+saludable e imagen corporal, prevención de adicciones y educación
+afectivo-sexual (VIH, embarazo), integrados en los ámbitos y en la tutoría,
+en línea con el art.~66.3.i. & P3 & Orientador/a; Tutores; Departamento del
+ámbito científico-tecnológico; CCP \\
+A10 & \textbf{Crear vínculos positivos con el centro.} Actividades culturales,
+deportivas y de participación, enseñanzas para el desarrollo personal y
+aprendizaje cooperativo, para ofrecerle un grupo alternativo. & P3 & Jefatura
+de estudios; Responsable de actividades complementarias \\
+A11 & \textbf{Revisar los documentos del centro y formar al profesorado.}
+Incorporar al proyecto educativo, a la PGA y al plan de acción tutorial
+protocolos de acogida, de prevención del abandono y de detección de trastornos
+de la conducta alimentaria y consumo en jóvenes adultos, y ofrecer formación
+al claustro sobre estas señales de alerta. & P3 & Equipo directivo; Claustro;
+CCP; Consejo Escolar \\
+A12 & \textbf{Establecer convenios con entidades externas.} Colaboración
+estable con el centro de salud, los servicios sociales, los recursos de
+adicciones, los servicios de empleo y ONG (art.~127.j) para derivar en ambos
+sentidos. & P3 & Consejo Escolar (fija las directrices); Dirección (las
+ejecuta) \\
+\bottomrule
+\end{longtable}
+}
+
+\textbf{Criterio de ordenación.} Primero se asegura que la joven
+\emph{llegue y se quede} en el centro y que sus necesidades de salud estén
+atendidas (A1--A4). En la educación de adultos la primera semana decide si
+continúa, y sin vínculo no hay intervención posible. Después se construye un
+itinerario con sentido para ella y se evita que lo deje (A5--A8). Por último,
+se actúa sobre la organización para responder mejor a otros casos (A9--A12).
+Al ser mayor de edad, rigen siempre su \textbf{autonomía y su consentimiento}:
+la información sanitaria y familiar solo se comparte si ella lo autoriza y con
+quien la necesita para intervenir.
+
+\section{Clasificación por órganos y personal responsables}
+Los órganos de gobierno (Consejo Escolar, Claustro y equipo directivo) son los
+que recoge la LOMLOE (arts.~119 y 126--132). Los órganos de coordinación docente
+(orientación, departamentos, CCP, tutoría y equipo docente) son los que la ley
+menciona en su art.~119. En los centros de adultos los desarrolla la normativa
+autonómica de forma análoga al Reglamento Orgánico de los IES\footnote{Real
+Decreto 83/1996, de 26 de enero, por el que se aprueba el Reglamento Orgánico de
+los Institutos de Educación Secundaria.}, con departamentos organizados por
+ámbitos.
+
+{\small
+\renewcommand{\arraystretch}{1.3}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.27\linewidth} p{0.53\linewidth} >{\centering\arraybackslash}p{0.12\linewidth}}
+\toprule
+Órgano / personal & Funciones en este caso & Actuaciones \\
+\midrule
+\endhead
+\multicolumn{3}{l}{\textbf{\color{acento}Órganos colegiados de gobierno}}\\
+Consejo Escolar & Propone medidas de estilos de vida saludable y de
+convivencia (art.~127.g), fija las directrices de colaboración con entidades
+(127.j), aprueba el proyecto educativo y evalúa la PGA (127.a--b). & A11, A12 \\
+Claustro del profesorado & Aprueba los aspectos educativos de los planes
+(acción tutorial, acogida) y propone la formación del profesorado. & A11 \\
+\midrule
+\multicolumn{3}{l}{\textbf{\color{acento}Órganos unipersonales (equipo directivo, art.~131)}}\\
+Dirección & Garantiza el cumplimiento de la normativa (art.~132.d), impulsa la
+colaboración con las familias y con otras instituciones (132.g) y coordina la
+derivación a servicios externos. & A3, A11, A12 \\
+Jefatura de estudios & Organiza la acogida, la asignación de grupo y tutor, el
+seguimiento de la asistencia y las actividades. & A1, A4, A5, A7, A10 \\
+Secretaría & Gestiona la matrícula (también fuera de plazo, si la normativa lo
+permite) y las inscripciones en pruebas libres, y custodia el expediente de
+forma confidencial. & A1 \\
+Coordinador/a de bienestar y protección & Aplica el protocolo si aparecen
+indicios de violencia o explotación (art.~124.5). & A3 \\
+\midrule
+\multicolumn{3}{l}{\textbf{\color{acento}Órganos de coordinación docente}}\\
+Orientación (departamento u orientador/a del centro) & Hace la entrevista de
+acogida, la orientación académico-profesional, la coordinación con los
+servicios sanitarios, sociales y de empleo y la intervención familiar
+consentida. & A1, A2, A3, A5, A8, A9 \\
+Comisión de coordinación pedagógica (CCP) & Integra la educación para la salud
+en las programaciones y revisa los documentos institucionales. & A9, A11 \\
+Departamentos de ámbito (comunicación, social, científico-tecnológico) & Hacen
+la valoración inicial y la adaptación metodológica, y desarrollan contenidos
+de salud y alimentación en el ámbito científico-tecnológico. & A2, A6, A9 \\
+Responsable de actividades complementarias & Organiza actividades que
+favorecen la integración y un ocio saludable. & A10 \\
+Tutor/a & Es la persona de referencia: hace el compromiso, las tutorías
+individuales, el seguimiento de la asistencia y, si ella lo autoriza, el
+contacto con la familia. & A4, A5, A7, A8, A9 \\
+Equipo docente & Aplica de forma coherente la adaptación metodológica y
+participa en el seguimiento. & A2, A6, A7 \\
+\bottomrule
+\end{longtable}
+}
+
+\section{Conclusión}
+El bajo peso de esta joven de 20 años es la parte visible de un problema más
+amplio: abandono escolar sin título, conductas de riesgo y un entorno familiar
+frágil. Como ya es adulta, el sistema educativo no puede obligarla a volver;
+solo puede \textbf{atraerla y retenerla}. Por eso el centro de adultos tiene
+que ofrecerle una acogida cálida y un itinerario con sentido profesional, y
+actuar de forma coordinada: la jefatura de estudios y la tutoría acogen y hacen
+el seguimiento, la orientación evalúa, orienta y conecta con los servicios
+sanitarios, sociales y de empleo, el equipo docente adapta la enseñanza a una
+persona adulta, y el equipo directivo, el Claustro y el Consejo Escolar
+convierten la experiencia en protocolos estables. Todo ello respetando su
+autonomía como mayor de edad. La clave es que, mientras siga vinculada a una
+formación, sigue habiendo margen para intervenir.
+
+\end{document}
