@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "rag-normativa": {
+        "type": "local",
+        "command": ["uv", "run", "--quiet", "--project", "rag-normativa", "rag-normativa-mcp"],
+        "codemode": false,
+        "timeout": { "startup": 60000 }
+      }
+    }
+  }
+}

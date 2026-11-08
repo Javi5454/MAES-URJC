@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "rag-normativa": {
+      "command": "uv",
+      "args": ["run", "--quiet", "--project", "rag-normativa", "rag-normativa-mcp"]
+    }
+  }
+}

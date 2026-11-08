@@ -1,3 +1,24 @@
+# Normativa (PDF grandes, se guardan solo en local)
 BOE-A-2020-17264.pdf
 Decreto-64-2022-Curriculum-de-Bachillerato_Madrid.pdf
+Decreto-65-2022_ordenacion-y-el-curriculo-ESO-en-CAM.pdf
+
+# RAG: índice generado
+rag-normativa/data/
+
+# Python
 .venv/
+__pycache__/
+.pytest_cache/
+
+# LaTeX: archivos auxiliares de compilación
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# macOS
+.DS_Store

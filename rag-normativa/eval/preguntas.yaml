@@ -1,0 +1,38 @@
+# Páginas físicas del PDF, localizadas en el texto del PDF sin usar el buscador.
+- {pregunta: "¿Qué dice la ley sobre la evaluación y promoción en la ESO?", norma: lomloe, paginas: [26]}
+- {pregunta: "¿Cuál es el calendario de implantación de la LOMLOE?", norma: lomloe, paginas: [85, 86]}
+- {pregunta: "¿Qué es el Plan de Contingencia para situaciones de emergencia?", norma: lomloe, paginas: [76]}
+- {pregunta: "¿Qué se necesita para obtener el título de Bachiller según la ley orgánica?", norma: lomloe, paginas: [32]}
+- {pregunta: "¿Qué modificaciones introduce la ley en las funciones del profesorado?", norma: lomloe, paginas: [49]}
+- {pregunta: "¿Qué alumnado cursa Educación en Valores cívicos y éticos en secundaria?", norma: lomloe, paginas: [25]}
+- {pregunta: "¿Cuándo promociona de curso un alumno de ESO en Madrid?", norma: decreto-65-eso, paginas: [15]}
+- {pregunta: "¿Qué requisitos hay para obtener el título de Graduado en ESO en Madrid?", norma: decreto-65-eso, paginas: [16]}
+- {pregunta: "¿Cómo se regulan las materias optativas en la ESO de Madrid?", norma: decreto-65-eso, paginas: [8]}
+- {pregunta: "¿Cómo se organiza el horario lectivo de la ESO?", norma: decreto-65-eso, paginas: [9]}
+- {pregunta: "¿Cuáles son las competencias clave en la ESO?", norma: decreto-65-eso, paginas: [10, 11]}
+- {pregunta: "¿Qué medidas hay para alumnos con altas capacidades intelectuales en ESO?", norma: decreto-65-eso, paginas: [22]}
+- {pregunta: "¿Cómo es la evaluación de diagnóstico en la ESO?", norma: decreto-65-eso, paginas: [13]}
+- {pregunta: "¿Qué medidas contempla el decreto de ESO para alumnos con necesidades educativas especiales?", norma: decreto-65-eso, paginas: [20, 21]}
+- {pregunta: "¿Cuáles son las competencias específicas de Matemáticas en la ESO?", norma: decreto-65-eso, paginas: [227, 228, 229, 230, 231]}
+- {pregunta: "Criterios de evaluación de Matemáticas de 2º de ESO", norma: decreto-65-eso, paginas: [234, 235]}
+- {pregunta: "¿Cuándo se promociona de primero a segundo de Bachillerato?", norma: decreto-64-bach, paginas: [10, 11]}
+- {pregunta: "¿Qué hace falta para obtener el título de Bachiller en Madrid?", norma: decreto-64-bach, paginas: [11, 12]}
+- {pregunta: "¿Se puede cursar el Bachillerato en tres años académicos en Madrid?", norma: decreto-64-bach, paginas: [7]}
+- {pregunta: "¿Qué materias se cursan en la modalidad General de Bachillerato?", norma: decreto-64-bach, paginas: [6]}
+- {pregunta: "¿Qué objetivo tiene la materia de Matemáticas Generales en Bachillerato?", norma: decreto-64-bach, paginas: [331, 332, 333]}
+
+# Preguntas por curso, sin filtros. Páginas tomadas de los metadatos de materia, curso y bloque.
+- {pregunta: "Contenidos de Matemáticas de 3º de ESO", norma: decreto-65-eso, paginas: [240, 241, 242, 243]}
+- {pregunta: "Criterios de evaluación de Matemáticas de 4º ESO", norma: decreto-65-eso, paginas: [243, 244, 248, 249]}
+- {pregunta: "¿Cuáles son los criterios de evaluación de Matemáticas en primero de la ESO?", norma: decreto-65-eso, paginas: [230, 231]}
+- {pregunta: "Criterios de evaluación de Física y Química de tercero de ESO", norma: decreto-65-eso, paginas: [113, 114]}
+- {pregunta: "Contenidos de Geografía e Historia de 2.º de ESO", norma: decreto-65-eso, paginas: [138, 139, 140]}
+- {pregunta: "Contenidos de Biología y Geología de 1º ESO", norma: decreto-65-eso, paginas: [35, 36, 37, 38]}
+- {pregunta: "Contenidos de Matemáticas de segundo de Bachillerato", norma: decreto-64-bach, paginas: [316, 317, 318, 319, 320]}
+- {pregunta: "Criterios de evaluación de Matemáticas de 1º de Bachillerato", norma: decreto-64-bach, paginas: [311, 312]}
+- {pregunta: "Contenidos de Filosofía de primero de Bachillerato", norma: decreto-64-bach, paginas: [137, 138, 139]}
+
+# Preguntas cuya respuesta no está en las normas: el modelo debe rechazarlas.
+- {pregunta: "¿Cuánto cobra un profesor de secundaria en la Comunidad de Madrid?", sin_respuesta: true}
+- {pregunta: "¿Cuál es el temario de las oposiciones de Matemáticas?", sin_respuesta: true}
+- {pregunta: "¿Cuál es la capital de Francia?", sin_respuesta: true}

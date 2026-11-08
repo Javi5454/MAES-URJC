@@ -11,7 +11,8 @@ Aquí voy recogiendo las actividades, materiales y reflexiones de cada asignatur
 ```
 MAES-URJC/
 ├── Didáctica de las Matemáticas/   # Actividades de la asignatura, por bloque o profesorado
-└── Innovación Educativa/           # Portfolio de clase: web propia con una reflexión por sesión
+├── Innovación Educativa/           # Portfolio de clase: web propia con una reflexión por sesión
+└── rag-normativa/                  # RAG local con citas sobre la LOMLOE y los decretos de Madrid
 ```
 
 Cada asignatura tiene su carpeta, y dentro de ella el material se organiza según lo que pida cada una.
