@@ -125,6 +125,18 @@ Probado con OpenCode 2.2.5 y `qwen3.5:35b-a3b`. Ten en cuenta:
 | `buscar_normativa` | Búsqueda híbrida con filtros; cada resultado trae su `cita` |
 | `leer_pagina` | Devuelve una página completa del PDF para verificar una cita |
 
+## Que el modelo use el RAG sin pedírselo
+
+Un modelo conectado por MCP decide por sí mismo si usa una herramienta. Para que tienda a usarla siempre:
+
+| Programa | Dónde está la instrucción |
+|---|---|
+| Claude Code | `CLAUDE.md`, en la raíz del repositorio, que importa `AGENTS.md` |
+| OpenCode | `AGENTS.md`, en la raíz del repositorio |
+| Claude Desktop | Hay que añadirla en las instrucciones de un Proyecto o en tus preferencias, porque no lee estos archivos |
+
+Abre una sesión nueva desde la raíz del repositorio para que se apliquen. Aun así, el modelo podría ignorarlas. La única vía donde la búsqueda ocurre siempre es `rag-normativa ask`.
+
 ## Configuración
 
 | Variable | Valor por defecto |
