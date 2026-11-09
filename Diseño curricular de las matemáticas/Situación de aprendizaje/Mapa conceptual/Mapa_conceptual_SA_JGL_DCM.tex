@@ -1,0 +1,117 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[landscape,margin=1.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\usetikzlibrary{arrows.meta,shapes.geometric}
+
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+
+\pagestyle{empty}
+
+\tikzset{
+  concepto/.style={ellipse, draw=acento, thick, fill=acento!6, align=center,
+    inner sep=1pt, minimum height=1.1cm, font=\normalsize},
+  central/.style={concepto, fill=acento, text=white, font=\Large\bfseries,
+    minimum height=1.8cm},
+  linea/.style={thick, gris},
+  flecha/.style={linea, -{Stealth[length=2.5mm]}},
+  % Verbo compartido: una línea llega al verbo y de él se reparten las flechas
+  nexo/.style={fill=white, inner sep=1.5pt, font=\small\itshape, text=acento!80!black},
+  verbo/.style={pos=0.55, fill=white, inner sep=1.5pt, font=\small\itshape,
+    text=acento!80!black, align=center},
+}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries\color{acento} Medir lo que no se puede alcanzar: ¿dónde caben más paneles solares en nuestro instituto?}\\[4pt]
+  {\small\color{gris} Situación de aprendizaje de Matemáticas I \textperiodcentered{} Diseño Curricular de las Matemáticas \textperiodcentered{} Javier Gómez López}
+\end{center}
+
+\vfill
+\begin{center}
+\resizebox{\linewidth}{!}{%
+\begin{tikzpicture}[x=1cm, y=0.85cm]
+  % Mapa radial: el reto en el centro y las ramas repartidas a ambos lados.
+
+  % ---------- Concepto central y origen ----------
+  \node[central]  (C)   at (0,0)    {Reto de\\los paneles};
+  \node[concepto] (dir) at (0,-6.5) {Dirección\\del centro};
+
+  % ---------- Primer nivel ----------
+  \node[concepto] (sab) at (-6,5)    {Saberes de\\Matemáticas I};
+  \node[concepto] (met) at (-6,-4)   {Metodología};
+  \node[concepto] (mod) at (6,5)     {Modelo\\de sombras};
+  \node[concepto] (med) at (6,0.5)   {Medición\\en el centro};
+  \node[concepto] (eva) at (6,-4.4)  {Evaluación};
+  \node[concepto] (div) at (6,-7.5)  {Diversidad\\(DUA)};
+
+  % ---------- Izquierda ----------
+  \node[concepto] (vec)  at (-12.5,8.6) {Vectores};
+  \node[concepto] (trig) at (-12.5,6.2) {Trigonometría};
+  \node[concepto] (tri)  at (-12.5,3.8) {Resolución\\de triángulos};
+  \node[concepto] (rec)  at (-12.5,1.4) {Rectas};
+  \node[concepto] (mag)  at (-12.5,-1)  {Sesiones\\magistrales};
+  \node[concepto] (fich) at (-12.5,-3)  {Talleres\\de GeoGebra};
+  \node[concepto] (rol)  at (-12.5,-5)  {Equipos con\\roles rotatorios};
+  \node[concepto] (etw)  at (-12.5,-7)  {Proyecto\\eTwinning};
+
+  % ---------- Derecha ----------
+  \node[concepto] (prop)  at (12.5,5)    {Propuesta\\de ampliación};
+  \node[concepto] (ods)   at (12.5,8.8)  {ODS 7 y 11};
+  \node[concepto] (libro) at (12.5,1.2)  {Libro de\\GeoGebra};
+  \node[concepto] (exam)  at (12.5,-1.4) {Examen\\individual};
+  \node[concepto] (rub)   at (12.5,-3.4) {Libro y\\exposición};
+  \node[concepto] (fci)   at (12.5,-5.4) {Fichas y\\cuestionarios};
+  \node[concepto] (obs)   at (12.5,-7.4) {Observación y\\co/autoevaluación};
+
+  % ---------- Enlaces ----------
+  \draw[flecha] (dir) -- node[verbo] {encarga} (C);
+
+  \draw[flecha] (C.north west) to[out=125, in=-55] node[verbo] {moviliza} (sab);
+  \draw[flecha] (C) to[out=10, in=180] node[verbo] {exige} (med);
+  \draw[flecha] (C) to[out=-145, in=0] node[verbo] {se apoya en} (met);
+  \draw[flecha] (C) to[out=-20, in=180] node[verbo] {se comprueba con} (eva);
+  \draw[flecha] (C) to[out=-55, in=180] node[verbo, pos=0.7] {atiende la} (div);
+
+  \node[nexo] (ab) at (-9.3,5) {abarcan};
+  \draw[linea]  (sab) -- (ab);
+  \draw[flecha] (ab.north) to[out=100,  in=0] (vec);
+  \draw[flecha] (ab.west)  to[out=155,  in=0] (trig);
+  \draw[flecha] (ab.west)  to[out=-155, in=0] (tri);
+  \draw[flecha] (ab.south) to[out=-100, in=0] (rec);
+
+  \draw[flecha] (sab.north east) to[out=40, in=140] node[verbo, pos=0.5] {construyen} (mod.north west);
+  \draw[flecha] (med) -- node[verbo] {aporta datos al} (mod);
+  \draw[flecha] (mod)  -- node[verbo] {justifica} (prop);
+  \draw[flecha] (prop) -- node[verbo] {contribuye a} (ods);
+  \draw[flecha] (prop) -- node[verbo] {se recoge en} (libro);
+
+  \node[nexo] (comb) at (-9.3,-4) {combina};
+  \draw[linea]  (met) -- (comb);
+  \draw[flecha] (comb.north) to[out=100,  in=0] (mag);
+  \draw[flecha] (comb.west)  to[out=155,  in=0] (fich);
+  \draw[flecha] (comb.west)  to[out=-155, in=0] (rol);
+  \draw[flecha] (comb.south) to[out=-100, in=0] (etw);
+
+  \node[nexo] (pon) at (9.3,-4.4) {incluye};
+  \draw[linea]  (eva) -- (pon);
+  \draw[flecha] (pon.north) to[out=80,  in=180] (exam);
+  \draw[flecha] (pon.east)  to[out=25,  in=180] (rub);
+  \draw[flecha] (pon.east)  to[out=-25, in=180] (fci);
+  \draw[flecha] (pon.south) to[out=-80, in=180] (obs);
+\end{tikzpicture}%
+}
+\end{center}
+\vfill
+
+{\footnotesize\color{gris} Fuente: elaboración propia a partir de la situación de aprendizaje «Medir lo que no se puede alcanzar» (1.º de Bachillerato, Matemáticas I, 20 sesiones). IES Ejemplo es un centro ficticio.}
+
+\end{document}
