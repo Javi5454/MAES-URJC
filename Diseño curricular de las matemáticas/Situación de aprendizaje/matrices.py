@@ -77,7 +77,7 @@ DESCRIPTORES = [
     ("1", "CD5", "Desarrolla soluciones tecnológicas innovadoras y sostenibles para dar respuesta a necesidades concretas",
      "El modelo de GeoGebra se entrega como herramienta que la dirección puede reutilizar cambiando la fecha y la altura del obstáculo.",
      "Aquí sí se crea una herramienta digital que responde a una necesidad concreta. Por eso CD5 se trabaja en esta competencia y en ninguna otra.",
-     "Libro, parte 2 (R1), S15"),
+     "Construcción dinámica del libro (R1, modelo y método), S15"),
     ("1", "CE3", "estrategias ágiles de planificación y gestión de proyectos",
      "Cada equipo planifica el producto con un tablero Kanban y lo revisa en cada sesión de trabajo.",
      "Kanban es una estrategia ágil, y S14--S17 obligan a gestionar tareas y tiempo para llegar a un resultado útil para otros.",
@@ -89,7 +89,7 @@ DESCRIPTORES = [
     ("2", "STEM2", "apreciando la importancia de la precisión y la veracidad",
      "Cada medida se repite y se calcula cómo cambia la altura con un grado de error.",
      "A diferencia de un problema de libro, la medida real tiene error, y de él depende la validez de la solución.",
-     "Libro, parte 3 (R1), S14--S15"),
+     "Análisis del error en el libro (R1, error y solución), S14--S15"),
     ("3", "STEM1", "métodos inductivos y deductivos propios del razonamiento matemático",
      "En F2 se observan casos y se formula una conjetura (S5); después se demuestra (S6).",
      "La secuencia reproduce los dos métodos que nombra el descriptor: primero inducción y luego deducción.",
@@ -105,15 +105,15 @@ DESCRIPTORES = [
     ("6", "CC4", "actividades y hábitos que conduzcan al logro de los Objetivos de Desarrollo Sostenible",
      "Cada equipo argumenta cómo contribuye su propuesta a los ODS 7 y 11.",
      "La decisión afecta a la energía de su propio centro: una actuación local conectada con un objetivo global.",
-     "Libro, parte 5 (R1), y defensa (R2)"),
+     "Reflexión sobre los ODS en el libro (R1, ODS y límites) y defensa (R2)"),
     ("6", "STEM2", "mostrando una actitud crítica acerca del alcance y limitaciones de los métodos empleados",
      "Se compara la separación del mediodía con la del pliego del IDAE y se señalan los límites del modelo.",
      "El modelo matemático por sí solo no basta: el criterio técnico muestra hasta dónde llega y dónde se queda corto.",
-     "Libro, partes 4 y 5 (R1)"),
+     "Propuesta y límites del modelo en el libro (R1, propuesta y ODS y límites)"),
     ("7", "CD2", "Crea, integra y reelabora contenidos digitales de forma individual o colectiva",
      "El equipo integra en el libro construcciones, cálculos y explicación, y cita los datos y materiales ajenos.",
      "El libro es un contenido digital colectivo que reelabora datos de terceros, por lo que también obliga a respetar su autoría.",
-     "Libro, partes 2 y 7 (R1)"),
+     "Construcciones y fuentes citadas en el libro (R1, representación)"),
     ("8", "CCL1", "adecuación a los diferentes contextos sociales y académicos",
      "La propuesta se defiende ante la clase y la dirección.",
      "Explicar el mismo método a compañeros y a quien decide obliga a adaptar el discurso sin perder rigor.",
@@ -127,9 +127,9 @@ DESCRIPTORES = [
      "Es un intercambio real con otro centro, en el que la identidad digital se gestiona con reglas explícitas.",
      "Publicaciones del TwinSpace (seguimiento, sin calificación)"),
     ("9", "CPSAA3.2", "Distribuye en un grupo las tareas, recursos y responsabilidades de manera ecuánime",
-     "Los cuatro roles rotan, de modo que todos los ejercen todos (sección~\\ref{sec:cooperativo}).",
+     "Los cuatro roles rotan, de modo que todos los ejercen todos\\soloProducto{ (sección~\\ref{sec:cooperativo})}.",
      "La rotación convierte el reparto ecuánime en una regla de funcionamiento, no en una intención.",
-     "Kanban y hojas de relevo (L1), R3"),
+     "Tablero Kanban y cumplimiento del rol (L1), R3"),
     ("9", "CPSAA1.1", "la resiliencia, la autoeficacia y la búsqueda de objetivos de forma autónoma",
      "Las conjeturas falsas y las medidas fallidas se revisan y se repiten.",
      "El reto incluye fallos reales (nubes, medidas incoherentes), que dan ocasión de perseverar.",
@@ -339,8 +339,10 @@ salida = (
     [r"\subsection{Competencias específicas, criterios y descriptores}", r"\vspace{4pt}", ""] + tabla_ce() +
     ["", r"\subsection{Descriptores priorizados: actuación y justificación}", r"\vspace{4pt}", ""] + tabla_descriptores() +
     ["", r"\subsection{Criterios operativizados, saberes, sesiones, instrumentos y evidencias}", r"\vspace{4pt}", ""] + tabla_relacion() +
-    ["", r"\subsection{Justificación pedagógica de las relaciones}", r"\vspace{4pt}", ""] + tabla_justificacion() +
+    ["", r"\ifjustificacion", r"\input{matrices_justificacion.tex}", r"\fi"] +
     ["", r"\clearpage", r"\subsection{Cobertura: cada criterio por sesiones e instrumentos}", r"\vspace{4pt}", ""] + tabla_cobertura()
 )
 (HERE / "matrices_tabla.tex").write_text("\n".join(salida) + "\n", encoding="utf-8")
+justificacion = [r"\subsection{Justificación pedagógica de las relaciones}", r"\vspace{4pt}", ""] + tabla_justificacion()
+(HERE / "matrices_justificacion.tex").write_text("\n".join(justificacion) + "\n", encoding="utf-8")
 print("matrices_tabla.tex generado:", sum(len(f[2]) for f in GRUPOS), "filas operativizadas")

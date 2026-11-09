@@ -1,0 +1,286 @@
+\section{El reto y el producto final}
+
+\subsection{El reto}
+La dirección del IES Ejemplo encarga a cada equipo un informe: \emph{¿dónde se pueden instalar más paneles solares sin que les den sombra los edificios ni las otras filas de paneles?} Para contestar hay que conocer alturas a las que no se llega con una cinta métrica: las del gimnasio y el edificio principal y la del bloque de viviendas del sur, a cuyo pie ni siquiera se puede llegar. El reto está próximo al alumnado: mide su propio instituto y la dirección escucha la respuesta.
+
+\subsection{El modelo matemático}
+La figura~\ref{fig:sombra} recoge el modelo en un plano vertical orientado de sur a norte. El mediodía solar es el momento de referencia, y la altura del sol~$h$ se calcula con la latitud~$\varphi$ y la declinación~$\delta$ \parencite{pveducation}:
+\[
+  h = 90^\circ - \varphi + \delta, \qquad L = \frac{H}{\tan h}.
+\]
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[x=0.42cm,y=0.42cm,>=Stealth]
+  \fill[gray!30] (-4,0) rectangle (0,12);
+  \draw[thick] (-4,0) rectangle (0,12);
+  \draw[thick] (-7,0) -- (28,0);
+  \coordinate (T) at (0,12); \coordinate (S) at (24.44,0); \coordinate (O) at (0,0);
+  \draw[urjc,thick,->] (-3.5,13.72) -- (T);
+  \draw[urjc,thick] (T) -- node[above right,pos=0.45,font=\small]{rayo: $T+t\,\vec v$} (S);
+  \draw[very thick,gray!70!black] (O) -- node[below,font=\small]{sombra $L=H/\tan h$} (S);
+  \draw[<->] (-5.2,0) -- node[left,font=\small]{$H$} (-5.2,12);
+  \draw (20,0) -- (20,2.18);
+  \draw[|<->|,font=\footnotesize] (20,-3.2) -- node[below]{$x_P$} (0,-3.2);
+  \draw[very thick,blue!60!black] (18.6,0.9) -- (21.4,3.1) node[above right,font=\footnotesize]{panel};
+  \fill (T) circle (2.5pt) node[above right,font=\small]{$T=(0,H)$};
+  \draw (21.9,0) arc (180:154:2.54);
+  \node[font=\small] at (21.2,0.8) {$h$};
+  \node[font=\footnotesize,align=center] at (-2,6) {edificio};
+  \node[font=\footnotesize] at (-7,1) {sur};
+  \node[font=\footnotesize] at (27.5,1) {norte};
+\end{tikzpicture}
+\caption{Modelo de sombra en el plano vertical sur-norte (elaboración propia).}\label{fig:sombra}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{Altura con un punto de medida} (figura~\ref{fig:puntosmedida}a)\textbf{.} Si se puede llegar al pie del objeto, basta medir la distancia $D$ y el ángulo de elevación~$\alpha$: $H = D\tan\alpha + a$, donde $a$ es la altura del ojo. Con $D=24{,}8$~m, $\alpha=25^\circ$ y $a=1{,}6$~m resulta $H\approx 13{,}2$~m, y un grado de error lo cambia a unos $12{,}6$~m o $13{,}7$~m.
+  \item \textbf{Altura inaccesible} (figura~\ref{fig:puntosmedida}b)\textbf{.} Si no se puede llegar al pie, como en el bloque de viviendas, se usan dos puntos de medida $A$ y $B$ separados $d$ metros y alineados con el edificio, con ángulos de elevación $\alpha<\beta$. El teorema del seno da
+  $H = \dfrac{d\,\sin\alpha\,\sin\beta}{\sin(\beta-\alpha)} + a$. Con $d=10$~m, $\alpha=25^\circ$, $\beta=38^\circ$ y $a=1{,}6$~m resulta $H\approx 13{,}17$~m. Un grado de error en $\alpha$ cambia el resultado a unos $14{,}58$~m o $11{,}95$~m: este método es más sensible que el de un punto de medida, así que solo se usa cuando hace falta y cada medida se repite.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!30] (4.6,0) rectangle (5.4,2.745); \draw[thick] (4.6,0) rectangle (5.4,2.745);
+  \draw[thick] (-0.5,0) -- (5.9,0);
+  \draw[thick] (0,0) -- (0,0.6); \fill (0,0.6) circle (1.5pt);
+  \draw[dashed] (0,0.6) -- (4.6,0.6);
+  \draw[urjc,thick] (0,0.6) -- (4.6,2.745); \fill[urjc] (4.6,2.745) circle (1.5pt);
+  \draw (1.1,0.6) arc (0:25:1.1); \node at (1.5,0.87) {$\alpha$};
+  \draw[<->] (-0.3,0) -- node[left]{$a$} (-0.3,0.6);
+  \draw[<->] (0,-0.3) -- node[below]{$D$} (4.6,-0.3);
+  \draw[<->] (4.35,0.6) -- node[left]{$D\tan\alpha$} (4.35,2.745);
+  \draw[<->] (5.65,0) -- node[right]{$H$} (5.65,2.745);
+\end{tikzpicture}
+\par\smallskip (a)
+\end{minipage}\hfill
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!30] (4.962,0) rectangle (5.7,2.634); \draw[thick] (4.962,0) rectangle (5.7,2.634);
+  \fill[urjc!12] (0,0.32) -- (2,0.32) -- (4.962,2.634) -- cycle;
+  \draw[thick] (-0.4,0) -- (6.1,0);
+  \draw[thick] (0,0) -- (0,0.32) (2,0) -- (2,0.32);
+  \fill (0,0.32) circle (1.5pt) node[above left]{$A$}; \fill (2,0.32) circle (1.5pt) node[above left]{$B$};
+  \draw[dashed] (0,0.32) -- (4.962,0.32);
+  \draw[urjc,thick] (0,0.32) -- (4.962,2.634) (2,0.32) -- (4.962,2.634);
+  \fill[urjc] (4.962,2.634) circle (1.5pt);
+  \draw (0.95,0.32) arc (0:25:0.95); \node at (1.3,0.5) {$\alpha$};
+  \draw (2.6,0.32) arc (0:38:0.6); \node at (2.88,0.58) {$\beta$};
+  \node (dif) at (3.2,2.85) {$\beta-\alpha$}; \draw[thin] (dif.east) -- (4.4,2.36);
+  \draw[gray!70!black,dashed,thick] (4.3,0) -- (4.3,0.95); \node[below,gray!70!black] at (4.3,0) {valla};
+  \draw[<->] (0,-0.3) -- node[below]{$d$} (2,-0.3);
+\end{tikzpicture}
+\par\smallskip (b)
+\end{minipage}
+\caption{Altura de un objeto con un punto de medida (a) y con dos puntos de medida cuando no se llega al pie (b) (elaboración propia).}\label{fig:puntosmedida}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{Rayo como recta} (figura~\ref{fig:rectaincidencia}a)\textbf{.} El rayo que pasa por $T=(0,H)$ tiene vector director $\vec v=(\cos h,-\sin h)$, es decir, $y = H - x\tan h$. Un punto $P=(x_P,y_P)$ queda en sombra si está por debajo de la recta.
+  \item \textbf{Incidencia y ángulo suma} (figura~\ref{fig:rectaincidencia}b)\textbf{.} Con un panel de inclinación $\beta_p$ orientado al sur, de normal $\vec n$ unitaria, y $\vec s$ el vector unitario hacia el sol, el producto escalar da $\cos\theta=\vec n\cdot\vec s=\sin\beta_p\cos h+\cos\beta_p\sin h=\sin(\beta_p+h)$. Aparece así la fórmula del seno de la suma, y la incidencia es perpendicular si $\beta_p + h = 90^\circ$.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!20] (0,0) -- (0,2.6) -- (5.3,0) -- cycle;
+  \fill[gray!30] (-0.8,0) rectangle (0,2.6); \draw[thick] (-0.8,0) rectangle (0,2.6);
+  \draw[->] (-1,0) -- (5.9,0) node[right]{$x$}; \draw[->] (0,0) -- (0,3.3) node[above]{$y$};
+  \draw[urjc,thick] (0,2.6) -- (5.3,0);
+  \fill (0,2.6) circle (1.5pt) node[above right]{$T=(0,H)$};
+  \draw[->,urjc,very thick] (1.4,1.913) -- ++(1.257,-0.617) node[pos=0.5,above right]{$\vec v$};
+  \node[urjc] at (4.2,2.2) {$y=H-x\tan h$};
+  \fill (3,0.45) circle (1.5pt) node[left]{$P$ (en sombra)};
+  \fill (3.6,1.5) circle (1.5pt) node[right]{$Q$ (al sol)};
+  \draw (4.3,0) arc (180:153.85:1); \node at (4.02,0.17) {$h$};
+\end{tikzpicture}
+\par\smallskip (a)
+\end{minipage}\hfill
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \draw[thick] (-0.8,0) -- (3.6,0);
+  \node[below] at (-0.5,0) {sur}; \node[below] at (3.3,0) {norte};
+  \draw[blue!60!black,very thick] (0,0) -- (2.25,1.3) node[right]{panel};
+  \coordinate (M) at (1.125,0.65);
+  \draw[dashed] (M) -- (-0.8,0.65);
+  \draw[->,thick] (M) -- ++(120:1.6) node[above]{$\vec n$};
+  \draw[->,urjc,thick] (M) -- ++(150:2) node[above left]{$\vec s$ (hacia el sol)};
+  \draw (M) ++(120:0.85) arc (120:150:0.85); \path (M) ++(135:1.08) node{$\theta$};
+  \draw (M) ++(150:1.35) arc (150:180:1.35); \path (M) ++(165:1.58) node{$h$};
+  \draw (0.9,0) arc (0:30:0.9); \node at (1.22,0.3) {$\beta_p$};
+\end{tikzpicture}
+\par\smallskip (b)
+\end{minipage}
+\caption{El rayo como recta y los puntos en sombra (a), e incidencia del sol sobre un panel orientado al sur (b) (elaboración propia).}\label{fig:rectaincidencia}
+\end{figure}
+
+\begin{itemize}
+  \item \textbf{Criterio técnico} (figura~\ref{fig:filashoras}a)\textbf{.} El pliego del IDAE fija la distancia mínima $d$ entre una fila y un obstáculo de altura~$h_o$ como $d = h_o / \tan(61^\circ-\text{latitud})$ \parencite{idae}. Para $40{,}4^\circ$ el coeficiente es $k\approx 2{,}66$, es decir, se diseña con un sol de $20{,}6^\circ$, más bajo que los $26{,}15^\circ$ del mediodía del solsticio.
+  \item \textbf{Otras horas y orientación} (figura~\ref{fig:filashoras}b)\textbf{.} El plano sur-norte solo describe el mediodía. A otra hora, la altura~$h$ y el ángulo~$A$ que forma el sol con el sur se consultan en la calculadora de la NOAA \parencite{noaa}: la sombra mide $L=H/\tan h$ y su avance hacia el norte es la proyección ortogonal $L\cos A$. Si la fachada no está orientada de este a oeste, el plano se traza hacia el norte desde la arista superior que proyecta la sombra.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!30] (-0.7,0) rectangle (0,1.2); \draw[thick] (-0.7,0) rectangle (0,1.2);
+  \draw[thick] (-1.2,0) -- (5,0);
+  \draw[gray!70!black,dashed,thick] (0,1.2) -- (2.45,0);
+  \draw[urjc,thick] (0,1.2) -- (3.19,0);
+  \draw[blue!60!black,very thick] (3.19,0) -- (4.1,0.63) node[right]{fila};
+  \draw (2.39,0) arc (180:159.4:0.8);
+  \node (ang) at (3.1,0.95) {$61^\circ-\text{latitud}$}; \draw[thin] (ang.south) -- (2.6,0.14);
+  \draw[<->] (-0.95,0) -- node[left]{$h_o$} (-0.95,1.2);
+  \draw[<->] (0,-0.3) -- node[below]{$d=k\,h_o$} (3.19,-0.3);
+\end{tikzpicture}
+\par\smallskip (a)
+\end{minipage}\hfill
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!30] (-1.3,-0.9) rectangle (1.3,0); \draw[thick] (-1.3,-0.9) rectangle (1.3,0);
+  \node at (0,-0.45) {edificio (planta)};
+  \draw[dashed] (0,0) -- (0,3.1) node[above]{N};
+  \draw[->,very thick,gray!70!black] (0,0) -- node[left]{$L$} (-1.43,2.545);
+  \draw[dashed] (-1.43,2.545) -- (0,2.545);
+  \draw[<->] (0.35,0) -- node[right]{$L\cos A$} (0.35,2.545);
+  \draw (0,0.9) arc (90:119.3:0.9); \path (0,0) ++(104.6:1.2) node{$A$};
+  \node[urjc] (sol) at (2.5,-1.05) {sol}; \draw[->,urjc,thick] (sol) -- (1.9,0.02);
+\end{tikzpicture}
+\par\smallskip (b)
+\end{minipage}
+\caption{Separación mínima entre filas, con el sol de diseño del IDAE en trazo continuo y el del mediodía en discontinuo (a), y avance de la sombra hacia el norte a otra hora, en planta (b) (elaboración propia).}\label{fig:filashoras}
+\end{figure}
+
+\begin{tablaSA}{colspec={X[2,l]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}, width=0.8\linewidth}
+  Mediodía solar a 40,4° N & Solsticio de invierno & Equinoccio & Solsticio de verano \\
+  Declinación $\delta$ & $-23{,}45^\circ$ & $0^\circ$ & $+23{,}45^\circ$ \\
+  Altura del sol $h$ & $26{,}15^\circ$ & $49{,}60^\circ$ & $73{,}05^\circ$ \\
+  Sombra de un edificio de 12~m & $24{,}44$~m & $10{,}21$~m & $3{,}66$~m \\
+\end{tablaSA}
+
+\vspace{6pt}
+\begin{tablaSA}{colspec={X[2.4,l]X[1,c]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}}
+  Solsticio de invierno, edificio de 12~m & Altura del sol & Longitud de sombra & Avance al norte & Coeficiente $k$ \\
+  Mediodía solar & $26{,}15^\circ$ & $24{,}44$~m & $24{,}44$~m & $2{,}04$ \\
+  Dos horas antes o después ($A\approx 29{,}3^\circ$) & $20{,}31^\circ$ & $32{,}42$~m & $28{,}28$~m & $2{,}36$ \\
+  Criterio del IDAE a 40,4° N & $20{,}60^\circ$ & -- & $31{,}93$~m & $2{,}66$ \\
+\end{tablaSA}
+
+El mediodía da una separación un 23\,\% menor que la del pliego. Por eso las filas se calculan con el criterio del IDAE, y el modelo explica el motivo: hay que dejar margen para las horas en que el sol está más bajo.
+
+\subsection{Producto final}
+Cada equipo entrega un libro de GeoGebra con estas partes:
+\begin{enumerate}[leftmargin=1.6em]
+  \item Objeto medido, método (uno o dos puntos de medida, con comparación de ambos) y hoja de datos con medidas repetidas.
+  \item Construcción dinámica del modelo de sombras con deslizador para la fecha, pensada para que la dirección pueda reutilizarla cambiando la fecha y la altura del obstáculo, y comprobación a mano.
+  \item Análisis del error: efecto de un grado de desviación y resultado elegido.
+  \item Propuesta de ampliación: plano del patio o cubierta, separación entre filas con el criterio del IDAE, comparada con la del mediodía, y número de paneles que caben, con estimación de producción tomada de PVGIS \parencite{pvgis}.
+  \item Reflexión: aportación a los ODS~7 y~11 y límites del modelo (otras horas del día, orientación del edificio, obstáculos no medidos, nubosidad, coste, estructura).
+  \item Registro de cambios tras la coevaluación: crítica recibida, qué se modifica y por qué.
+  \item Fuentes y autoría de los datos, criterios y construcciones ajenas que se reutilizan.
+\end{enumerate}
+La propuesta se defiende en cinco minutos ante la clase y la dirección o un representante.
+
+\subsection{Andamiaje}\label{sec:andamiaje}
+El apoyo se retira de forma progresiva. Las cuatro fichas, completas en la sección~\ref{sec:fichas}, pasan de una guía paso a paso a un encargo abierto, y cada una prepara lo que la siguiente deja de dar hecho.
+
+\begin{tablaSAlarga}{colspec={Q[l,wd=66pt]X[l]X[l]X[l]X[l]}, cells={font=\scriptsize}, colsep=3pt,
+  row{1}={bg=urjc, fg=white, font=\scriptsize\bfseries}, column{1}={bg=rosa, font=\scriptsize\bfseries}, cell{1}{1}={bg=urjc}}
+  Aspecto & F1 & F2 & F3 & F4 \\
+  Sesión y agrupamiento & S2. Individual, con ayuda del equipo & S5. Individual y parejas & S9. Parejas & S12. Equipo \\
+  Nivel de guía & Paso a paso & Guion por objetivos & Encargo con pistas a demanda & Encargo abierto con requisitos \\
+  Lugar en la secuencia & Antes de S3 y S4: da significado a las operaciones & Antes de S6: la exposición formaliza lo conjeturado & Tras la exposición de S9: aplica y discrimina casos & Tras S10 y S11: integra los tres bloques \\
+  Qué se da hecho & Archivo de partida, datos y orden de los comandos & Lista de elementos de la construcción, sin comandos & Solo el problema y los datos & Solo los requisitos del modelo \\
+  Qué decide el alumnado & Qué casos prueba al arrastrar & Cómo construir y qué conjeturar & Cómo construir, qué valores son críticos y qué teorema usar & Cómo definir el rayo y qué ecuación utilizar \\
+  Qué debe justificar & Coincidencia entre cálculo a mano y GeoGebra & Una conjetura propia y su demostración & Cuántas soluciones hay y por qué & Una decisión sobre una situación real \\
+  Ayuda disponible & Profesor y equipo & Glosario y compañero de pareja & Tres pistas escalonadas, solo si se piden & Tarjetas de ayuda para el equipo, si las pide \\
+  Qué se retira & -- & Comandos y archivo de partida & Orden de los pasos & Pistas y vector director \\
+  Qué prepara & Rayo y normal en S4 y F4 & Razones de S6 y S7 y sombra de la varilla & Medición con dos puntos de medida (S9 y S14) & Parte~2 del libro (S15) \\
+  Criterios & 7.1, 2.1 & 3.2, 3.1 & 1.1, 1.2, 2.1 & 7.2 \\
+\end{tablaSAlarga}
+
+Las pistas no restan nota: se registran como información para el docente. Quien no alcanza el nivel~3 de la rúbrica R4 en una ficha recibe un comentario con el paso que debe revisar antes de la ficha siguiente.
+
+El mismo proceso continúa en el producto. Cada sesión magistral termina con una \emph{pieza del reto}, que el equipo guarda para su libro, de modo que S15 y S16 ensamblan lo ya hecho. Se dispone además de plantillas de hoja de datos y de índice del libro, que se usan en S13--S16.
+
+\vspace{4pt}
+\begin{tablaSA}{colspec={Q[c,wd=26pt]X[l]X[l]}, cells={font=\footnotesize}}
+  Ses. & Pieza del reto & Parte del libro \\
+  3 & Vectores entre puntos del plano del centro y distancias reales & 4. Propuesta (plano) \\
+  4 & Ángulo entre el rayo solar y la normal de un panel & 4. Propuesta (inclinación) \\
+  6 & Altura del sol y sombra de una varilla en varias fechas & 2. Modelo \\
+  7 & Inclinación con incidencia perpendicular: $\sin(\beta_p+h)=1$ & 4. Propuesta (inclinación) \\
+  8 & Primera medida real: altura del aula con el clinómetro & 1. Método (un punto de medida) \\
+  9 & Plan de dos puntos de medida para el bloque de viviendas & 1. Método (dos puntos de medida) \\
+  10 & Recta del rayo del edificio elegido y puntos en sombra & 2. Modelo \\
+  11 & Filas como rectas paralelas: mediodía frente a IDAE & 4. Propuesta (separación) \\
+\end{tablaSA}
+
+\vspace{6pt}
+Antes de avanzar hacia el producto, tres hitos comprueban que el equipo está preparado:
+
+\begin{tablaSAlarga}{colspec={X[1.1,l]Q[c,wd=26pt]X[1.6,l]X[1.9,l]X[1.6,l]}, cells={font=\footnotesize},
+  row{1}={bg=urjc, fg=white, font=\footnotesize\bfseries}}
+  Hito & Ses. & Qué se revisa & Criterio para avanzar & Si no se cumple \\
+  Método aprobado & 13 & Objeto, método de medida y reparto de tareas, en unos 3 minutos por equipo & Croquis con las medidas previstas y motivo de usar uno o dos puntos de medida & Se corrige y se reenvía antes de S14 \\
+  Datos validados & 14 & Hoja de toma de datos & Tres medidas por magnitud, con unidades, y ángulos que difieren 2° como máximo & Se repite la medida en el cierre de S14 \\
+  Borrador coevaluado & 16 & Partes 1 a 4 del libro & Otro equipo aplica R1 y deja al menos una crítica razonada & Se anota en el registro de cambios y se corrige en S17 \\
+\end{tablaSAlarga}
+
+\begin{nota}{¿Qué es un clinómetro?}
+Instrumento que mide el ángulo de una visual respecto a la horizontal. Se fabrica con un transportador, una pajita como visor y un hilo con plomada; también sirven las aplicaciones de inclinómetro del móvil.
+\end{nota}
+
+\subsection{Trabajo cooperativo}\label{sec:cooperativo}
+\textbf{Formación de los equipos.} Con el diagnóstico de S1, el profesor forma siete equipos de cuatro estudiantes que combinan distintos niveles y no reúnen a quienes necesitan el mismo apoyo. Si hay ausencias prolongadas y un equipo queda con tres, coordinación y comunicación recaen en la misma persona.
+
+\textbf{Roles y criterios.} El rol no reparte el trabajo: todo el equipo mide, calcula y escribe. Determina quién responde de que cada parte esté bien hecha. Los criterios valen para cualquier pieza, de modo que se pueden observar en todos los turnos.
+
+\begin{tablaSAlarga}{colspec={Q[l,wd=62pt]X[1.2,l]X[2.5,l]X[0.9,l]}, cells={font=\footnotesize},
+  row{1}={bg=urjc, fg=white, font=\footnotesize\bfseries}, column{1}={font=\footnotesize\bfseries}}
+  Rol & Responsabilidad & Tres criterios de desempeño observables & Evidencia \\
+  Coordinación & Organiza las tareas y el tiempo y da la palabra & Mantiene el Kanban actualizado. Asigna a cada tarea responsable y plazo. Comprueba que todos pueden explicar la pieza terminada. & Kanban \\
+  Medición & Aporta los datos de cada pieza y garantiza su calidad & Aporta los datos con unidades y origen (plano, tabla o instrumento). Comprueba cada dato con una segunda lectura o medida. Deja registro. En S8 y S14 esto supone calibrar el clinómetro y tomar tres medidas por magnitud. & Pieza, hoja de datos \\
+  Modelo & Traslada el problema al cálculo o a GeoGebra & Plantea el cálculo o la construcción. Comprueba el resultado por otra vía. Lo explica al equipo. & Cálculo, construcción \\
+  Comunicación & Redacta las piezas y cuida la notación & Usa notación y unidades correctas. Indica de dónde salen datos y fórmulas. Guarda la pieza en su parte del libro; en el turno~4, también el registro de cambios y las publicaciones del TwinSpace. & Libro, TwinSpace \\
+\end{tablaSAlarga}
+
+\textbf{Duración y rotación.} Cada estudiante (A, B, C o D en su equipo) ejerce los cuatro roles. El rol solo se ejerce cuando hay trabajo de equipo: S2 y S5 no cuentan porque el trabajo es individual o por parejas, y S18 es el examen.
+
+\begin{tablaSAlarga}{colspec={Q[c,wd=30pt]Q[l,wd=44pt]Q[l,wd=62pt]X[l]Q[l,wd=52pt]Q[l,wd=52pt]Q[l,wd=52pt]Q[l,wd=52pt]}, cells={font=\scriptsize}, colsep=3pt,
+  row{1}={bg=urjc, fg=white, font=\scriptsize\bfseries}}
+  Turno & Sesiones & Rol activo & Foco & A & B & C & D \\
+  1 & S2--S7 & Piezas de S3, S4, S6 y S7 (40 min) & Vectores y trigonometría & Coordinación & Medición & Modelo & Comunicación \\
+  2 & S8--S11 & Piezas de S8 a S11 (40 min) & Primera medida real, plan de puntos de medida y rectas & Medición & Modelo & Comunicación & Coordinación \\
+  3 & S12--S15 & Cuatro sesiones & F4, mapa, medición y modelo & Modelo & Comunicación & Coordinación & Medición \\
+  4 & S16, S17, S19 y S20 & Cuatro sesiones & Propuesta, mejora y defensa & Comunicación & Coordinación & Medición & Modelo \\
+\end{tablaSAlarga}
+
+\textbf{Formación en los roles.} Los roles se enseñan; no se da por supuesto que el alumnado sepa ejercerlos. Toda la formación se hace en las sesiones de Matemáticas, una vez formados los equipos.
+
+\begin{tablaSAlarga}{colspec={Q[l,wd=86pt]Q[c,wd=44pt]X[l]}, cells={font=\footnotesize},
+  row{1}={bg=urjc, fg=white, font=\footnotesize\bfseries}}
+  Momento & Duración & Contenido \\
+  S2, inicio & 15 min & Publicación de los equipos, tarjetas de rol del turno~1 y tres normas acordadas por cada equipo. Fórmula de la crítica razonada: «observo\dots, propongo\dots, porque\dots». Cada equipo crea su Kanban (\emph{por hacer}, \emph{en curso}, \emph{hecho}) y asigna la primera tarea. \\
+  S3 & Consulta & Página modelo del libro y guía de notación para el rol de comunicación. \\
+  S7, S11 y S15 & 3 min & Relevo: quien deja el rol marca sus criterios en la hoja de relevo y anota qué queda pendiente y una mejora; quien lo recibe lee su tarjeta. \\
+  S8, pieza del reto & 10 min & Primera medida real: el rol de medición dirige la calibración del clinómetro y el protocolo que se usará en S14. \\
+  S16, antes de coevaluar & 3 min & El profesor modela una crítica razonada con un ejemplo de borrador. \\
+\end{tablaSAlarga}
+
+\textbf{Interdependencia y responsabilidad individual.} Una pieza no se da por terminada hasta que tiene las aportaciones de los cuatro roles. A la vez, examen, cuestionarios y fichas F1 a F3 son individuales o por parejas, y en la defensa cada miembro expone una parte y cualquiera puede responder a las preguntas, por lo que todos deben conocer el trabajo completo.
+
+\textbf{Evaluación y registro.} Un turno se considera cumplido con al menos dos de los tres criterios del rol, y el indicador de rol de la lista L1 se marca Sí con tres turnos cumplidos de cuatro. Para que sea viable con un solo docente, no se comprueba cada criterio de cada estudiante: al acabar cada turno, cada equipo entrega una hoja de relevo en la que quien ejerció cada rol marca sus criterios y otro miembro lo confirma. Son 28 hojas en toda la secuencia (7 equipos por 4 turnos; la última se completa en S20). El profesor las contrasta con el Kanban y las piezas, observa cada sesión a un equipo distinto y comenta con el equipo cualquier discrepancia. El criterio 9.3 se completa con la coevaluación R3.
+
+\textbf{Conflictos.} El equipo trata primero el problema con la fórmula de la crítica razonada; si no se resuelve, coordinación pide la mediación del profesor, que informa al tutor si hace falta. Solo como último recurso se reorganiza el equipo.
+
+\subsection{Autoría de la propuesta}
+Esta situación de aprendizaje es de diseño propio. La medición con clinómetro es una actividad clásica de la enseñanza de la trigonometría; el planteamiento sobre paneles solares es original.
+
+\textbf{ADAPTADA de} \textcite{eratostenes}: la medición simultánea de sombras al mediodía solar en centros distantes del proyecto eTwinning (sección~\ref{sec:etwinning}) se adapta de este proyecto escolar, con finalidad y nivel distintos.
+
+% ======================================================================
+\clearpage

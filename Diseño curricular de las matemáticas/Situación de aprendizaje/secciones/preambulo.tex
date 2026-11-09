@@ -1,0 +1,141 @@
+% ---------- Datos del documento ----------
+\newcommand{\tituloSA}{Medir lo que no se puede alcanzar: ¿dónde caben más paneles solares en nuestro instituto?}
+\newcommand{\autor}{Javier Gómez López}
+\newcommand{\asignatura}{Diseño Curricular de las Matemáticas}
+\newcommand{\master}{Máster Universitario en Formación del Profesorado -- Especialidad en Matemáticas}
+
+% ---------- Paquetes ----------
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage[scaled=0.92]{helvet} % equivalente libre de la Arial del original
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[left=2cm,right=2cm,top=2.55cm,bottom=1.6cm,
+            headheight=44pt,headsep=4pt,footskip=20pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{pdflscape}
+\usepackage{tikz}
+\usetikzlibrary{angles,quotes,arrows.meta}
+\usepackage{tabularray}
+\usepackage[most]{tcolorbox}
+\usepackage{csquotes}
+\usepackage[backend=bibtex,style=authoryear,maxcitenames=2,uniquename=false,uniquelist=false]{biblatex}
+\addbibresource{bibliografia.bib}
+\usepackage[hidelinks]{hyperref}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist{nosep,leftmargin=1.2em}
+\emergencystretch=1.5em
+
+% ---------- Colores (medidos sobre la plantilla) ----------
+\definecolor{urjc}{HTML}{C8102E}
+\definecolor{rosa}{HTML}{FBE9EB}
+\definecolor{borde}{HTML}{D0D0D0}
+\definecolor{titular}{HTML}{3C3C3B}
+\definecolor{pistagris}{HTML}{7F7F7F}
+
+% ---------- Títulos ----------
+\titleformat{\section}{\Large\bfseries\color{urjc}}{\thesection}{0.6em}{}[{\color{urjc}\titlerule[0.7pt]}]
+\titleformat{\subsection}{\large\bfseries\color{titular}}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{urjc}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{3pt}
+\titlespacing*{\subsubsection}{0pt}{8pt}{2pt}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+\makeatletter\renewcommand*\l@subsection{\@dottedtocline{2}{1.5em}{2.9em}}\makeatother
+
+% ---------- Cabecera y pie ----------
+\newcommand{\cabecera}{Máster en Formación del Profesorado · Diseño Curricular de las Matemáticas · 2026-27}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=42pt]{logo_urjc.png}}
+\fancyhead[R]{\footnotesize\color{pistagris}\cabecera}
+\fancyfoot[R]{\footnotesize\color{pistagris}Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrule}{{\color{urjc}\hrule height 1pt}}
+\renewcommand{\footrulewidth}{0pt}
+
+% ---------- Elementos de texto ----------
+% Etiqueta de un campo (Título:, Producto:...)
+\newcommand{\campo}[1]{{\bfseries\color{urjc}#1}}
+% Texto orientativo, en cursiva gris
+\newcommand{\pista}[1]{{\itshape\small\color{pistagris}#1}}
+% Lista con viñetas; dentro de las tablas hay que usar esta y no itemize
+\newenvironment{lista}
+  {\begin{minipage}[t]{\linewidth}\begin{itemize}[leftmargin=*,nosep]}
+  {\end{itemize}\end{minipage}}
+% Encabezado de los apartados a todo el ancho de la plantilla (7 y 8)
+\newcommand{\apartado}[1]{%
+  \par\vspace{14pt}%
+  {\large\bfseries\color{urjc}#1\par}%
+  \vspace{4pt}{\color{urjc}\hrule height 0.7pt}\vspace{5pt}}
+
+% ---------- Recuadros ----------
+% \begin{tarjeta}[subtítulo opcional]{título}
+\newtcolorbox{tarjeta}[2][]{%
+  enhanced, sharp corners, boxrule=0.5pt, titlerule=0pt,
+  colframe=borde, colback=white, colbacktitle=urjc, coltitle=white,
+  fonttitle=\bfseries\large, toptitle=3pt, bottomtitle=3pt,
+  left=7pt, right=7pt, top=7pt, bottom=7pt,
+  halign=flush left, halign title=flush left,
+  before upper={\setlength{\parskip}{5pt}},
+  title={#2\ifstrempty{#1}{}{\\[-1pt]{\footnotesize\itshape #1}}}}
+
+% Fila de dos recuadros de igual altura
+\newenvironment{filatarjetas}{%
+  \begin{tcbraster}[raster columns=2, raster equal height=rows,
+                    raster column skip=8pt, raster after skip=12pt]}
+  {\end{tcbraster}}
+
+% Sesión de la secuencia: \sesion{n}{tipo}{título}{duraciones y texto}
+\newtcolorbox{sesionbox}[3]{%
+  enhanced, sharp corners, boxrule=0.5pt, titlerule=0pt,
+  colframe=borde, colback=white, colbacktitle=urjc, coltitle=white,
+  fonttitle=\bfseries, toptitle=2pt, bottomtitle=2pt,
+  left=6pt, right=6pt, top=4pt, bottom=5pt, after skip=8pt,
+  halign=flush left, halign title=flush left,
+  fontupper=\small, before upper={\setlength{\parskip}{3pt}},
+  title={Sesión #1 · #2: #3}}
+
+% Caja de información
+\newtcolorbox{nota}[1]{%
+  enhanced, sharp corners, boxrule=0pt, leftrule=3pt, colframe=urjc, colback=rosa,
+  coltitle=urjc, colbacktitle=rosa, fonttitle=\bfseries, attach title to upper={\ },
+  left=7pt, right=7pt, top=4pt, bottom=4pt, title={#1}, fontupper=\small}
+
+% ---------- Tablas ----------
+\NewTblrEnviron{tablaSA}
+\SetTblrInner[tablaSA]{
+  hlines={0.5pt,borde}, vlines={0.5pt,borde},
+  leftsep=5pt, rightsep=5pt, rowsep=3pt,
+  cells={font=\footnotesize, valign=t},
+  row{1}={bg=rosa, fg=urjc, font=\footnotesize\bfseries},
+}
+
+% Versión con salto de página y cabecera repetida
+\NewTblrTheme{limpio}{
+  \SetTblrTemplate{caption}{empty}
+  \SetTblrTemplate{capcont}{empty}
+  \SetTblrTemplate{contfoot}{empty}
+  \SetTblrTemplate{conthead}{empty}
+  \SetTblrTemplate{note}{empty}
+  \SetTblrTemplate{remark}{empty}
+}
+\NewTblrEnviron{tablaSAlarga}
+\SetTblrOuter[tablaSAlarga]{long, theme=limpio, entry=none, label=none, presep=2pt, postsep=4pt}
+\SetTblrInner[tablaSAlarga]{
+  hlines={0.5pt,borde}, vlines={0.5pt,borde},
+  leftsep=5pt, rightsep=5pt, rowsep=3pt,
+  cells={font=\footnotesize, valign=t},
+  rowhead=1,
+}
