@@ -3,6 +3,11 @@ BOE-A-2020-17264.pdf
 Decreto-64-2022-Curriculum-de-Bachillerato_Madrid.pdf
 Decreto-65-2022_ordenacion-y-el-curriculo-ESO-en-CAM.pdf
 
+# Materiales de la profesora (solo en local)
+Guia_AF_SA1_MasterProf_2026_27.pdf
+Plantilla_Mapa_Situacion_Aprendizaje_URJC.pdf
+Rubrica_Unidad_Didactica_SA.pdf
+
 # RAG: índice generado
 rag-normativa/data/
 
@@ -13,6 +18,10 @@ __pycache__/
 
 # LaTeX: archivos auxiliares de compilación
 *.aux
+*.bbl
+*.blg
+*-blx.bib
+*.run.xml
 *.fdb_latexmk
 *.fls
 *.log
