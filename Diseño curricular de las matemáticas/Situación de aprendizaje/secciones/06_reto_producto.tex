@@ -154,22 +154,33 @@ La figura~\ref{fig:sombra} recoge el modelo en un plano vertical orientado de su
 \caption{Separación mínima entre filas, con el sol de diseño del IDAE en trazo continuo y el del mediodía en discontinuo (a), y avance de la sombra hacia el norte a otra hora, en planta (b) (elaboración propia).}\label{fig:filashoras}
 \end{figure}
 
+Las tablas~\ref{tab:fechas} y~\ref{tab:horas} aplican el modelo a casos concretos. La primera muestra cómo cambia la sombra del mediodía a lo largo del año: el solsticio de invierno es el caso más desfavorable, así que es el que decide la separación. La segunda comprueba, para ese día, que ni siquiera el mediodía basta, porque a otras horas el sol está más bajo.
+
+\begin{table}[H]
+\centering
+\caption{Altura del sol y sombra de un edificio de 12~m al mediodía solar a 40,4°~N en tres fechas clave.}\label{tab:fechas}
+\vspace{4pt}
 \begin{tablaSA}{colspec={X[2,l]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}, width=0.8\linewidth}
   Mediodía solar a 40,4° N & Solsticio de invierno & Equinoccio & Solsticio de verano \\
   Declinación $\delta$ & $-23{,}45^\circ$ & $0^\circ$ & $+23{,}45^\circ$ \\
   Altura del sol $h$ & $26{,}15^\circ$ & $49{,}60^\circ$ & $73{,}05^\circ$ \\
   Sombra de un edificio de 12~m & $24{,}44$~m & $10{,}21$~m & $3{,}66$~m \\
 \end{tablaSA}
+\end{table}
 
-\vspace{6pt}
+\begin{table}[H]
+\centering
+\caption{Sombra de un edificio de 12~m en el solsticio de invierno a distintas horas, comparada con el criterio del IDAE.}\label{tab:horas}
+\vspace{4pt}
 \begin{tablaSA}{colspec={X[2.4,l]X[1,c]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}}
   Solsticio de invierno, edificio de 12~m & Altura del sol & Longitud de sombra & Avance al norte & Coeficiente $k$ \\
   Mediodía solar & $26{,}15^\circ$ & $24{,}44$~m & $24{,}44$~m & $2{,}04$ \\
   Dos horas antes o después ($A\approx 29{,}3^\circ$) & $20{,}31^\circ$ & $32{,}42$~m & $28{,}28$~m & $2{,}36$ \\
   Criterio del IDAE a 40,4° N & $20{,}60^\circ$ & -- & $31{,}93$~m & $2{,}66$ \\
 \end{tablaSA}
+\end{table}
 
-El mediodía da una separación un 23\,\% menor que la del pliego. Por eso las filas se calculan con el criterio del IDAE, y el modelo explica el motivo: hay que dejar margen para las horas en que el sol está más bajo.
+Como muestra la tabla~\ref{tab:horas}, el mediodía da una separación un 23\,\% menor que la del pliego. Por eso las filas se calculan con el criterio del IDAE, y el modelo explica el motivo: hay que dejar margen para las horas en que el sol está más bajo.
 
 \subsection{Producto final}
 Cada equipo entrega un libro de GeoGebra con estas partes:

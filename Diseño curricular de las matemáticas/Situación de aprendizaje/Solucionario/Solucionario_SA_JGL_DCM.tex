@@ -1,0 +1,510 @@
+\documentclass[10pt,a4paper]{article}
+
+% Solucionario del reto de la situación de aprendizaje «Medir lo que no se puede alcanzar».
+% Reutiliza el preámbulo y la bibliografía de la situación de aprendizaje.
+% Compilar desde esta carpeta con: BIBINPUTS=..: latexmk -pdf Solucionario_SA_JGL_DCM.tex
+
+\input{../secciones/preambulo}
+\graphicspath{{../}}
+\renewcommand{\cabecera}{Solucionario del reto · Diseño Curricular de las Matemáticas · 2026-27}
+
+% Resultados y demostraciones
+\newcounter{res}
+\newcommand{\resultado}[2]{\par\medskip\noindent\refstepcounter{res}{\bfseries\color{urjc}Resultado \theres. #1.} \emph{#2}\par\smallskip}
+\newenvironment{dem}{\noindent{\itshape Demostración.} }{\hfill$\square$\par\medskip}
+\newcommand{\paso}[1]{\par\medskip\noindent{\bfseries\color{titular}#1}\par\smallskip}
+
+\begin{document}
+
+% ---------- Portada ----------
+\thispagestyle{empty}
+\vspace*{3.2cm}
+\begin{center}
+  {\small\color{pistagris}\MakeUppercase{\master}\\ Universidad Rey Juan Carlos}\\[1.4em]
+  {\color{urjc}\rule{\linewidth}{1.2pt}}\\[1.2em]
+  {\fontsize{13}{16}\selectfont\color{titular} Solucionario del reto y demostraciones}\\[0.8em]
+  {\fontsize{25}{31}\selectfont\bfseries\color{titular}\tituloSA\par}
+  \vspace{1em}
+  {\color{urjc}\rule{\linewidth}{1.2pt}}\\[1.4em]
+  {\large Matemáticas I · 1.º de Bachillerato (Ciencias y Tecnología)}\\[0.4em]
+  {\large\color{pistagris}\asignatura}\\[3em]
+  {\large\bfseries\autor}\\[0.4em]
+  {\small\color{pistagris}Curso 2026-27}
+\end{center}
+\clearpage
+
+{\setlength{\parskip}{0pt}\tableofcontents}
+\clearpage
+
+% ======================================================================
+\section*{Presentación}
+\addcontentsline{toc}{section}{Presentación}
+
+Este documento acompaña a la situación de aprendizaje y está pensado para el docente. Tiene dos partes:
+
+\begin{itemize}
+  \item \textbf{Guía paso a paso (secciones 1 a~\ref{sec:cierre}).} Resuelve el reto completo tal como lo haría un equipo: qué medir, cómo calcular, cómo construir el modelo en GeoGebra y cómo llegar a la propuesta. Sigue el orden de las partes del libro de GeoGebra y de las sesiones de trabajo (S13 a S17).
+  \item \textbf{Demostraciones (sección~\ref{sec:demos}).} Justifica cada fórmula que usa el alumnado, desde la definición de las razones trigonométricas hasta el criterio de separación entre filas.
+\end{itemize}
+
+\begin{nota}{Datos de ejemplo.}
+Las medidas, el plano y las dimensiones de la cubierta son inventados, pero coherentes entre sí y con la situación de aprendizaje, y todos los cálculos están comprobados. Cada equipo obtendrá valores distintos según su centro y sus medidas. Las soluciones de las fichas F1 a F4, del cuestionario y del examen ya figuran en la propia situación de aprendizaje.
+\end{nota}
+
+\paso{Notación común}
+\begin{tablaSA}{colspec={Q[l,wd=50pt]X[l]}, cells={font=\footnotesize}}
+  Símbolo & Significado \\
+  $a$ & Altura del ojo de quien mide (m) \\
+  $D$, $d$ & Distancia al pie del objeto; distancia entre dos puntos de medida (m) \\
+  $\alpha$, $\beta$ & Ángulos de elevación medidos con el clinómetro, con $\alpha<\beta$ \\
+  $H$ & Altura del objeto (m) \\
+  $\varphi$, $\delta$ & Latitud del centro y declinación solar del día \\
+  $h$, $A$ & Altura del sol sobre el horizonte y ángulo que forma con el sur \\
+  $L$, $k$ & Longitud de la sombra y coeficiente $k=L/H=1/\tan h$ \\
+  $\beta_p$, $\theta$ & Inclinación del panel y ángulo de incidencia del sol sobre él \\
+\end{tablaSA}
+
+% ======================================================================
+\part*{Guía paso a paso}
+\addcontentsline{toc}{part}{Guía paso a paso}
+
+\section{Preparar la medición (S13)}
+
+Antes de salir al patio, cada equipo decide qué objetos mide y con qué método, y el profesor lo aprueba.
+
+\paso{Paso 1. Elegir el objeto y el método}
+\begin{itemize}
+  \item \textbf{Si se puede llegar al pie del objeto}, como en el edificio principal, basta \emph{un punto de medida}: se mide la distancia $D$ con la cinta y el ángulo de elevación $\alpha$.
+  \item \textbf{Si no se puede llegar}, como en el bloque de viviendas tras la valla, hacen falta \emph{dos puntos de medida} $A$ y $B$, alineados con el objeto y separados una distancia $d$ que sí se puede medir.
+  \item Además, se mide el edificio principal también con dos puntos, para comparar ambos métodos en un objeto cuya altura ya se conoce por el otro.
+\end{itemize}
+
+\paso{Paso 2. Calibrar el clinómetro}
+Se apunta a un objeto horizontal, como el borde de una mesa a la altura del ojo: el clinómetro debe marcar $0^\circ$. Si el clinómetro casero mide el ángulo con la vertical (transportador con plomada), el ángulo de elevación es $\alpha = 90^\circ - \text{lectura}$.
+
+\begin{nota}{Errores frecuentes.}
+Olvidar sumar la altura del ojo $a$; usar la calculadora en radianes; medir $d$ en una dirección que no está alineada con el objeto; confundir qué punto es $A$ (el más lejano, con el ángulo menor $\alpha$) y cuál es $B$.
+\end{nota}
+
+% ======================================================================
+\section{Medir el instituto (S14)}
+
+\paso{Paso 3. Tomar y registrar los datos}
+Cada magnitud se mide tres veces y se elige la media. Hoja de datos completa del equipo de ejemplo:
+
+\begin{tablaSA}{colspec={X[2.6,l]X[1,c]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}}
+  Magnitud (con unidad) & Medida 1 & Medida 2 & Medida 3 & Valor elegido \\
+  Altura del ojo $a$ (m) & 1,60 & 1,61 & 1,59 & 1,60 \\
+  \SetCell[c=5]{l}{\bfseries Edificio principal, un punto de medida} & & & & \\
+  Distancia al pie $D$ (m) & 24,78 & 24,82 & 24,80 & 24,80 \\
+  Ángulo de elevación $\alpha$ (°) & 25,5 & 24,5 & 25,0 & 25,0 \\
+  \SetCell[c=5]{l}{\bfseries Edificio principal, dos puntos de medida ($B$ es el punto anterior)} & & & & \\
+  Distancia entre puntos $d$ (m) & 10,00 & 10,01 & 9,99 & 10,00 \\
+  Ángulo $\alpha$ en $A$ (°) & 18,5 & 18,2 & 18,5 & 18,4 \\
+  Ángulo $\beta$ en $B$ (°) & 25,5 & 24,5 & 25,0 & 25,0 \\
+  \SetCell[c=5]{l}{\bfseries Bloque de viviendas, dos puntos de medida} & & & & \\
+  Distancia entre puntos $d$ (m) & 10,00 & 10,02 & 9,98 & 10,00 \\
+  Ángulo $\alpha$ en $A$ (°) & 24,5 & 25,5 & 25,0 & 25,0 \\
+  Ángulo $\beta$ en $B$ (°) & 38,5 & 37,5 & 38,0 & 38,0 \\
+  Sombra de la varilla de 1~m (m), 10 de marzo, mediodía solar & 1,00 & 1,02 & 1,01 & 1,01 \\
+\end{tablaSA}
+
+\paso{Paso 4. Validar los datos antes de irse}
+Se revisan las tres medidas de cada fila: si una se aleja mucho de las otras dos (por ejemplo, más de un grado), se repite. En el ejemplo todas las filas son coherentes.
+
+% ======================================================================
+\section{Calcular las alturas (S15)}
+
+\begin{figure}[H]
+\centering
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!30] (4.6,0) rectangle (5.4,2.745); \draw[thick] (4.6,0) rectangle (5.4,2.745);
+  \draw[thick] (-0.5,0) -- (5.9,0);
+  \draw[thick] (0,0) -- (0,0.6); \fill (0,0.6) circle (1.5pt);
+  \draw[dashed] (0,0.6) -- (4.6,0.6);
+  \draw[urjc,thick] (0,0.6) -- (4.6,2.745); \fill[urjc] (4.6,2.745) circle (1.5pt) node[above left]{$T$};
+  \draw (1.1,0.6) arc (0:25:1.1); \node at (1.5,0.87) {$\alpha$};
+  \draw[<->] (-0.3,0) -- node[left]{$a$} (-0.3,0.6);
+  \draw[<->] (0,-0.3) -- node[below]{$D$} (4.6,-0.3);
+  \draw[<->] (4.35,0.6) -- node[left]{$x$} (4.35,2.745);
+  \draw[<->] (5.65,0) -- node[right]{$H$} (5.65,2.745);
+\end{tikzpicture}
+\par\smallskip (a)
+\end{minipage}\hfill
+\begin{minipage}[b]{0.49\linewidth}\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize]
+  \fill[gray!30] (4.962,0) rectangle (5.7,2.634); \draw[thick] (4.962,0) rectangle (5.7,2.634);
+  \fill[urjc!12] (0,0.32) -- (2,0.32) -- (4.962,2.634) -- cycle;
+  \draw[thick] (-0.4,0) -- (6.1,0);
+  \draw[thick] (0,0) -- (0,0.32) (2,0) -- (2,0.32);
+  \fill (0,0.32) circle (1.5pt) node[above left]{$A$}; \fill (2,0.32) circle (1.5pt) node[above left]{$B$};
+  \draw[dashed] (0,0.32) -- (4.962,0.32); \node[below right] at (4.962,0.32) {$F$};
+  \draw[urjc,thick] (0,0.32) -- (4.962,2.634) (2,0.32) -- (4.962,2.634);
+  \fill[urjc] (4.962,2.634) circle (1.5pt) node[above left]{$T$};
+  \draw (0.95,0.32) arc (0:25:0.95); \node at (1.3,0.5) {$\alpha$};
+  \draw (2.6,0.32) arc (0:38:0.6); \node at (2.88,0.58) {$\beta$};
+  \draw[<->] (0,-0.3) -- node[below]{$d$} (2,-0.3);
+\end{tikzpicture}
+\par\smallskip (b)
+\end{minipage}
+\caption{Altura con un punto de medida (a) y con dos puntos de medida (b). $T$ es lo alto del objeto y $F$, el punto de su vertical a la altura del ojo.}\label{fig:alturas}
+\end{figure}
+
+\paso{Paso 5. Edificio principal con un punto de medida}
+En el triángulo rectángulo de la figura~\ref{fig:alturas}a, $D$ es el cateto adyacente a $\alpha$ y $x$ el opuesto, así que $x=D\tan\alpha$ (resultado~\ref{res:unpunto}):
+\[
+  x = 24{,}80\cdot\tan 25^\circ \approx 11{,}56\ \text{m}, \qquad H = x + a \approx 11{,}56 + 1{,}60 = 13{,}16\ \text{m}.
+\]
+
+\paso{Paso 6. Bloque de viviendas con dos puntos de medida}
+No se conoce la distancia al pie, pero sí $d$. Se trabaja en el triángulo $ABT$ (figura~\ref{fig:alturas}b, resultado~\ref{res:dospuntos}):
+\begin{enumerate}[leftmargin=1.6em]
+  \item Ángulos del triángulo: en $A$, $\alpha=25^\circ$; en $B$, $180^\circ-\beta=142^\circ$; en $T$, $\beta-\alpha=13^\circ$.
+  \item Teorema del seno: $\dfrac{BT}{\sin\alpha}=\dfrac{d}{\sin(\beta-\alpha)}$, luego $BT=\dfrac{10\cdot\sin 25^\circ}{\sin 13^\circ}\approx 18{,}79$~m.
+  \item Triángulo rectángulo $BFT$: $x = BT\sin\beta \approx 18{,}79\cdot\sin 38^\circ \approx 11{,}57$~m.
+  \item Altura: $H = x + a \approx 11{,}57+1{,}60 = 13{,}17$~m.
+\end{enumerate}
+Todo junto: $H=\dfrac{d\,\sin\alpha\,\sin\beta}{\sin(\beta-\alpha)}+a$. Un camino equivalente, con dos triángulos rectángulos y tangentes, da $x=\dfrac{d\tan\alpha\tan\beta}{\tan\beta-\tan\alpha}\approx 11{,}57$~m, el mismo resultado.
+
+\paso{Paso 7. Comparar los dos métodos en el edificio principal}
+Con $d=10$~m, $\alpha=18{,}4^\circ$ y $\beta=25{,}0^\circ$:
+\[
+  H=\frac{10\cdot\sin 18{,}4^\circ\cdot\sin 25^\circ}{\sin 6{,}6^\circ}+1{,}60\approx 13{,}21\ \text{m},
+\]
+frente a los $13{,}16$~m del método de un punto. Los dos métodos coinciden en unos 5~cm, lo que valida el procedimiento de dos puntos antes de aplicarlo al bloque, donde no hay otra forma de comprobarlo.
+
+\paso{Paso 8. Validar el modelo del sol con la varilla}
+El 10 de marzo es el día $d=69$ del año. La declinación se obtiene con la fórmula de PVEducation \parencite{pveducationdecl}:
+\[
+  \delta=-23{,}45^\circ\cos\!\left[\frac{360^\circ}{365}(d+10)\right]\approx -4{,}91^\circ,\qquad h=90^\circ-\varphi+\delta\approx 90^\circ-40{,}4^\circ-4{,}91^\circ=44{,}69^\circ.
+\]
+El modelo predice una sombra de $1/\tan 44{,}69^\circ\approx 1{,}011$~m para la varilla de 1~m. La medida fue $1{,}01$~m, que corresponde a $h=\arctan(1/1{,}01)\approx 44{,}71^\circ$. Modelo y realidad difieren en dos centésimas de grado: el modelo funciona.
+
+% ======================================================================
+\section{Analizar el error (S15)}
+
+\paso{Paso 9. Efecto de un grado de error}
+Se repite cada cálculo cambiando un ángulo en $\pm 1^\circ$:
+
+\begin{tablaSA}{colspec={X[2.2,l]X[1.4,c]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}}
+  Objeto y método & Ángulo alterado & $-1^\circ$ & Valor medido & $+1^\circ$ \\
+  Edificio, un punto & $\alpha$ & 12,64~m & 13,16~m & 13,70~m \\
+  Edificio, dos puntos & $\alpha$ & 15,99~m & 13,21~m & 11,16~m \\
+  Bloque, dos puntos & $\alpha$ & 11,95~m & 13,17~m & 14,58~m \\
+  Bloque, dos puntos & $\beta$ & 13,83~m & 13,17~m & 12,59~m \\
+\end{tablaSA}
+
+\paso{Paso 10. Interpretar y elegir el resultado}
+\begin{itemize}
+  \item Con un punto de medida, un grado de error cambia la altura en algo más de medio metro. Con dos, en el bloque cambia más de un metro, y en el edificio casi tres, porque allí $\beta-\alpha$ es solo de $6{,}6^\circ$. El motivo es el denominador $\sin(\beta-\alpha)$: cuanto más parecidos son los dos ángulos, más pequeño es y más amplifica el error (resultado~\ref{res:error}).
+  \item \textbf{Conclusión del equipo:} se usa un punto de medida siempre que se pueda; con dos, conviene separar bastante $A$ y $B$ para que $\beta-\alpha$ sea grande.
+  \item \textbf{Resultados elegidos:} edificio principal, $13{,}2$~m; bloque de viviendas, $13{,}2$~m, sabiendo que podría estar entre unos $12$ y $14{,}6$~m. En la propuesta se comprueba si la decisión cambia dentro de ese intervalo.
+\end{itemize}
+
+% ======================================================================
+\section{Construir el modelo en GeoGebra (S15)}
+
+\paso{Paso 11. La construcción}
+Se escribe en la barra de entrada, en este orden. Los nombres de los comandos son los de GeoGebra en español; en inglés son \texttt{Slider}, \texttt{Ray}, \texttt{Intersect} y \texttt{xAxis}.
+
+\begin{tablaSA}{colspec={Q[l,wd=170pt]X[l]}, cells={font=\footnotesize}}
+  Entrada & Qué hace \\
+  \texttt{lat = 40.4°} & Latitud del centro, $\varphi$ \\
+  \texttt{d = Deslizador(1, 365, 1)} & Día del año: deslizador para la fecha \\
+  \texttt{dec = -23.45° cos(360° / 365 (d + 10))} & Declinación del día, $\delta$ \\
+  \texttt{h = 90° - lat + dec} & Altura del sol al mediodía \\
+  \texttt{H = Deslizador(0, 30, 0.1)} & Altura del obstáculo, reutilizable \\
+  \texttt{T = (0, H)} & Lo alto del obstáculo \\
+  \texttt{v = (cos(h), -sin(h))} & Vector director del rayo \\
+  \texttt{r = Semirrecta(T, T + v)} & Rayo de sol que roza el obstáculo \\
+  \texttt{S = Interseca(r, EjeX)} & Final de la sombra \\
+  \texttt{L = x(S)} & Longitud de la sombra \\
+  \texttt{k = 1 / tan(61° - lat)} & Coeficiente del criterio del IDAE \\
+  \texttt{dIDAE = k H} & Separación mínima según el IDAE \\
+\end{tablaSA}
+
+\paso{Paso 12. Comprobación a mano}
+Con $H=12$ se mueve el deslizador de la fecha y se compara con el cálculo $L=12/\tan h$:
+
+\begin{tablaSA}{colspec={X[1.6,l]X[1,c]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}}
+  Fecha & Día $d$ & $\delta$ & $h$ & $L$ para $H=12$~m \\
+  21 de diciembre & 355 & $-23{,}45^\circ$ & $26{,}15^\circ$ & 24,44~m \\
+  22 de marzo & 81 & $-0{,}10^\circ$ & $49{,}50^\circ$ & 10,25~m \\
+  21 de junio & 172 & $+23{,}45^\circ$ & $73{,}05^\circ$ & 3,66~m \\
+\end{tablaSA}
+
+En el equinoccio la fórmula da $\delta\approx-0{,}10^\circ$ en lugar de $0^\circ$, porque es una aproximación: la diferencia en la sombra es de unos 4~cm.
+
+\paso{Paso 13. Prueba de reutilización}
+Se cambian la fecha y la altura y se comprueba que el modelo responde, por ejemplo con el bloque ($H=13{,}2$) el 21 de diciembre: $L\approx 26{,}8$~m y $\text{dIDAE}\approx 35{,}0$~m. Así la dirección puede usar el archivo con cualquier obstáculo.
+
+% ======================================================================
+\section{Elaborar la propuesta (S16)}
+
+El equipo estudia dos zonas: la franja del patio junto a la valla sur y la cubierta plana del edificio principal (figura~\ref{fig:plano}). Las separaciones se calculan con el criterio del IDAE, $k\approx 2{,}66$, y se comparan con las del mediodía del solsticio, $k\approx 2{,}04$.
+
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[x=0.19cm,y=0.115cm,>=Stealth,font=\footnotesize]
+  % de sur (abajo) a norte (arriba), en metros
+  \fill[gray!35] (0,0) rectangle (40,4); \node at (20,2) {bloque de viviendas ($H\approx 13{,}2$ m)};
+  \draw[thick,dashed] (-2,10) -- (42,10); \node[right] at (42,10) {valla};
+  \fill[green!12] (5,10) rectangle (35,30); \draw (5,10) rectangle (35,30);
+  \node[align=center] at (20,20) {franja del patio\\$30\times 20$ m};
+  \fill[gray!15] (0,30) rectangle (40,46); \node at (20,38) {patio de deportes};
+  \fill[gray!35] (0,46) rectangle (40,62); \draw[very thick] (0,46) rectangle (40,62);
+  \node[align=center] at (20,54) {cubierta del edificio principal\\$40\times 16$ m, $H\approx 13{,}2$ m};
+  \draw[<->] (-3,4) -- node[left]{6 m} (-3,10);
+  \draw[<->] (-3,4) -- (-3,46); \node[left] at (-3,28) {42 m};
+  \draw[->,thick] (46,50) -- (46,58) node[above]{N};
+\end{tikzpicture}
+\caption{Plano esquemático del centro de ejemplo, de sur (abajo) a norte (arriba). Las distancias se miden desde la fachada norte del bloque.}\label{fig:plano}
+\end{figure}
+
+\paso{Paso 14. Primera zona: la franja del patio}
+El bloque está al sur de la franja, a 6~m de su borde. Los paneles irían sobre el suelo, así que el obstáculo tiene toda su altura:
+\begin{itemize}
+  \item Criterio del IDAE: $2{,}66\cdot 13{,}17\approx 35{,}0$~m desde el bloque, es decir, la primera fila empezaría a $29{,}0$~m del borde de la franja, que solo tiene 20~m de fondo.
+  \item Incluso con el sol del mediodía haría falta $2{,}04\cdot 13{,}17\approx 26{,}8$~m, y la fila empezaría a $20{,}8$~m: tampoco cabe.
+  \item Con la altura más baja del intervalo de error, $11{,}95$~m, la primera fila seguiría a $25{,}8$~m del borde.
+\end{itemize}
+\textbf{Conclusión:} la franja no es viable por la sombra del bloque, y la decisión no cambia por el error de medida. Es justo el resultado que exigía medir una altura inaccesible.
+
+\paso{Paso 15. Segunda zona: la cubierta del edificio principal}
+\begin{enumerate}[leftmargin=1.6em]
+  \item \textbf{Sombra del bloque.} El bloque ($13{,}17$~m) y el edificio ($13{,}16$~m) tienen casi la misma altura, así que el bloque no proyecta sombra sobre la cubierta. En el peor caso del error, el bloque mediría $14{,}58$~m y sobresaldría $1{,}42$~m: su sombra útil llegaría a $2{,}66\cdot 1{,}42\approx 3{,}8$~m, muy lejos de los 42~m que lo separan del edificio.
+  \item \textbf{Petril.} La cubierta tiene un petril de 1~m en su borde sur. La primera fila debe quedar a $2{,}66\cdot 1\approx 2{,}66$~m de él.
+  \item \textbf{Geometría de cada fila.} Paneles de $2{,}28\times 1{,}13$~m (valores ilustrativos), colocados en horizontal con el lado de $1{,}13$~m en la pendiente e inclinados $\beta_p=30^\circ$. Cada fila alcanza una altura $h_o=1{,}13\sin 30^\circ=0{,}565$~m y ocupa en planta $1{,}13\cos 30^\circ\approx 0{,}98$~m.
+  \item \textbf{Paso entre filas} (resultado~\ref{res:filas}): $p=0{,}98+2{,}66\cdot 0{,}565\approx 2{,}48$~m.
+  \item \textbf{Número de filas.} Se deja 1~m libre en el borde norte, así que hay sitio entre $2{,}66$~m y $15$~m desde el petril. Caben 5 filas: la última termina a $2{,}66+4\cdot 2{,}48+0{,}98\approx 13{,}57$~m.
+  \item \textbf{Paneles por fila.} Con 1~m libre a cada lado quedan 38~m: $38/2{,}28\approx 16{,}7$, es decir, 16 paneles.
+  \item \textbf{Total:} $5\cdot 16=80$ paneles. Con paneles de 550~W (valor ilustrativo), $80\cdot 0{,}55=44$~kWp.
+\end{enumerate}
+
+\begin{figure}[!htb]
+\centering
+\begin{tikzpicture}[x=1.45cm,y=1.45cm,>=Stealth,font=\footnotesize]
+  \draw[thick] (-0.5,0) -- (7.0,0);
+  \fill[gray!35] (-0.2,0) rectangle (0,1); \draw[thick] (-0.2,0) rectangle (0,1);
+  \node[left] at (-0.2,0.5) {petril};
+  \draw[blue!60!black,very thick] (2.6605,0) -- (3.6391,0.565);
+  \draw[blue!60!black,very thick] (5.1423,0) -- (6.1209,0.565);
+  \draw[urjc,thick] (0,1) -- (2.6605,0);
+  \draw[urjc,thick] (3.6391,0.565) -- (5.1423,0);
+  \draw (4.5423,0) arc (180:159.4:0.6); \node at (4.25,0.13) {$20{,}6^\circ$};
+  \draw[<->] (0,-0.25) -- node[below]{$k\cdot 1\approx 2{,}66$ m} (2.6605,-0.25);
+  \draw[<->] (2.6605,-0.75) -- node[below]{paso $p\approx 2{,}48$ m} (5.1423,-0.75);
+  \draw[<->] (3.6391,-0.25) -- node[below]{$k\,h_o\approx 1{,}50$ m} (5.1423,-0.25);
+  \draw[dashed] (3.6391,0.565) -- (3.6391,-0.3);
+  \draw[<->] (6.4,0) -- node[right]{$h_o=0{,}565$ m} (6.4,0.565);
+  \draw (3.2605,0) arc (0:30:0.6); \node at (3.36,0.09) {$30^\circ$};
+  \node[below] at (-0.3,-0.25) {sur}; \node[below] at (6.8,-0.25) {norte};
+\end{tikzpicture}
+\caption{Corte sur-norte de la cubierta con el petril y las dos primeras filas. El sol de diseño del IDAE ($20{,}6^\circ$) roza lo alto de cada obstáculo y llega justo al pie de la fila siguiente.}\label{fig:filas}
+\end{figure}
+
+\paso{Paso 16. Comparar con el criterio del mediodía}
+Con $k\approx 2{,}04$ la primera fila podría estar a $2{,}04$~m y el paso sería de $2{,}13$~m: cabrían 6 filas, es decir, 96 paneles. Esa fila de más quedaría a la sombra de la anterior en las primeras y últimas horas de los días de invierno, que es justo lo que el criterio del IDAE quiere evitar. Se elige la propuesta de 80 paneles.
+
+\paso{Paso 17. Producción estimada con PVGIS}
+En PVGIS \parencite{pvgis} se introduce la ubicación ($40{,}4^\circ$~N, $3{,}7^\circ$~O), la potencia de 44~kWp, una inclinación de $30^\circ$, orientación sur y las pérdidas por defecto del 14\,\%. La herramienta estima unos \textbf{71\,300~kWh al año}, unos 1\,620~kWh por cada kWp instalado, con un mínimo de unos 4\,300~kWh en noviembre y un máximo de unos 7\,600~kWh en julio.
+
+\paso{Paso 18. Incidencia sobre los paneles}
+Con $\beta_p=30^\circ$, la fórmula $\cos\theta=\sin(\beta_p+h)$ (resultado~\ref{res:incidencia}) da al mediodía:
+
+\begin{tablaSA}{colspec={X[1.6,l]X[1,c]X[1,c]X[1,c]}, cells={font=\footnotesize}}
+  Fecha & $h$ & $\cos\theta=\sin(30^\circ+h)$ & $\theta$ \\
+  Solsticio de invierno & $26{,}15^\circ$ & 0,83 & $33{,}85^\circ$ \\
+  Equinoccio & $49{,}60^\circ$ & 0,98 & $10{,}40^\circ$ \\
+  Solsticio de verano & $73{,}05^\circ$ & 0,97 & $13{,}05^\circ$ \\
+\end{tablaSA}
+
+La incidencia sería perfecta con $\beta_p+h=90^\circ$. Una inclinación de $30^\circ$ favorece la primavera y el verano, cuando más produce la instalación, y además reduce la altura de las filas y, con ella, la separación necesaria.
+
+% ======================================================================
+\section{Reflexionar sobre el modelo (S16)}
+
+\paso{Paso 19. Aportación a los ODS}
+La propuesta añade unos 71\,300~kWh anuales de energía renovable producida en el propio centro (ODS~7, meta~7.2) y aprovecha una cubierta ya construida en lugar de ocupar el patio, que sigue disponible para la comunidad (ODS~11).
+
+\paso{Paso 20. Límites del modelo}
+\begin{itemize}
+  \item El plano sur-norte describe el mediodía; a otras horas la sombra se tuerce (resultado~\ref{res:avance}) y por eso se usa el criterio del IDAE.
+  \item Se supone el edificio orientado de este a oeste y el terreno llano.
+  \item Puede haber obstáculos no medidos: chimeneas, antenas, árboles o castilletes en la cubierta.
+  \item No se consideran la nubosidad real de cada día, el coste, la resistencia de la cubierta ni los permisos.
+  \item Las alturas tienen un error de medida que se ha acotado, pero no eliminado.
+\end{itemize}
+
+% ======================================================================
+\section{Cerrar el libro y defender (S17 a S20)}\label{sec:cierre}
+
+\paso{Paso 21. Registro de cambios}
+Ejemplo de entradas tras la coevaluación de S16:
+
+\begin{tablaSA}{colspec={X[1.3,l]X[1.2,l]X[1.3,l]}, cells={font=\footnotesize}}
+  Crítica recibida & Qué se modifica & Por qué \\
+  «No se entiende por qué la franja no sirve» & Se añade el cálculo con el peor y el mejor caso del error & La conclusión debe ser robusta frente al error de medida \\
+  «Las filas parecen demasiado separadas» & Se incluye la comparación con el criterio del mediodía (96 paneles) & Hay que justificar por qué se renuncia a una fila \\
+  «Falta la unidad en la tabla de alturas» & Se revisan unidades en todas las tablas & Notación correcta (criterio 8.1) \\
+\end{tablaSA}
+
+\paso{Paso 22. Fuentes y autoría}
+El libro cita la fórmula de la declinación \parencite{pveducationdecl}, la de la altura del sol \parencite{pveducation}, el criterio de separación entre filas \parencite{idae}, la estimación de producción \parencite{pvgis} y, si se usan, los datos de la calculadora de la NOAA \parencite{noaa}.
+
+\paso{Paso 23. Estructura de la defensa (5 minutos)}
+Problema y zonas estudiadas (1~min); medición y error (1~min); modelo y validación con la varilla (1~min); propuesta, 80 paneles y producción (1{,}5~min); límites y conclusión (0{,}5~min). Cada miembro del equipo presenta una parte.
+
+% ======================================================================
+\part*{Demostraciones}
+\addcontentsline{toc}{part}{Demostraciones}
+
+\section{Por qué funcionan las fórmulas}\label{sec:demos}
+
+Los resultados siguen un orden lógico: cada uno usa solo los anteriores. Se trabaja con ángulos en grados y se usan las razones de un ángulo cualquiera definidas en la circunferencia goniométrica.
+
+\subsection{Trigonometría del triángulo}
+
+\resultado{Las razones no dependen del triángulo}{Si dos triángulos rectángulos tienen un ángulo agudo igual a $\alpha$, el cociente entre dos lados correspondientes es el mismo en ambos. Por eso $\sin\alpha$, $\cos\alpha$ y $\tan\alpha$ dependen solo de $\alpha$.}\label{res:razones}
+\begin{dem}
+Los dos triángulos tienen un ángulo recto y un ángulo $\alpha$, así que el tercer ángulo es $90^\circ-\alpha$ en ambos. Con los tres ángulos iguales son semejantes, y sus lados son proporcionales: $a'=\lambda a$, $b'=\lambda b$ y $c'=\lambda c$. Por tanto $a'/c'=\lambda a/(\lambda c)=a/c$, y lo mismo ocurre con los otros cocientes.
+\end{dem}
+
+\resultado{Altura con un punto de medida}{Con las notaciones de la figura~\ref{fig:alturas}a, $H=D\tan\alpha+a$.}\label{res:unpunto}
+\begin{dem}
+El triángulo formado por el ojo, el punto $F$ de la fachada a la altura del ojo y lo alto $T$ es rectángulo en $F$. El cateto adyacente a $\alpha$ mide $D$ y el opuesto, $x=FT$. Por definición de tangente, $\tan\alpha=x/D$, así que $x=D\tan\alpha$. Como $F$ está a la altura $a$ del suelo, $H=x+a$.
+\end{dem}
+
+\resultado{Teorema del coseno}{En un triángulo de lados $a$, $b$, $c$, con $C$ el ángulo opuesto a $c$, se cumple $c^2=a^2+b^2-2ab\cos C$.}\label{res:coseno}
+\begin{dem}
+Se colocan los vértices en $C=(0,0)$, $B=(a,0)$ y, por la definición de las razones en la circunferencia goniométrica, $A=(b\cos C,\ b\sin C)$. Esto vale también si $C$ es obtuso. Entonces
+\[
+  c^2=|AB|^2=(b\cos C-a)^2+(b\sin C)^2=b^2(\cos^2 C+\sin^2 C)-2ab\cos C+a^2=a^2+b^2-2ab\cos C.
+\]
+\end{dem}
+
+\resultado{Teorema del seno}{En cualquier triángulo, $\dfrac{a}{\sin A}=\dfrac{b}{\sin B}=\dfrac{c}{\sin C}$.}\label{res:seno}
+\begin{dem}
+Sea $h_c$ la altura desde $C$ sobre la recta $AB$. En el triángulo rectángulo que forma con el lado $b$, $h_c=b\sin A$. En el que forma con el lado $a$, $h_c=a\sin B$. Si $B$ es obtuso, el pie de la altura cae fuera del lado $AB$ y el ángulo de ese triángulo es $180^\circ-B$, pero $\sin(180^\circ-B)=\sin B$. Igualando, $b\sin A=a\sin B$, es decir, $a/\sin A=b/\sin B$. Con la altura desde $A$ se obtiene la igualdad con $c/\sin C$.
+\end{dem}
+
+\subsection{Vectores y fórmulas de adición}
+
+\resultado{Expresión geométrica del producto escalar}{Si $\vec u$ y $\vec v$ forman un ángulo $\theta$, entonces $u_1v_1+u_2v_2=|\vec u|\,|\vec v|\cos\theta$.}\label{res:escalar}
+\begin{dem}
+Los vectores $\vec u$, $\vec v$ y $\vec u-\vec v$ forman un triángulo con ángulo $\theta$ entre los dos primeros. Por el teorema del coseno, $|\vec u-\vec v|^2=|\vec u|^2+|\vec v|^2-2|\vec u||\vec v|\cos\theta$. En coordenadas, $|\vec u-\vec v|^2=(u_1-v_1)^2+(u_2-v_2)^2=|\vec u|^2+|\vec v|^2-2(u_1v_1+u_2v_2)$. Igualando las dos expresiones se obtiene el resultado.
+\end{dem}
+En particular, dos vectores son perpendiculares si y solo si $\vec u\cdot\vec v=0$, y la proyección ortogonal de $\vec v$ sobre un vector unitario $\vec e$ mide $\vec v\cdot\vec e=|\vec v|\cos\theta$.
+
+\resultado{Coseno de la diferencia y seno de la suma}{Para ángulos cualesquiera $a$ y $b$:
+\[
+  \cos(a-b)=\cos a\cos b+\sin a\sin b,\qquad \sin(a+b)=\sin a\cos b+\cos a\sin b,\qquad \sin(a-b)=\sin a\cos b-\cos a\sin b.
+\]}\label{res:adicion}
+\begin{dem}
+Los vectores unitarios $\vec u=(\cos a,\sin a)$ y $\vec v=(\cos b,\sin b)$ forman un ángulo $a-b$ (o su opuesto, que tiene el mismo coseno). Por el resultado~\ref{res:escalar}, $\cos(a-b)=\vec u\cdot\vec v=\cos a\cos b+\sin a\sin b$. Para el seno de la suma se usa que $\sin x=\cos(90^\circ-x)$:
+\[
+  \sin(a+b)=\cos\big((90^\circ-a)-b\big)=\cos(90^\circ-a)\cos b+\sin(90^\circ-a)\sin b=\sin a\cos b+\cos a\sin b.
+\]
+Cambiando $b$ por $-b$, y como $\cos(-b)=\cos b$ y $\sin(-b)=-\sin b$, se obtiene el seno de la diferencia.
+\end{dem}
+
+\subsection{Alturas inaccesibles}
+
+\resultado{Altura con dos puntos de medida}{Con las notaciones de la figura~\ref{fig:alturas}b y $\alpha<\beta$,
+\[
+  H=\frac{d\,\sin\alpha\,\sin\beta}{\sin(\beta-\alpha)}+a=\frac{d\tan\alpha\tan\beta}{\tan\beta-\tan\alpha}+a.
+\]}\label{res:dospuntos}
+\begin{dem}
+En el triángulo $ABT$, el ángulo en $A$ es $\alpha$. El ángulo en $B$ es $180^\circ-\beta$, porque $\beta$ es su ángulo exterior. Como los tres suman $180^\circ$, el ángulo en $T$ es $\beta-\alpha$. Por el teorema del seno, $BT/\sin\alpha=d/\sin(\beta-\alpha)$, así que $BT=d\sin\alpha/\sin(\beta-\alpha)$. En el triángulo rectángulo $BFT$, $BT$ es la hipotenusa y $x=FT$ el cateto opuesto a $\beta$, así que $x=BT\sin\beta$. Sumando la altura del ojo se obtiene la primera fórmula.
+
+Para la segunda, sea $D=BF$. En los triángulos rectángulos $BFT$ y $AFT$, $x=D\tan\beta$ y $x=(D+d)\tan\alpha$. Igualando, $D=d\tan\alpha/(\tan\beta-\tan\alpha)$ y $x=d\tan\alpha\tan\beta/(\tan\beta-\tan\alpha)$. Ambas expresiones coinciden, porque por el resultado~\ref{res:adicion}
+\[
+  \tan\beta-\tan\alpha=\frac{\sin\beta\cos\alpha-\cos\beta\sin\alpha}{\cos\alpha\cos\beta}=\frac{\sin(\beta-\alpha)}{\cos\alpha\cos\beta}.
+\]
+\end{dem}
+
+\resultado{Sensibilidad al error (ampliación con derivadas)}{Un error pequeño $\Delta\alpha$, en radianes, cambia la altura sobre el ojo aproximadamente en
+\[
+  \Delta x\approx\frac{D}{\cos^2\alpha}\,\Delta\alpha\ \text{(un punto)},\qquad \Delta x\approx x\,\big(\cot\alpha+\cot(\beta-\alpha)\big)\,\Delta\alpha\ \text{(dos puntos)}.
+\]}\label{res:error}
+\begin{dem}
+Con un punto, $x=D\tan\alpha$ y $x'(\alpha)=D/\cos^2\alpha$. Con dos, $\ln x=\ln d+\ln\sin\alpha+\ln\sin\beta-\ln\sin(\beta-\alpha)$; derivando respecto de $\alpha$,
+\[
+  \frac{x'}{x}=\frac{\cos\alpha}{\sin\alpha}+\frac{\cos(\beta-\alpha)}{\sin(\beta-\alpha)}=\cot\alpha+\cot(\beta-\alpha).
+\]
+En ambos casos $\Delta x\approx x'\,\Delta\alpha$.
+\end{dem}
+Con los datos del ejemplo y $\Delta\alpha=1^\circ\approx 0{,}0175$~rad: con un punto, $\Delta x\approx 24{,}8\cdot 0{,}0175/\cos^2 25^\circ\approx 0{,}53$~m; con dos, $\cot 25^\circ+\cot 13^\circ\approx 6{,}48$ y $\Delta x\approx 11{,}57\cdot 6{,}48\cdot 0{,}0175\approx 1{,}31$~m, en línea con la tabla del paso~9. El término $\cot(\beta-\alpha)$ crece sin límite cuando $\beta-\alpha$ se acerca a $0^\circ$: por eso conviene separar los puntos de medida.
+
+\subsection{El sol y las sombras}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[>=Stealth,font=\footnotesize,scale=1.15]
+  \draw[thick] (0,0) circle (2);
+  \draw[dashed] (-2.6,0) node[left]{ecuador} -- (2.6,0);
+  \draw[dotted] (0,-2.4) -- (0,2.5) node[above]{eje (N)};
+  \coordinate (P) at (40:2); \coordinate (Q) at (15:2);
+  \draw (0,0) -- (P) (0,0) -- (Q);
+  \fill (P) circle (1.5pt) node[left=2pt]{$P$}; \fill (Q) circle (1.5pt) node[below=2pt]{$S$};
+  \draw (0.7,0) arc (0:40:0.7); \node at (20:0.95) {$\varphi$};
+  \draw (1.25,0) arc (0:15:1.25); \node at (7:1.5) {$\delta$};
+  \draw[->] (P) -- (2.604,2.185) node[above]{cenit};
+  \draw[thick] (0.761,2.205) -- (2.303,0.367) node[right]{horizonte};
+  \draw[->,urjc,thick] (4.816,2.166) -- (P); \draw[->,urjc,thick] (4.540,1.217) -- (Q);
+  \node[urjc,align=center] at (5.2,1.6) {rayos del sol\\(paralelos)};
+  \draw (P) ++(-50:0.55) arc (-50:15:0.55); \path (P) ++(-17:0.78) node{$h$};
+  \draw (P) ++(15:1.0) arc (15:40:1.0); \path (P) ++(26:1.45) node{$\varphi-\delta$};
+\end{tikzpicture}
+\caption{Corte de la Tierra por el meridiano del centro al mediodía solar. $P$ es el centro, a latitud $\varphi$; $S$ es el punto donde el sol está en el cenit, a latitud $\delta$.}\label{fig:tierra}
+\end{figure}
+
+\resultado{Altura del sol al mediodía}{Si la Tierra es esférica y los rayos del sol llegan paralelos, al mediodía solar en un lugar de latitud $\varphi\ge\delta$ el sol está a una altura $h=90^\circ-\varphi+\delta$.}\label{res:altura}
+\begin{dem}
+Al mediodía solar el sol está en el plano del meridiano del lugar, que es el de la figura~\ref{fig:tierra}. En el punto $S$, de latitud $\delta$, el sol está en el cenit, así que los rayos son paralelos a la recta $OS$. En $P$ el cenit sigue la recta $OP$. El ángulo entre $OP$ y $OS$ es $\varphi-\delta$, porque las dos latitudes se miden desde el ecuador en el mismo plano. Como los rayos que llegan a $P$ son paralelos a $OS$, el ángulo entre el cenit de $P$ y la dirección del sol también es $\varphi-\delta$. El horizonte es perpendicular al cenit, así que $h=90^\circ-(\varphi-\delta)$.
+\end{dem}
+En Madrid siempre se cumple $\varphi\ge\delta$, porque $\delta$ nunca supera $23{,}45^\circ$. Una consecuencia útil para el proyecto eTwinning: el mismo día y al mediodía, la diferencia de alturas del sol entre dos centros es igual a la diferencia de sus latitudes, que es la idea con la que Eratóstenes midió la Tierra. La fórmula de $\delta$ en función del día es un modelo astronómico aproximado que se toma de PVEducation \parencite{pveducationdecl}; no se demuestra aquí.
+
+\resultado{El rayo como recta y los puntos en sombra}{En el plano sur-norte, con el obstáculo ocupando $x\le 0$ hasta la altura $H$, el rayo que roza $T=(0,H)$ es la recta $y=H-x\tan h$, y un punto $P=(x_P,y_P)$ con $x_P>0$ está en sombra si y solo si $y_P<H-x_P\tan h$.}\label{res:rayo}
+\begin{dem}
+La luz avanza hacia el norte y hacia abajo, en la dirección de $\vec v=(\cos h,-\sin h)$, así que el rayo es $T+t\vec v=(t\cos h,\ H-t\sin h)$ con $t\ge 0$. Despejando $t=x/\cos h$ queda $y=H-x\tan h$.
+
+Desde $P$, la dirección hacia el sol es $\vec s=(-\cos h,\sin h)$. La semirrecta $P+t\vec s$ llega a la fachada $x=0$ cuando $t=x_P/\cos h$, a la altura $y^*=y_P+x_P\tan h$. El obstáculo tapa el sol si y solo si esa semirrecta choca con él, es decir, si $y^*<H$, que equivale a $y_P<H-x_P\tan h$.
+\end{dem}
+
+\resultado{Longitud de la sombra}{Un obstáculo de altura $H$ proyecta sobre el suelo horizontal una sombra de longitud $L=H/\tan h$, y el coeficiente $k=L/H=1/\tan h$ solo depende de la altura del sol.}\label{res:sombra}
+\begin{dem}
+Un punto del suelo, $y_P=0$, está en sombra si y solo si $0<H-x_P\tan h$, es decir, si $x_P<H/\tan h$ (resultado~\ref{res:rayo}). La sombra va, por tanto, de $x=0$ a $x=H/\tan h$.
+\end{dem}
+Como la tangente es creciente entre $0^\circ$ y $90^\circ$, cuanto más bajo está el sol, mayor es $k$ y más larga es la sombra. Por eso el solsticio de invierno es el caso que decide la separación.
+
+\resultado{Avance de la sombra hacia el norte}{Si el sol forma un ángulo $A$ con el sur, una sombra de longitud $L$ avanza hacia el norte $L\cos A$.}\label{res:avance}
+\begin{dem}
+Vista en planta, la sombra apunta en sentido contrario al sol, así que forma un ángulo $A$ con el norte. Si $\vec w$ es el vector unitario en la dirección de la sombra y $\vec e$ el vector unitario hacia el norte, el avance es la proyección ortogonal de $L\vec w$ sobre $\vec e$: $L\,\vec w\cdot\vec e=L\cos A$ (resultado~\ref{res:escalar}).
+\end{dem}
+La altura y el ángulo a otras horas se toman de la calculadora de la NOAA. Como comprobación optativa, la trigonometría esférica, que no se demuestra aquí, da $\sin h=\sin\varphi\sin\delta+\cos\varphi\cos\delta\cos\omega$ y $\sin A=\cos\delta\sin\omega/\cos h$, donde $\omega$ es el ángulo horario ($15^\circ$ por hora desde el mediodía). Dos horas después del mediodía del solsticio de invierno, $\omega=30^\circ$ y resultan $h\approx 20{,}31^\circ$ y $A\approx 29{,}3^\circ$, los mismos valores de la situación de aprendizaje.
+
+\resultado{Incidencia sobre un panel}{Un panel orientado al sur con inclinación $\beta_p$ recibe el sol de altura $h$ con un ángulo $\theta$ que cumple $\cos\theta=\sin(\beta_p+h)$. La incidencia es perpendicular si y solo si $\beta_p+h=90^\circ$.}\label{res:incidencia}
+\begin{dem}
+En el plano sur-norte, con $x$ hacia el norte, la superficie del panel sube hacia el norte en la dirección $\vec p=(\cos\beta_p,\sin\beta_p)$. El vector $\vec n=(-\sin\beta_p,\cos\beta_p)$ es unitario, perpendicular a $\vec p$ porque $\vec n\cdot\vec p=0$, y apunta hacia arriba y hacia el sur: es la normal. El vector unitario hacia el sol es $\vec s=(-\cos h,\sin h)$. Por los resultados~\ref{res:escalar} y~\ref{res:adicion},
+\[
+  \cos\theta=\vec n\cdot\vec s=\sin\beta_p\cos h+\cos\beta_p\sin h=\sin(\beta_p+h).
+\]
+El coseno vale 1, es decir, $\theta=0^\circ$, si y solo si $\sin(\beta_p+h)=1$, lo que con $0^\circ<\beta_p+h<180^\circ$ ocurre solo si $\beta_p+h=90^\circ$.
+\end{dem}
+
+\resultado{Paso entre filas}{Si cada fila tiene una longitud $l$ en la pendiente y una inclinación $\beta_p$, y la separación se diseña con un sol de altura $h_d$, el paso entre el comienzo de dos filas consecutivas es $p=l\cos\beta_p+k\,l\sin\beta_p$, con $k=1/\tan h_d$.}\label{res:filas}
+\begin{dem}
+La fila delantera alcanza una altura $h_o=l\sin\beta_p$ y ocupa en planta $l\cos\beta_p$. Para que no haga sombra a la siguiente, el pie de esta debe quedar donde termina la sombra de la delantera con el sol de diseño, es decir, a $h_o/\tan h_d=k\,h_o$ de su borde trasero (resultado~\ref{res:sombra}). Sumando la ocupación en planta y esa separación se obtiene $p$ (figura~\ref{fig:filas}).
+\end{dem}
+El pliego del IDAE fija $h_d=61^\circ-\varphi$ \parencite{idae}; es un criterio técnico, no un resultado que se demuestre. A $40{,}4^\circ$ da $h_d=20{,}6^\circ$, unos $5{,}55^\circ$ por debajo de la altura del mediodía del solsticio de invierno, $66{,}55^\circ-\varphi$. Por el resultado~\ref{res:sombra}, un sol más bajo da un $k$ mayor ($2{,}66$ frente a $2{,}04$): ese es el margen que protege las filas fuera del mediodía.
+
+% ======================================================================
+\printbibliography[heading=bibintoc,title={Bibliografía}]
+
+\section*{Declaración de uso de inteligencia artificial}
+\addcontentsline{toc}{section}{Declaración de uso de inteligencia artificial}
+Para la elaboración de este documento se ha utilizado una herramienta de inteligencia artificial generativa (Claude, de Anthropic) para redactar el solucionario y las demostraciones, generar el código \LaTeX{} y las figuras, y calcular y comprobar los valores numéricos. El alumno ha revisado y validado el contenido y asume la plena responsabilidad sobre el documento.
+
+\end{document}
