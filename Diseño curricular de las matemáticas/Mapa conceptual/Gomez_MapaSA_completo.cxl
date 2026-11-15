@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmap xmlns:dcterms="http://purl.org/dc/terms/" xmlns="http://cmap.ihmc.us/xml/cmap/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
+  <res-meta>
+    <dc:title>Gomez_MapaSA_completo</dc:title>
+    <dc:description>Medir lo que no se puede alcanzar: ¿dónde caben más paneles solares en nuestro instituto? (versión completa)</dc:description>
+    <dc:creator><vcard:FN>Javier Gómez López</vcard:FN></dc:creator>
+    <dc:language>es</dc:language>
+  </res-meta>
+  <map width="3272" height="1084">
+    <concept-list>
+      <concept id="sa" label="Situación de&#10;aprendizaje"/>
+      <concept id="ctx" label="Contexto"/>
+      <concept id="ctx1" label="Ampliación solar&#10;del instituto"/>
+      <concept id="sab" label="Saberes básicos"/>
+      <concept id="vec" label="Vectores (A)"/>
+      <concept id="tri" label="Trigonometría (B, D)"/>
+      <concept id="modz" label="Modelización (C, D)"/>
+      <concept id="triang" label="Resolución de&#10;triángulos (B)"/>
+      <concept id="rec" label="Rectas (C)"/>
+      <concept id="energ" label="Energía solar (C, F)"/>
+      <concept id="actit" label="Actitudes y&#10;aprendizaje (F)"/>
+      <concept id="act" label="Actividades"/>
+      <concept id="s1" label="Presentación del&#10;reto (S1)"/>
+      <concept id="f14" label="Talleres GeoGebra&#10;F1–F4"/>
+      <concept id="expo" label="Exposiciones y&#10;ejercicios (S3–S11)"/>
+      <concept id="piezas" label="Piezas del reto"/>
+      <concept id="s13" label="Mapa y&#10;método (S13)"/>
+      <concept id="med" label="Medimos el&#10;instituto (S14)"/>
+      <concept id="mod" label="Modelo de&#10;sombras (S15)"/>
+      <concept id="s16" label="Propuesta y&#10;coevaluación (S16)"/>
+      <concept id="s17" label="Mejora y&#10;ensayo (S17)"/>
+      <concept id="s18" label="Prueba individual&#10;(S18)"/>
+      <concept id="s19" label="Defensa final&#10;(S19–S20)"/>
+      <concept id="reto" label="Reto"/>
+      <concept id="preg" label="¿Dónde caben&#10;más paneles?"/>
+      <concept id="ods" label="ODS"/>
+      <concept id="ods711" label="ODS 7 y 11"/>
+      <concept id="prod" label="Producto final"/>
+      <concept id="libro" label="Libro de&#10;GeoGebra"/>
+      <concept id="p1" label="Método y datos"/>
+      <concept id="p2" label="Modelo dinámico"/>
+      <concept id="p3" label="Análisis del error"/>
+      <concept id="p5" label="Reflexión ODS&#10;y límites"/>
+      <concept id="p6" label="Registro de&#10;cambios"/>
+      <concept id="p7" label="Fuentes y autoría"/>
+      <concept id="p4" label="Propuesta de&#10;ampliación"/>
+      <concept id="eval" label="Evaluación"/>
+      <concept id="evid" label="Evidencias"/>
+      <concept id="hoja" label="Hoja de datos"/>
+      <concept id="kanban" label="Tablero Kanban"/>
+      <concept id="relevo" label="Hojas de relevo"/>
+      <concept id="agentes" label="Hetero, co y&#10;autoevaluación"/>
+      <concept id="inst" label="Instrumentos"/>
+      <concept id="EX" label="Examen escrito&#10;(EX)"/>
+      <concept id="CU" label="Cuestionarios&#10;Q1–Q4 (CU)"/>
+      <concept id="FI" label="Fichas GeoGebra&#10;R4 (FI)"/>
+      <concept id="LI" label="Rúbrica R1&#10;libro (LI)"/>
+      <concept id="EP" label="Rúbrica R2&#10;defensa (EP)"/>
+      <concept id="MC" label="Lista L2&#10;mapa (MC)"/>
+      <concept id="OB" label="Lista L1&#10;observación (OB)"/>
+      <concept id="CO" label="Rúbrica R3&#10;co/auto (CO)"/>
+      <concept id="ce" label="Competencias&#10;específicas"/>
+      <concept id="met" label="Metodología"/>
+      <concept id="abr" label="Aprendizaje&#10;basado en retos"/>
+      <concept id="mag" label="Sesiones&#10;magistrales"/>
+      <concept id="coop" label="Trabajo&#10;cooperativo"/>
+      <concept id="etw" label="Proyecto&#10;eTwinning"/>
+      <concept id="roles" label="Cuatro roles&#10;rotatorios"/>
+      <concept id="r_coord" label="Coordinación"/>
+      <concept id="r_med" label="Medición"/>
+      <concept id="r_mod" label="Modelo"/>
+      <concept id="r_com" label="Comunicación"/>
+      <concept id="lat" label="Sombras en&#10;otra latitud"/>
+      <concept id="recu" label="Recursos"/>
+      <concept id="clin" label="Clinómetro"/>
+      <concept id="cinta" label="Cinta métrica"/>
+      <concept id="ggb" label="GeoGebra"/>
+      <concept id="pvgis" label="PVGIS"/>
+      <concept id="noaa" label="Calculadora NOAA"/>
+      <concept id="twin" label="TwinSpace"/>
+      <concept id="div" label="Atención a la&#10;diversidad"/>
+      <concept id="dua" label="Pautas DUA"/>
+      <concept id="refz" label="Refuerzo por&#10;criterio (S13)"/>
+      <concept id="ampl" label="Ampliación:&#10;radio terrestre"/>
+      <concept id="ce1" label="CE1 Modelizar&#10;(CD5 · CE3 · STEM3)"/>
+      <concept id="cr1" label="1.1: EX · FI · LI · EP&#10;1.2: EX · CU · FI"/>
+      <concept id="ce2" label="CE2 Verificar&#10;(STEM1 · STEM2)"/>
+      <concept id="cr2" label="2.1: EX · FI · CU&#10;2.2: LI · EP"/>
+      <concept id="ce3" label="CE3 Conjeturar&#10;(STEM1 · STEM2)"/>
+      <concept id="cr3" label="3.1: EX · FI&#10;3.2: FI · OB"/>
+      <concept id="ce5" label="CE5 Conectar ideas&#10;(STEM1)"/>
+      <concept id="cr5" label="5.1: MC · EX&#10;5.2: EX · CU"/>
+      <concept id="ce6" label="CE6 Conexiones&#10;extramatemáticas&#10;(CC4 · STEM2)"/>
+      <concept id="cr6" label="6.1: LI · EP&#10;6.2: LI · EP"/>
+      <concept id="ce7" label="CE7 Representar&#10;(CD2)"/>
+      <concept id="cr7" label="7.1: CU · FI&#10;7.2: EX · FI · LI · CO"/>
+      <concept id="ce8" label="CE8 Comunicar&#10;(CCL1 · CD3 · STEM4)"/>
+      <concept id="cr8" label="8.1: EP · CO"/>
+      <concept id="ce9" label="CE9 Destrezas&#10;socioafectivas&#10;(CPSAA1.1 · CPSAA3.2)"/>
+      <concept id="cr9" label="9.1: OB · CO&#10;9.2: CO · OB&#10;9.3: OB · CO"/>
+      <concept id="foco" label="Pregunta de enfoque: ¿Cómo se articula mi situación de aprendizaje para que el alumnado aprenda de forma competencial?"/>
+      <concept id="ley_marco" label="Marco: situación, contexto, reto, ODS y producto"/>
+      <concept id="ley_curr" label="Currículo: saberes, competencias, criterios y descriptores"/>
+      <concept id="ley_acc" label="Actividades, metodología y recursos"/>
+      <concept id="ley_eval" label="Evaluación: instrumentos y evidencias"/>
+      <concept id="ley_extra" label="Instrumentos: EX examen · CU cuestionarios · FI fichas · LI libro y propuesta · EP exposición · MC mapa conceptual · OB observación · CO co/autoevaluación. Entre paréntesis, en cada competencia, sus descriptores operativos priorizados."/>
+    </concept-list>
+    <linking-phrase-list>
+      <linking-phrase id="lp1" label="parte del"/>
+      <linking-phrase id="lp2" label="moviliza"/>
+      <linking-phrase id="lp3" label="se desarrolla mediante"/>
+      <linking-phrase id="lp4" label="se articula en torno al"/>
+      <linking-phrase id="lp5" label="se comprueba mediante"/>
+      <linking-phrase id="lp6" label="desarrolla"/>
+      <linking-phrase id="lp7" label="se apoya en"/>
+      <linking-phrase id="lp8" label="se concreta en"/>
+      <linking-phrase id="lp9" label="incluyen"/>
+      <linking-phrase id="lp10" label="se concretan en"/>
+      <linking-phrase id="lp11" label="contribuye a los"/>
+      <linking-phrase id="lp12" label="se formula como"/>
+      <linking-phrase id="lp13" label="da lugar al"/>
+      <linking-phrase id="lp14" label="se concretan en"/>
+      <linking-phrase id="lp15" label="se concreta en"/>
+      <linking-phrase id="lp16" label="incluye"/>
+      <linking-phrase id="lp17" label="se apoya en"/>
+      <linking-phrase id="lp18" label="combina"/>
+      <linking-phrase id="lp19" label="se realiza con"/>
+      <linking-phrase id="lp20" label="incluyen"/>
+      <linking-phrase id="lp21" label="incluyen"/>
+      <linking-phrase id="lp22" label="incluyen"/>
+      <linking-phrase id="lp23" label="combina"/>
+      <linking-phrase id="lp24" label="desarrolla un"/>
+      <linking-phrase id="lp25" label="utiliza"/>
+      <linking-phrase id="lp26" label="incluye"/>
+      <linking-phrase id="lp27" label="se organiza en"/>
+      <linking-phrase id="lp28" label="rotan entre"/>
+      <linking-phrase id="lp29" label="compara"/>
+      <linking-phrase id="lp30" label="incluyen"/>
+      <linking-phrase id="lp31" label="se concreta en"/>
+      <linking-phrase id="lp32" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp33" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp34" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp35" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp36" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp37" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp38" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp39" label="se evalúa con los criterios"/>
+      <linking-phrase id="lp40" label="se construyen en"/>
+      <linking-phrase id="lp41" label="se trabaja en"/>
+      <linking-phrase id="lp42" label="se desarrolla en"/>
+      <linking-phrase id="lp43" label="se aplica en"/>
+      <linking-phrase id="lp44" label="se aplican en"/>
+      <linking-phrase id="lp45" label="se aplica en la"/>
+      <linking-phrase id="lp46" label="se trabajan en"/>
+      <linking-phrase id="lp47" label="se recoge en el"/>
+      <linking-phrase id="lp48" label="aporta la evidencia de"/>
+      <linking-phrase id="lp49" label="se defiende en la"/>
+      <linking-phrase id="lp50" label="se evalúan con los"/>
+    </linking-phrase-list>
+    <connection-list>
+      <connection id="cx1" from-id="sa" to-id="lp1"/>
+      <connection id="cx2" from-id="lp1" to-id="ctx"/>
+      <connection id="cx3" from-id="sa" to-id="lp2"/>
+      <connection id="cx4" from-id="lp2" to-id="sab"/>
+      <connection id="cx5" from-id="sa" to-id="lp3"/>
+      <connection id="cx6" from-id="lp3" to-id="act"/>
+      <connection id="cx7" from-id="sa" to-id="lp4"/>
+      <connection id="cx8" from-id="lp4" to-id="reto"/>
+      <connection id="cx9" from-id="sa" to-id="lp5"/>
+      <connection id="cx10" from-id="lp5" to-id="eval"/>
+      <connection id="cx11" from-id="sa" to-id="lp6"/>
+      <connection id="cx12" from-id="lp6" to-id="ce"/>
+      <connection id="cx13" from-id="sa" to-id="lp7"/>
+      <connection id="cx14" from-id="lp7" to-id="met"/>
+      <connection id="cx15" from-id="ctx" to-id="lp8"/>
+      <connection id="cx16" from-id="lp8" to-id="ctx1"/>
+      <connection id="cx17" from-id="sab" to-id="lp9"/>
+      <connection id="cx18" from-id="lp9" to-id="vec"/>
+      <connection id="cx19" from-id="lp9" to-id="tri"/>
+      <connection id="cx20" from-id="lp9" to-id="modz"/>
+      <connection id="cx21" from-id="lp9" to-id="triang"/>
+      <connection id="cx22" from-id="lp9" to-id="rec"/>
+      <connection id="cx23" from-id="lp9" to-id="energ"/>
+      <connection id="cx24" from-id="lp9" to-id="actit"/>
+      <connection id="cx25" from-id="act" to-id="lp10"/>
+      <connection id="cx26" from-id="lp10" to-id="s1"/>
+      <connection id="cx27" from-id="lp10" to-id="f14"/>
+      <connection id="cx28" from-id="lp10" to-id="expo"/>
+      <connection id="cx29" from-id="lp10" to-id="piezas"/>
+      <connection id="cx30" from-id="lp10" to-id="s13"/>
+      <connection id="cx31" from-id="lp10" to-id="med"/>
+      <connection id="cx32" from-id="lp10" to-id="mod"/>
+      <connection id="cx33" from-id="lp10" to-id="s16"/>
+      <connection id="cx34" from-id="lp10" to-id="s17"/>
+      <connection id="cx35" from-id="lp10" to-id="s18"/>
+      <connection id="cx36" from-id="lp10" to-id="s19"/>
+      <connection id="cx37" from-id="reto" to-id="lp11"/>
+      <connection id="cx38" from-id="lp11" to-id="ods"/>
+      <connection id="cx39" from-id="reto" to-id="lp12"/>
+      <connection id="cx40" from-id="lp12" to-id="preg"/>
+      <connection id="cx41" from-id="reto" to-id="lp13"/>
+      <connection id="cx42" from-id="lp13" to-id="prod"/>
+      <connection id="cx43" from-id="ods" to-id="lp14"/>
+      <connection id="cx44" from-id="lp14" to-id="ods711"/>
+      <connection id="cx45" from-id="prod" to-id="lp15"/>
+      <connection id="cx46" from-id="lp15" to-id="libro"/>
+      <connection id="cx47" from-id="libro" to-id="lp16"/>
+      <connection id="cx48" from-id="lp16" to-id="p1"/>
+      <connection id="cx49" from-id="lp16" to-id="p2"/>
+      <connection id="cx50" from-id="lp16" to-id="p3"/>
+      <connection id="cx51" from-id="lp16" to-id="p5"/>
+      <connection id="cx52" from-id="lp16" to-id="p6"/>
+      <connection id="cx53" from-id="lp16" to-id="p7"/>
+      <connection id="cx54" from-id="lp16" to-id="p4"/>
+      <connection id="cx55" from-id="eval" to-id="lp17"/>
+      <connection id="cx56" from-id="lp17" to-id="evid"/>
+      <connection id="cx57" from-id="eval" to-id="lp18"/>
+      <connection id="cx58" from-id="lp18" to-id="agentes"/>
+      <connection id="cx59" from-id="eval" to-id="lp19"/>
+      <connection id="cx60" from-id="lp19" to-id="inst"/>
+      <connection id="cx61" from-id="evid" to-id="lp20"/>
+      <connection id="cx62" from-id="lp20" to-id="hoja"/>
+      <connection id="cx63" from-id="lp20" to-id="kanban"/>
+      <connection id="cx64" from-id="lp20" to-id="relevo"/>
+      <connection id="cx65" from-id="inst" to-id="lp21"/>
+      <connection id="cx66" from-id="lp21" to-id="EX"/>
+      <connection id="cx67" from-id="lp21" to-id="CU"/>
+      <connection id="cx68" from-id="lp21" to-id="FI"/>
+      <connection id="cx69" from-id="lp21" to-id="LI"/>
+      <connection id="cx70" from-id="lp21" to-id="EP"/>
+      <connection id="cx71" from-id="lp21" to-id="MC"/>
+      <connection id="cx72" from-id="lp21" to-id="OB"/>
+      <connection id="cx73" from-id="lp21" to-id="CO"/>
+      <connection id="cx74" from-id="ce" to-id="lp22"/>
+      <connection id="cx75" from-id="lp22" to-id="ce1"/>
+      <connection id="cx76" from-id="lp22" to-id="ce2"/>
+      <connection id="cx77" from-id="lp22" to-id="ce3"/>
+      <connection id="cx78" from-id="lp22" to-id="ce5"/>
+      <connection id="cx79" from-id="lp22" to-id="ce6"/>
+      <connection id="cx80" from-id="lp22" to-id="ce7"/>
+      <connection id="cx81" from-id="lp22" to-id="ce8"/>
+      <connection id="cx82" from-id="lp22" to-id="ce9"/>
+      <connection id="cx83" from-id="met" to-id="lp23"/>
+      <connection id="cx84" from-id="lp23" to-id="abr"/>
+      <connection id="cx85" from-id="lp23" to-id="mag"/>
+      <connection id="cx86" from-id="lp23" to-id="coop"/>
+      <connection id="cx87" from-id="met" to-id="lp24"/>
+      <connection id="cx88" from-id="lp24" to-id="etw"/>
+      <connection id="cx89" from-id="met" to-id="lp25"/>
+      <connection id="cx90" from-id="lp25" to-id="recu"/>
+      <connection id="cx91" from-id="met" to-id="lp26"/>
+      <connection id="cx92" from-id="lp26" to-id="div"/>
+      <connection id="cx93" from-id="coop" to-id="lp27"/>
+      <connection id="cx94" from-id="lp27" to-id="roles"/>
+      <connection id="cx95" from-id="roles" to-id="lp28"/>
+      <connection id="cx96" from-id="lp28" to-id="r_coord"/>
+      <connection id="cx97" from-id="lp28" to-id="r_med"/>
+      <connection id="cx98" from-id="lp28" to-id="r_mod"/>
+      <connection id="cx99" from-id="lp28" to-id="r_com"/>
+      <connection id="cx100" from-id="etw" to-id="lp29"/>
+      <connection id="cx101" from-id="lp29" to-id="lat"/>
+      <connection id="cx102" from-id="recu" to-id="lp30"/>
+      <connection id="cx103" from-id="lp30" to-id="clin"/>
+      <connection id="cx104" from-id="lp30" to-id="cinta"/>
+      <connection id="cx105" from-id="lp30" to-id="ggb"/>
+      <connection id="cx106" from-id="lp30" to-id="pvgis"/>
+      <connection id="cx107" from-id="lp30" to-id="noaa"/>
+      <connection id="cx108" from-id="lp30" to-id="twin"/>
+      <connection id="cx109" from-id="div" to-id="lp31"/>
+      <connection id="cx110" from-id="lp31" to-id="dua"/>
+      <connection id="cx111" from-id="lp31" to-id="refz"/>
+      <connection id="cx112" from-id="lp31" to-id="ampl"/>
+      <connection id="cx113" from-id="ce1" to-id="lp32"/>
+      <connection id="cx114" from-id="lp32" to-id="cr1"/>
+      <connection id="cx115" from-id="ce2" to-id="lp33"/>
+      <connection id="cx116" from-id="lp33" to-id="cr2"/>
+      <connection id="cx117" from-id="ce3" to-id="lp34"/>
+      <connection id="cx118" from-id="lp34" to-id="cr3"/>
+      <connection id="cx119" from-id="ce5" to-id="lp35"/>
+      <connection id="cx120" from-id="lp35" to-id="cr5"/>
+      <connection id="cx121" from-id="ce6" to-id="lp36"/>
+      <connection id="cx122" from-id="lp36" to-id="cr6"/>
+      <connection id="cx123" from-id="ce7" to-id="lp37"/>
+      <connection id="cx124" from-id="lp37" to-id="cr7"/>
+      <connection id="cx125" from-id="ce8" to-id="lp38"/>
+      <connection id="cx126" from-id="lp38" to-id="cr8"/>
+      <connection id="cx127" from-id="ce9" to-id="lp39"/>
+      <connection id="cx128" from-id="lp39" to-id="cr9"/>
+      <connection id="cx129" from-id="vec" to-id="lp40"/>
+      <connection id="cx130" from-id="lp40" to-id="f14"/>
+      <connection id="cx131" from-id="tri" to-id="lp41"/>
+      <connection id="cx132" from-id="lp41" to-id="expo"/>
+      <connection id="cx133" from-id="modz" to-id="lp42"/>
+      <connection id="cx134" from-id="lp42" to-id="piezas"/>
+      <connection id="cx135" from-id="triang" to-id="lp43"/>
+      <connection id="cx136" from-id="lp43" to-id="med"/>
+      <connection id="cx137" from-id="rec" to-id="lp44"/>
+      <connection id="cx138" from-id="lp44" to-id="mod"/>
+      <connection id="cx139" from-id="energ" to-id="lp45"/>
+      <connection id="cx140" from-id="lp45" to-id="s16"/>
+      <connection id="cx141" from-id="actit" to-id="lp46"/>
+      <connection id="cx142" from-id="lp46" to-id="s17"/>
+      <connection id="cx143" from-id="mod" to-id="lp47"/>
+      <connection id="cx144" from-id="lp47" to-id="libro"/>
+      <connection id="cx145" from-id="libro" to-id="lp48"/>
+      <connection id="cx146" from-id="lp48" to-id="evid"/>
+      <connection id="cx147" from-id="p4" to-id="lp49"/>
+      <connection id="cx148" from-id="lp49" to-id="s19"/>
+      <connection id="cx149" from-id="roles" to-id="lp50"/>
+      <connection id="cx150" from-id="lp50" to-id="cr9"/>
+    </connection-list>
+    <concept-appearance-list>
+      <concept-appearance id="sa" x="1615" y="109" width="104" height="46" background-color="250,214,214,255" font-style="bold"/>
+      <concept-appearance id="ctx" x="143" y="164" width="78" height="29" background-color="250,214,214,255" font-style="bold"/>
+      <concept-appearance id="ctx1" x="143" y="294" width="131" height="46" background-color="250,214,214,255"/>
+      <concept-appearance id="sab" x="286" y="202" width="124" height="29" background-color="210,226,250,255" font-style="bold"/>
+      <concept-appearance id="vec" x="357" y="340" width="104" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="tri" x="383" y="399" width="157" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="modz" x="380" y="458" width="150" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="triang" x="363" y="575" width="118" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="rec" x="350" y="634" width="91" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="energ" x="383" y="693" width="157" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="actit" x="367" y="752" width="124" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="act" x="758" y="202" width="98" height="29" background-color="214,238,214,255" font-style="bold"/>
+      <concept-appearance id="s1" x="674" y="281" width="131" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="f14" x="671" y="340" width="137" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="expo" x="664" y="399" width="150" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="piezas" x="677" y="458" width="124" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="s13" x="687" y="517" width="104" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="med" x="677" y="575" width="124" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="mod" x="684" y="634" width="111" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="s16" x="667" y="693" width="144" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="s17" x="687" y="752" width="104" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="s18" x="671" y="811" width="137" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="s19" x="684" y="869" width="111" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="reto" x="974" y="202" width="52" height="29" background-color="250,214,214,255" font-style="bold"/>
+      <concept-appearance id="preg" x="1092" y="294" width="104" height="46" background-color="250,214,214,255"/>
+      <concept-appearance id="ods" x="865" y="294" width="45" height="29" background-color="250,214,214,255" font-style="bold"/>
+      <concept-appearance id="ods711" x="865" y="361" width="91" height="29" background-color="250,214,214,255"/>
+      <concept-appearance id="prod" x="974" y="386" width="118" height="29" background-color="250,214,214,255" font-style="bold"/>
+      <concept-appearance id="libro" x="974" y="479" width="78" height="46" background-color="250,214,214,255"/>
+      <concept-appearance id="p1" x="1052" y="559" width="118" height="29" background-color="250,214,214,255"/>
+      <concept-appearance id="p2" x="1055" y="617" width="124" height="29" background-color="250,214,214,255"/>
+      <concept-appearance id="p3" x="1065" y="676" width="144" height="29" background-color="250,214,214,255"/>
+      <concept-appearance id="p5" x="1049" y="735" width="111" height="46" background-color="250,214,214,255"/>
+      <concept-appearance id="p6" x="1042" y="794" width="98" height="46" background-color="250,214,214,255"/>
+      <concept-appearance id="p7" x="1062" y="853" width="137" height="29" background-color="250,214,214,255"/>
+      <concept-appearance id="p4" x="1045" y="911" width="104" height="46" background-color="250,214,214,255"/>
+      <concept-appearance id="eval" x="1352" y="202" width="91" height="29" background-color="255,234,196,255" font-style="bold"/>
+      <concept-appearance id="evid" x="1235" y="294" width="91" height="29" background-color="255,234,196,255" font-style="bold"/>
+      <concept-appearance id="hoja" x="1309" y="374" width="111" height="29" background-color="255,234,196,255"/>
+      <concept-appearance id="kanban" x="1312" y="422" width="118" height="29" background-color="255,234,196,255"/>
+      <concept-appearance id="relevo" x="1316" y="470" width="124" height="29" background-color="255,234,196,255"/>
+      <concept-appearance id="agentes" x="1378" y="294" width="118" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="inst" x="1529" y="294" width="104" height="29" background-color="255,234,196,255" font-style="bold"/>
+      <concept-appearance id="EX" x="1606" y="374" width="118" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="CU" x="1603" y="433" width="111" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="FI" x="1610" y="491" width="124" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="LI" x="1593" y="550" width="91" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="EP" x="1600" y="609" width="104" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="MC" x="1590" y="668" width="85" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="OB" x="1613" y="727" width="131" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="CO" x="1600" y="785" width="104" height="46" background-color="255,234,196,255"/>
+      <concept-appearance id="ce" x="1739" y="202" width="104" height="46" background-color="210,226,250,255" font-style="bold"/>
+      <concept-appearance id="met" x="2701" y="202" width="98" height="29" background-color="214,238,214,255" font-style="bold"/>
+      <concept-appearance id="abr" x="2415" y="294" width="124" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="mag" x="2537" y="294" width="98" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="coop" x="2650" y="294" width="98" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="etw" x="2762" y="294" width="85" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="roles" x="2650" y="386" width="104" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="r_coord" x="2721" y="458" width="104" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="r_med" x="2708" y="504" width="78" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="r_mod" x="2701" y="550" width="65" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="r_com" x="2721" y="596" width="104" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="lat" x="2762" y="386" width="104" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="recu" x="2877" y="294" width="78" height="29" background-color="214,238,214,255" font-style="bold"/>
+      <concept-appearance id="clin" x="2941" y="374" width="91" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="cinta" x="2951" y="422" width="111" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="ggb" x="2935" y="470" width="78" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="pvgis" x="2925" y="519" width="58" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="noaa" x="2961" y="567" width="131" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="twin" x="2938" y="615" width="85" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="div" x="3087" y="294" width="111" height="46" background-color="214,238,214,255" font-style="bold"/>
+      <concept-appearance id="dua" x="3151" y="374" width="91" height="29" background-color="214,238,214,255"/>
+      <concept-appearance id="refz" x="3165" y="433" width="118" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="ampl" x="3168" y="491" width="124" height="46" background-color="214,238,214,255"/>
+      <concept-appearance id="ce1" x="1833" y="292" width="150" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="cr1" x="2215" y="292" width="170" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="ce2" x="1820" y="355" width="124" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="cr2" x="2198" y="355" width="137" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="ce3" x="1820" y="418" width="124" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="cr3" x="2182" y="418" width="104" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="ce5" x="1830" y="481" width="144" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="cr5" x="2182" y="481" width="104" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="ce6" x="1823" y="552" width="131" height="63" background-color="210,226,250,255"/>
+      <concept-appearance id="cr6" x="2182" y="552" width="104" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="ce7" x="1820" y="624" width="124" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="cr7" x="2215" y="624" width="170" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="ce8" x="1836" y="687" width="157" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="cr8" x="2182" y="687" width="104" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="ce9" x="1840" y="758" width="164" height="63" background-color="210,226,250,255"/>
+      <concept-appearance id="cr9" x="2182" y="758" width="104" height="63" background-color="210,226,250,255"/>
+      <concept-appearance id="foco" x="1615" y="42" width="803" height="30" background-color="255,255,255,255" border-color="0,0,0,0" font-style="bold"/>
+      <concept-appearance id="ley_marco" x="219" y="1008" width="287" height="26" background-color="250,214,214,255" font-size="10"/>
+      <concept-appearance id="ley_curr" x="567" y="1008" width="342" height="26" background-color="210,226,250,255" font-size="10"/>
+      <concept-appearance id="ley_acc" x="880" y="1008" width="216" height="26" background-color="214,238,214,255" font-size="10"/>
+      <concept-appearance id="ley_eval" x="1135" y="1008" width="227" height="26" background-color="255,234,196,255" font-size="10"/>
+      <concept-appearance id="ley_extra" x="680" y="1046" width="1210" height="24" background-color="255,255,255,255" border-color="0,0,0,0" font-size="10"/>
+    </concept-appearance-list>
+    <linking-phrase-appearance-list>
+      <linking-phrase-appearance id="lp1" x="879" y="136" width="67" height="18"/>
+      <linking-phrase-appearance id="lp2" x="1017" y="151" width="61" height="18"/>
+      <linking-phrase-appearance id="lp3" x="1144" y="160" width="147" height="18"/>
+      <linking-phrase-appearance id="lp4" x="1391" y="142" width="153" height="18"/>
+      <linking-phrase-appearance id="lp5" x="1457" y="165" width="140" height="18"/>
+      <linking-phrase-appearance id="lp6" x="1689" y="165" width="74" height="18"/>
+      <linking-phrase-appearance id="lp7" x="2158" y="155" width="80" height="18"/>
+      <linking-phrase-appearance id="lp8" x="143" y="229" width="98" height="18"/>
+      <linking-phrase-appearance id="lp9" x="286" y="244" width="61" height="18"/>
+      <linking-phrase-appearance id="lp10" x="758" y="244" width="104" height="18"/>
+      <linking-phrase-appearance id="lp11" x="909" y="257" width="110" height="18"/>
+      <linking-phrase-appearance id="lp12" x="1045" y="257" width="104" height="18"/>
+      <linking-phrase-appearance id="lp13" x="974" y="294" width="80" height="18"/>
+      <linking-phrase-appearance id="lp14" x="865" y="328" width="104" height="18"/>
+      <linking-phrase-appearance id="lp15" x="974" y="433" width="98" height="18"/>
+      <linking-phrase-appearance id="lp16" x="974" y="521" width="55" height="18"/>
+      <linking-phrase-appearance id="lp17" x="1282" y="257" width="80" height="18"/>
+      <linking-phrase-appearance id="lp18" x="1366" y="252" width="55" height="18"/>
+      <linking-phrase-appearance id="lp19" x="1458" y="257" width="98" height="18"/>
+      <linking-phrase-appearance id="lp20" x="1235" y="336" width="61" height="18"/>
+      <linking-phrase-appearance id="lp21" x="1529" y="336" width="61" height="18"/>
+      <linking-phrase-appearance id="lp22" x="1739" y="244" width="61" height="18"/>
+      <linking-phrase-appearance id="lp23" x="2570" y="246" width="55" height="18"/>
+      <linking-phrase-appearance id="lp24" x="2725" y="239" width="92" height="18"/>
+      <linking-phrase-appearance id="lp25" x="2806" y="257" width="55" height="18"/>
+      <linking-phrase-appearance id="lp26" x="2836" y="234" width="55" height="18"/>
+      <linking-phrase-appearance id="lp27" x="2650" y="340" width="98" height="18"/>
+      <linking-phrase-appearance id="lp28" x="2650" y="426" width="80" height="18"/>
+      <linking-phrase-appearance id="lp29" x="2762" y="340" width="55" height="18"/>
+      <linking-phrase-appearance id="lp30" x="2877" y="336" width="61" height="18"/>
+      <linking-phrase-appearance id="lp31" x="3087" y="336" width="98" height="18"/>
+      <linking-phrase-appearance id="lp32" x="2019" y="292" width="177" height="18"/>
+      <linking-phrase-appearance id="lp33" x="2006" y="355" width="177" height="18"/>
+      <linking-phrase-appearance id="lp34" x="2006" y="418" width="177" height="18"/>
+      <linking-phrase-appearance id="lp35" x="2015" y="481" width="177" height="18"/>
+      <linking-phrase-appearance id="lp36" x="2009" y="552" width="177" height="18"/>
+      <linking-phrase-appearance id="lp37" x="2006" y="624" width="177" height="18"/>
+      <linking-phrase-appearance id="lp38" x="2022" y="687" width="177" height="18"/>
+      <linking-phrase-appearance id="lp39" x="2025" y="758" width="177" height="18"/>
+      <linking-phrase-appearance id="lp40" x="505" y="340" width="110" height="18"/>
+      <linking-phrase-appearance id="lp41" x="525" y="399" width="92" height="18"/>
+      <linking-phrase-appearance id="lp42" x="535" y="458" width="110" height="18"/>
+      <linking-phrase-appearance id="lp43" x="519" y="575" width="86" height="18"/>
+      <linking-phrase-appearance id="lp44" x="512" y="634" width="92" height="18"/>
+      <linking-phrase-appearance id="lp45" x="528" y="693" width="104" height="18"/>
+      <linking-phrase-appearance id="lp46" x="532" y="752" width="98" height="18"/>
+      <linking-phrase-appearance id="lp47" x="837" y="556" width="104" height="18"/>
+      <linking-phrase-appearance id="lp48" x="1146" y="377" width="147" height="18"/>
+      <linking-phrase-appearance id="lp49" x="866" y="890" width="116" height="18"/>
+      <linking-phrase-appearance id="lp50" x="2416" y="572" width="122" height="18"/>
+    </linking-phrase-appearance-list>
+    <connection-appearance-list>
+      <connection-appearance id="cx1" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx2" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx3" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx4" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx5" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx6" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx7" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx8" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx9" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx10" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx11" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx12" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx13" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx14" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx15" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx16" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx17" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx18" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx19" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx20" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx21" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx22" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx23" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx24" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx25" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx26" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx27" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx28" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx29" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx30" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx31" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx32" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx33" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx34" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx35" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx36" from-pos="center" to-pos="right" arrowhead="yes"/>
+      <connection-appearance id="cx37" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx38" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx39" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx40" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx41" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx42" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx43" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx44" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx45" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx46" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx47" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx48" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx49" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx50" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx51" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx52" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx53" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx54" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx55" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx56" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx57" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx58" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx59" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx60" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx61" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx62" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx63" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx64" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx65" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx66" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx67" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx68" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx69" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx70" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx71" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx72" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx73" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx74" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx75" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx76" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx77" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx78" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx79" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx80" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx81" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx82" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx83" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx84" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx85" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx86" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx87" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx88" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx89" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx90" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx91" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx92" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx93" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx94" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx95" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx96" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx97" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx98" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx99" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx100" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx101" from-pos="center" to-pos="center" arrowhead="yes"/>
+      <connection-appearance id="cx102" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx103" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx104" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx105" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx106" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx107" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx108" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx109" from-pos="center" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx110" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx111" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx112" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx113" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx114" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx115" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx116" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx117" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx118" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx119" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx120" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx121" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx122" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx123" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx124" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx125" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx126" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx127" from-pos="right" to-pos="center" arrowhead="no"/>
+      <connection-appearance id="cx128" from-pos="center" to-pos="left" arrowhead="yes"/>
+      <connection-appearance id="cx129" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx130" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx131" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx132" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx133" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx134" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx135" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx136" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx137" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx138" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx139" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx140" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx141" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx142" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx143" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx144" from-pos="center" to-pos="left" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx145" from-pos="right" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx146" from-pos="center" to-pos="bottom" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx147" from-pos="left" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx148" from-pos="center" to-pos="right" arrowhead="yes" style="dashed"/>
+      <connection-appearance id="cx149" from-pos="left" to-pos="center" arrowhead="no" style="dashed"/>
+      <connection-appearance id="cx150" from-pos="center" to-pos="right" arrowhead="yes" style="dashed"/>
+    </connection-appearance-list>
+  </map>
+</cmap>

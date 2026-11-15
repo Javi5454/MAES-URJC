@@ -1,0 +1,256 @@
+\documentclass[border=8mm]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,shadows}
+\definecolor{urjc}{RGB}{200,16,46}
+\definecolor{marco}{RGB}{250,214,214}
+\definecolor{curr}{RGB}{210,226,250}
+\definecolor{acc}{RGB}{214,238,214}
+\definecolor{eval}{RGB}{255,234,196}
+\begin{document}
+\begin{tikzpicture}[y=-1cm, font=\small,
+  c/.style={draw=black!70, rounded corners=3pt, align=center, inner sep=2pt, fill=#1,
+    drop shadow={opacity=0.15, shadow xshift=0.6pt, shadow yshift=-0.6pt}},
+  lp/.style={fill=white, inner sep=1pt, font=\footnotesize\itshape, text=black!75},
+  glosa/.style={font=\footnotesize\itshape, text=urjc!85!black, align=center},
+  a/.style={-{Stealth[length=2mm]}, black!65, thick},
+  l/.style={black!65, thick},
+  cz/.style={dashed}]
+\node[font=\large\bfseries] at (32.60,-2.3) {Pregunta de enfoque: ¿Cómo se articula mi situación de aprendizaje para que el alumnado aprenda de forma competencial?};
+\node[text=black!60] at (32.60,-1.5) {Medir lo que no se puede alcanzar: ¿dónde caben más paneles solares en nuestro instituto?};
+\node[c=marco, font=\small\bfseries, minimum width=2.28cm, minimum height=0.95cm] (sa) at (32.60,0.00) {Situación de\\aprendizaje};
+\node[c=marco, font=\small\bfseries, minimum width=1.66cm, minimum height=0.55cm] (ctx) at (1.60,1.30) {Contexto};
+\node[c=marco, font=\small, minimum width=2.91cm, minimum height=0.95cm] (ctx1) at (1.60,4.40) {Ampliación solar\\del instituto};
+\node[c=curr, font=\small\bfseries, minimum width=2.75cm, minimum height=0.55cm] (sab) at (5.00,2.20) {Saberes básicos};
+\node[c=curr, font=\small, minimum width=2.28cm, minimum height=0.55cm] (vec) at (6.69,4.10) {Vectores (A)};
+\node[c=curr, font=\small, minimum width=3.07cm, minimum height=0.55cm] (tri) at (7.08,5.50) {Trigonometría (B)};
+\node[c=curr, font=\small, minimum width=1.97cm, minimum height=0.55cm] (rec) at (6.54,6.90) {Rectas (C)};
+\node[c=acc, font=\small\bfseries, minimum width=2.13cm, minimum height=0.55cm] (act) at (15.60,2.20) {Actividades};
+\node[c=acc, font=\small, minimum width=3.07cm, minimum height=0.95cm] (f14) at (13.52,4.10) {Talleres GeoGebra\\F1–F4};
+\node[c=acc, font=\small, minimum width=2.75cm, minimum height=0.95cm] (med) at (13.67,5.50) {Medimos el\\instituto (S14)};
+\node[c=acc, font=\small, minimum width=2.44cm, minimum height=0.95cm] (mod) at (13.83,6.90) {Modelo de\\sombras (S15)};
+\node[c=marco, font=\small\bfseries, minimum width=1.03cm, minimum height=0.55cm] (reto) at (20.60,2.20) {Reto};
+\node[c=marco, font=\small, minimum width=2.28cm, minimum height=0.95cm] (preg) at (18.00,4.40) {¿Dónde caben\\más paneles?};
+\node[c=marco, font=\small\bfseries, minimum width=0.87cm, minimum height=0.55cm] (ods) at (23.00,4.40) {ODS};
+\node[c=marco, font=\small, minimum width=1.97cm, minimum height=0.55cm] (ods711) at (23.00,6.00) {ODS 7 y 11};
+\node[c=marco, font=\small\bfseries, minimum width=2.60cm, minimum height=0.55cm] (prod) at (20.60,7.20) {Producto final};
+\node[c=marco, font=\small, minimum width=1.66cm, minimum height=0.95cm] (libro) at (20.60,9.40) {Libro de\\GeoGebra};
+\node[c=marco, font=\small, minimum width=2.28cm, minimum height=0.95cm] (prop) at (20.60,11.60) {Propuesta de\\ampliación};
+\node[c=eval, font=\small\bfseries, minimum width=1.97cm, minimum height=0.55cm] (eval) at (27.80,2.20) {Evaluación};
+\node[c=eval, font=\small\bfseries, minimum width=1.97cm, minimum height=0.55cm] (evid) at (25.60,4.40) {Evidencias};
+\node[c=eval, font=\small, minimum width=2.44cm, minimum height=0.55cm] (hoja) at (26.40,6.00) {Hoja de datos};
+\node[c=eval, font=\small\bfseries, minimum width=2.28cm, minimum height=0.55cm] (inst) at (29.60,4.40) {Instrumentos};
+\node[c=eval, font=\small, minimum width=1.97cm, minimum height=0.95cm] (r1) at (31.14,6.30) {Rúbrica R1\\(libro)};
+\node[c=eval, font=\small, minimum width=1.97cm, minimum height=0.95cm] (r2) at (31.14,7.70) {Rúbrica R2\\(defensa)};
+\node[c=eval, font=\small, minimum width=2.44cm, minimum height=0.95cm] (l1) at (31.37,9.10) {Lista L1\\(observación)};
+\node[c=curr, font=\small\bfseries, minimum width=2.28cm, minimum height=0.95cm] (ce) at (42.20,2.20) {Competencias\\específicas};
+\node[c=curr, font=\small\bfseries, minimum width=2.28cm, minimum height=0.95cm] (crit) at (38.75,4.40) {Criterios de\\evaluación};
+\node[c=curr, font=\small, minimum width=2.28cm, minimum height=0.55cm] (c11) at (37.06,6.30) {Criterio 1.1};
+\node[c=curr, font=\small, minimum width=2.28cm, minimum height=0.55cm] (c61) at (37.06,7.70) {Criterio 6.1};
+\node[c=curr, font=\small, minimum width=2.28cm, minimum height=0.55cm] (c93) at (37.06,9.10) {Criterio 9.3};
+\node[c=curr, font=\small, minimum width=2.44cm, minimum height=0.55cm] (ce1) at (43.97,4.10) {CE1 Modelizar};
+\node[c=curr, font=\small, minimum width=2.91cm, minimum height=0.95cm] (ce6) at (44.21,5.50) {CE6 Conexiones\\extramatemáticas};
+\node[c=curr, font=\small, minimum width=2.13cm, minimum height=0.95cm] (ce9) at (43.81,6.90) {CE9 Trabajo\\en equipo};
+\node[c=curr, font=\small\bfseries, minimum width=2.28cm, minimum height=0.95cm] (desc) at (49.20,4.40) {Descriptores\\operativos};
+\node[c=curr, font=\small, minimum width=1.19cm, minimum height=0.55cm] (stem3) at (50.34,6.20) {STEM3};
+\node[c=curr, font=\small, minimum width=0.87cm, minimum height=0.55cm] (cc4) at (50.19,7.60) {CC4};
+\node[c=curr, font=\small, minimum width=1.66cm, minimum height=0.55cm] (cps) at (50.58,9.00) {CPSAA3.2};
+\node[c=acc, font=\small\bfseries, minimum width=2.13cm, minimum height=0.55cm] (met) at (57.00,2.20) {Metodología};
+\node[c=acc, font=\small, minimum width=2.75cm, minimum height=0.95cm] (abr) at (55.07,4.10) {Aprendizaje\\basado en retos};
+\node[c=acc, font=\small, minimum width=2.13cm, minimum height=0.95cm] (mag) at (55.39,5.50) {Sesiones\\magistrales};
+\node[c=acc, font=\small, minimum width=2.13cm, minimum height=0.95cm] (coop) at (55.39,6.90) {Trabajo\\cooperativo};
+\node[c=acc, font=\small, minimum width=1.97cm, minimum height=0.95cm] (roles) at (55.39,9.00) {Roles\\rotatorios};
+\node[c=acc, font=\small\bfseries, minimum width=1.66cm, minimum height=0.55cm] (recu) at (60.20,4.40) {Recursos};
+\node[c=acc, font=\small, minimum width=1.97cm, minimum height=0.95cm] (clin) at (60.20,6.10) {Clinómetro\\y GeoGebra};
+\node[c=acc, font=\small\bfseries, minimum width=2.44cm, minimum height=0.95cm] (div) at (63.60,4.40) {Atención a la\\diversidad};
+\node[c=acc, font=\small, minimum width=2.60cm, minimum height=0.95cm] (ref) at (63.60,6.10) {Refuerzo por\\criterio (S13)};
+\coordinate (enl1) at (17.10,0.65);
+\draw[l] (sa) -- (enl1);
+\draw[a] (enl1) -- (ctx);
+\node[lp] at (enl1) {parte del};
+\coordinate (enl2) at (20.18,0.99);
+\draw[l] (sa) -- (enl2);
+\draw[a] (enl2) -- (sab);
+\node[lp] at (enl2) {moviliza};
+\coordinate (enl3) at (24.10,1.10);
+\draw[l] (sa) -- (enl3);
+\draw[a] (enl3) -- (act);
+\node[lp] at (enl3) {se desarrolla mediante};
+\coordinate (enl4) at (28.76,0.70);
+\draw[l] (sa) -- (enl4);
+\draw[a] (enl4) -- (reto);
+\node[lp] at (enl4) {se articula en torno al};
+\coordinate (enl5) at (29.14,1.58);
+\draw[l] (sa) -- (enl5);
+\draw[a] (enl5) -- (eval);
+\node[lp] at (enl5) {se comprueba mediante};
+\coordinate (enl6) at (37.40,1.10);
+\draw[l] (sa) -- (enl6);
+\draw[a] (enl6) -- (ce);
+\node[lp] at (enl6) {desarrolla};
+\coordinate (enl7) at (44.80,1.10);
+\draw[l] (sa) -- (enl7);
+\draw[a] (enl7) -- (met);
+\node[lp] at (enl7) {se apoya en};
+\coordinate (enl8) at (1.60,2.85);
+\draw[l] (ctx) -- (enl8);
+\draw[a] (enl8) -- (ctx1);
+\node[lp] at (enl8) {se concreta en};
+\coordinate (enl9) at (5.00,3.20);
+\draw[l] (sab) -- (enl9);
+\draw[a] (enl9) -- (vec.west);
+\draw[a] (enl9) -- (tri.west);
+\draw[a] (enl9) -- (rec.west);
+\node[lp] at (enl9) {incluyen, entre otros,};
+\coordinate (enl10) at (15.60,3.20);
+\draw[l] (act) -- (enl10);
+\draw[a] (enl10) -- (f14.east);
+\draw[a] (enl10) -- (med.east);
+\draw[a] (enl10) -- (mod.east);
+\node[lp] at (enl10) {incluyen, entre otras,};
+\coordinate (enl11) at (19.04,3.52);
+\draw[l] (reto) -- (enl11);
+\draw[a] (enl11) -- (preg);
+\node[lp] at (enl11) {se formula como};
+\coordinate (enl12) at (22.04,3.52);
+\draw[l] (reto) -- (enl12);
+\draw[a] (enl12) -- (ods);
+\node[lp] at (enl12) {contribuye a los};
+\coordinate (enl13) at (20.60,4.70);
+\draw[l] (reto) -- (enl13);
+\draw[a] (enl13) -- (prod);
+\node[lp] at (enl13) {da lugar al};
+\coordinate (enl14) at (23.00,5.20);
+\draw[l] (ods) -- (enl14);
+\draw[a] (enl14) -- (ods711);
+\node[lp] at (enl14) {se concretan en};
+\coordinate (enl15) at (20.60,8.30);
+\draw[l] (prod) -- (enl15);
+\draw[a] (enl15) -- (libro);
+\node[lp] at (enl15) {se concreta en};
+\coordinate (enl16) at (20.60,10.50);
+\draw[l] (libro) -- (enl16);
+\draw[a] (enl16) -- (prop);
+\node[lp] at (enl16) {recoge la};
+\coordinate (enl17) at (26.48,3.52);
+\draw[l] (eval) -- (enl17);
+\draw[a] (enl17) -- (evid);
+\node[lp] at (enl17) {se apoya en};
+\coordinate (enl18) at (28.88,3.52);
+\draw[l] (eval) -- (enl18);
+\draw[a] (enl18) -- (inst);
+\node[lp] at (enl18) {se realiza con};
+\coordinate (enl19) at (25.96,5.12);
+\draw[l] (evid) -- (enl19);
+\draw[a] (enl19) -- (hoja);
+\node[lp] at (enl19) {incluyen};
+\coordinate (enl20) at (29.60,5.40);
+\draw[l] (inst) -- (enl20);
+\draw[a] (enl20) -- (r1.west);
+\draw[a] (enl20) -- (r2.west);
+\draw[a] (enl20) -- (l1.west);
+\node[lp] at (enl20) {incluyen, entre otros,};
+\coordinate (enl21) at (40.03,3.59);
+\draw[l] (ce) -- (enl21);
+\draw[a] (enl21) -- (crit);
+\node[lp] at (enl21) {se evalúan con};
+\coordinate (enl22) at (42.20,3.06);
+\draw[l] (ce) -- (enl22);
+\draw[a] (enl22) -- (ce1.west);
+\draw[a] (enl22) -- (ce6.west);
+\draw[a] (enl22) -- (ce9.west);
+\node[lp] at (enl22) {incluyen, entre otras,};
+\coordinate (enl23) at (46.60,3.20);
+\draw[l] (ce) -- (enl23);
+\draw[a] (enl23) -- (desc);
+\node[lp] at (enl23) {contribuyen a los};
+\coordinate (enl24) at (38.75,5.40);
+\draw[l] (crit) -- (enl24);
+\draw[a] (enl24) -- (c11.east);
+\draw[a] (enl24) -- (c61.east);
+\draw[a] (enl24) -- (c93.east);
+\node[lp] at (enl24) {incluyen, entre otros,};
+\coordinate (enl25) at (49.20,5.40);
+\draw[l] (desc) -- (enl25);
+\draw[a] (enl25) -- (stem3.west);
+\draw[a] (enl25) -- (cc4.west);
+\draw[a] (enl25) -- (cps.west);
+\node[lp] at (enl25) {incluyen, entre otros,};
+\coordinate (enl26) at (57.00,3.20);
+\draw[l] (met) -- (enl26);
+\draw[a] (enl26) -- (abr.east);
+\draw[a] (enl26) -- (mag.east);
+\draw[a] (enl26) -- (coop.east);
+\node[lp] at (enl26) {combina};
+\coordinate (enl27) at (58.60,3.30);
+\draw[l] (met) -- (enl27);
+\draw[a] (enl27) -- (recu);
+\node[lp] at (enl27) {utiliza};
+\coordinate (enl28) at (60.30,3.30);
+\draw[l] (met) -- (enl28);
+\draw[a] (enl28) -- (div);
+\node[lp] at (enl28) {incluye};
+\coordinate (enl29) at (55.39,7.95);
+\draw[l] (coop) -- (enl29);
+\draw[a] (enl29) -- (roles);
+\node[lp] at (enl29) {se organiza en};
+\coordinate (enl30) at (60.20,5.25);
+\draw[l] (recu) -- (enl30);
+\draw[a] (enl30) -- (clin);
+\node[lp] at (enl30) {incluyen};
+\coordinate (enl31) at (63.60,5.25);
+\draw[l] (div) -- (enl31);
+\draw[a] (enl31) -- (ref);
+\node[lp] at (enl31) {se concreta en};
+\coordinate (enl32) at (9.91,4.10);
+\draw[l,cz] (vec.east) -- (enl32);
+\draw[a,cz] (enl32) -- (f14.west);
+\node[lp] at (enl32) {se construyen en};
+\coordinate (enl33) at (10.46,5.50);
+\draw[l,cz] (tri.east) -- (enl33);
+\draw[a,cz] (enl33) -- (med.west);
+\node[lp] at (enl33) {se aplica en};
+\coordinate (enl34) at (10.06,6.90);
+\draw[l,cz] (rec.east) -- (enl34);
+\draw[a,cz] (enl34) -- (mod.west);
+\node[lp] at (enl34) {se aplican en};
+\coordinate (enl35) at (16.75,8.43);
+\draw[l,cz] (mod.south) -- (enl35);
+\draw[a,cz] (enl35) -- (libro.west);
+\node[lp] at (enl35) {se recoge en el};
+\coordinate (enl36) at (23.97,6.61);
+\draw[l,cz] (libro.east) -- (enl36);
+\draw[a,cz] (enl36) -- (evid.south);
+\node[lp] at (enl36) {aporta la evidencia de};
+\coordinate (enl37) at (34.02,6.30);
+\draw[l,cz] (c11.west) -- (enl37);
+\draw[a,cz] (enl37) -- (r1.east);
+\node[lp] at (enl37) {se evalúa mediante};
+\coordinate (enl38) at (34.02,7.70);
+\draw[l,cz] (c61.west) -- (enl38);
+\draw[a,cz] (enl38) -- (r2.east);
+\node[lp] at (enl38) {se evalúa mediante};
+\coordinate (enl39) at (34.25,9.10);
+\draw[l,cz] (c93.west) -- (enl39);
+\draw[a,cz] (enl39) -- (l1.east);
+\node[lp] at (enl39) {se evalúa mediante};
+\coordinate (enl40) at (52.90,9.00);
+\draw[l,cz] (roles.west) -- (enl40);
+\draw[a,cz] (enl40) -- (cps.east);
+\node[lp] at (enl40) {movilizan el};
+\node[glosa] at (10.30,8.10) {cada saber se aplica\\en una actividad};
+\node[glosa] at (24.60,8.60) {el producto es\\la evidencia};
+\node[glosa] at (34.90,10.60) {cada criterio,\\su instrumento};
+\node[glosa] at (53.60,10.30) {el cooperativo moviliza\\un descriptor};
+\node[c=marco, font=\footnotesize, anchor=west] at (0.00,13.40) {Marco: situación, contexto, reto, ODS y producto};
+\node[c=curr, font=\footnotesize, anchor=west] at (7.64,13.40) {Currículo: saberes, competencias, criterios y descriptores};
+\node[c=acc, font=\footnotesize, anchor=west] at (16.58,13.40) {Actividades, metodología y recursos};
+\node[c=eval, font=\footnotesize, anchor=west] at (22.53,13.40) {Evaluación: instrumentos y evidencias};
+\draw[l,cz] (28.74,13.40) -- ++(1.6,0) node[right, font=\footnotesize, text=black] {enlace cruzado entre ramas};
+\node[font=\footnotesize, anchor=west] at (34.94,13.40) {\textbf{Negrita}: concepto genérico, que baja a un elemento propio de la situación de aprendizaje \quad \textcolor{urjc!85!black}{\itshape Cursiva roja}: por qué el diseño está alineado \quad \emph{entre otros}: se muestra una selección; la relación completa está en las matrices de la situación de aprendizaje};
+\end{tikzpicture}
+\end{document}
