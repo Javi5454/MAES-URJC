@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Datos del documento ----------
+\newcommand{\titulo}{Título de la tarea}
+% Título corto para el encabezado de las páginas
+\newcommand{\tituloCorto}{Actividad X}
+\newcommand{\asignatura}{Nombre de la asignatura}
+\newcommand{\autor}{Javier Gómez López}
+% Texto explicativo de la tarea (déjalo vacío para que no aparezca)
+\newcommand{\enunciado}{%
+Enunciado de la tarea.%
+}
+\newcommand{\master}{MÁSTER UNIVERSITARIO EN FORMACIÓN DEL PROFESORADO-ESPECIALIDAD EN MATEMÁTICAS -- Universidad Rey Juan Carlos}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm,headheight=14pt]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Estilo ----------
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+
+\titleformat{\section}{\Large\bfseries\color{acento}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{gris}}{\thesubsection.}{0.6em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}\asignatura}
+\fancyhead[R]{\small\color{gris}\tituloCorto}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrule}{{\color{acento}\hrule height 0.6pt}}
+
+\begin{document}
+
+% ---------- Cabecera ----------
+\thispagestyle{empty}
+\begin{center}
+  {\small\color{gris}\MakeUppercase{\master}}\\[1.2em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[0.8em]
+  {\Huge\bfseries \titulo}\\[0.6em]
+  {\Large\color{gris} \asignatura}\\[0.6em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[1em]
+  {\large \autor}\\[0.3em]
+  {\small\color{gris}\today}
+\end{center}
+\vspace{1.5em}
+
+% ---------- Enunciado ----------
+\ifdefempty{\enunciado}{}{%
+  \begin{tcolorbox}[enhanced, breakable, colback=acento!4, colframe=acento,
+      boxrule=0pt, leftrule=3pt, arc=0pt, title=Enunciado de la tarea,
+      coltitle=acento, colbacktitle=acento!4, fonttitle=\bfseries]
+    \enunciado
+  \end{tcolorbox}
+  \vspace{1em}
+}
+
+% ---------- Contenido ----------
+\section{Primera sección}
+Texto.
+
+\end{document}
