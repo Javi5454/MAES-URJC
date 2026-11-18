@@ -50,7 +50,7 @@ def corta(p, q, caja):
 class Mapa:
     """C: {id: (etiqueta, familia, genérico)}. P: [(origen, enlace, [destinos], cruzado, ajuste)].
 
-    Ajuste de la palabra de enlace: None (punto medio), ("t", f) (fracción del recorrido), ("p", x, y)
+    Ajuste de la palabra de enlace: None (punto medio), ("t", f) (fracción del recorrido), ("p", x, y[, ancla_origen, ancla_destino])
     (posición fija), ("lista", dy) (lista en columna) o ("cruce", ancla_origen, ancla_destino[, f]).
     """
 
@@ -58,9 +58,10 @@ class Mapa:
         self.C, self.titulo, self.pregunta, self.nombre = C, titulo, pregunta, nombre
         self.max_palabras = max_palabras
         self.POS, self.LADO, self.P, self.GLOSAS = {}, {}, [], []
-        self.XC, self.YL, self.MX, self.MY = 0.0, 0.0, 1.8, 2.6
+        self.XC, self.YL, self.MX, self.MY = 0.0, 0.0, 1.8, 3.4
         self.notas_leyenda = ""
         self.leyenda_extra = ""  # texto suelto bajo la leyenda, en las dos salidas
+        self.libres = []  # conceptos sin enlaces: (id, etiqueta, x, y)
 
     # ---------- disposición ----------
     def pon(self, cid, x, y):
@@ -108,6 +109,8 @@ class Mapa:
             return aj[1], aj[2]
         if aj and aj[0] == "lista":
             return "center", self.LADO[d]
+        if aj and aj[0] == "p" and len(aj) > 3:
+            return aj[3], aj[4]
         return "center", "center"
 
     # ---------- comprobaciones ----------
@@ -124,6 +127,8 @@ class Mapa:
         for _, lab, *_ in P:
             assert lab == lab.lower() and lab.split()[0] not in ("es", "tiene", "con", "de"), lab
         cajas = [(cid, *POS[cid], W(C[cid][0]), H(C[cid][0])) for cid in C]
+        cajas += [(cid, x, y, W(lab), H(lab)) for cid, lab, x, y in self.libres]
+        assert not {cid for cid, *_ in self.libres} & set(C), "concepto libre repetido"
         cajas += [(f"«{lab}» ({o})", *self.frase(o, ds, aj), WF(lab), 0.42) for o, lab, ds, _, aj in P]
         cajas += [(f"glosa «{g[:20]}»", x, y, 0.13 * max(len(l) for l in g.split("\n")) + 0.3, 0.38 * (g.count("\n") + 1))
                   for g, x, y in self.GLOSAS]
@@ -155,11 +160,21 @@ class Mapa:
             ca.append(f'<concept-appearance id="{cid}" x="{X}" y="{Y}" width="{round(W(lab) * PX)}" '
                       f'height="{round(H(lab) * PX)}" background-color="{rgb[0]},{rgb[1]},{rgb[2]},255"'
                       + (' font-style="bold"' if gen else "") + "/>")
+        for cid, lab, x, y in self.libres:
+            X, Y = self.px(x, y)
+            con.append(f'<concept id="{cid}" label={quoteattr(lab)}/>')
+            ca.append(f'<concept-appearance id="{cid}" x="{X}" y="{Y}" width="{round(W(lab) * PX)}" '
+                      f'height="{round(H(lab) * PX)}" background-color="255,255,255,255"/>')
+        # Encabezado: título de la SA y, debajo, la pregunta de enfoque (conceptos sueltos, sin borde)
+        X, Y = self.px(self.XC, -2.5)
+        con.append(f'<concept id="titulo" label={quoteattr(self.titulo)}/>')
+        ca.append(f'<concept-appearance id="titulo" x="{X}" y="{Y}" width="{round((0.2 * len(self.titulo) + 0.6) * PX)}" '
+                  f'height="34" background-color="255,255,255,255" border-color="0,0,0,0" font-style="bold" font-size="16"/>')
         X, Y = self.px(self.XC, -1.6)
         texto = "Pregunta de enfoque: " + self.pregunta
         con.append(f'<concept id="foco" label={quoteattr(texto)}/>')
-        ca.append(f'<concept-appearance id="foco" x="{X}" y="{Y}" width="{round(W(texto) * PX)}" height="30" '
-                  f'background-color="255,255,255,255" border-color="0,0,0,0" font-style="bold"/>')
+        ca.append(f'<concept-appearance id="foco" x="{X}" y="{Y}" width="{round(W(texto) * PX)}" height="28" '
+                  f'background-color="255,255,255,255" border-color="0,0,0,0" font-style="italic"/>')
         x = 0.0
         for fam, (rgb, texto) in COLOR.items():
             w = 0.13 * len(texto) + 0.6
@@ -169,10 +184,11 @@ class Mapa:
                       f'background-color="{rgb[0]},{rgb[1]},{rgb[2]},255" font-size="10"/>')
             x += w + 0.8
         if self.leyenda_extra:
-            w = 0.12 * len(self.leyenda_extra) + 0.6
-            X, Y = self.px(w / 2, self.YL + 0.9)
+            lineas = self.leyenda_extra.split("\n")
+            w = 0.12 * max(len(l) for l in lineas) + 0.6
+            X, Y = self.px(w / 2, self.YL + 0.6 + 0.3 * len(lineas))
             con.append(f'<concept id="ley_extra" label={quoteattr(self.leyenda_extra)}/>')
-            ca.append(f'<concept-appearance id="ley_extra" x="{X}" y="{Y}" width="{round(w * PX)}" height="24" '
+            ca.append(f'<concept-appearance id="ley_extra" x="{X}" y="{Y}" width="{round(w * PX)}" height="{12 + 14 * len(lineas)}" '
                       f'background-color="255,255,255,255" border-color="0,0,0,0" font-size="10"/>')
         k = 0
         for i, (o, lab, ds, cruz, aj) in enumerate(P, 1):
@@ -190,8 +206,8 @@ class Mapa:
                 k += 1
                 cn.append(f'<connection id="cx{k}" from-id="{lid}" to-id="{d}"/>')
                 na.append(f'<connection-appearance id="cx{k}" from-pos="center" to-pos="{a_d}" arrowhead="yes"{estilo}/>')
-        xmax = max(x + W(C[c][0]) / 2 for c, (x, _) in POS.items())
-        Wm, Hm = self.px(xmax + 1.0, self.YL + (1.8 if self.leyenda_extra else 1.0))
+        xmax = max([x + W(C[c][0]) / 2 for c, (x, _) in POS.items()] + [x + W(l) / 2 for _, l, x, _ in self.libres])
+        Wm, Hm = self.px(xmax + 1.0, self.YL + 1.0 + 0.6 * (self.leyenda_extra.count("\n") + 1 if self.leyenda_extra else 0))
         j = "\n      ".join
         return f'''<?xml version="1.0" encoding="UTF-8"?>
 <cmap xmlns:dcterms="http://purl.org/dc/terms/" xmlns="http://cmap.ihmc.us/xml/cmap/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
@@ -250,13 +266,16 @@ class Mapa:
   a/.style={-{Stealth[length=2mm]}, black!65, thick},
   l/.style={black!65, thick},
   cz/.style={dashed}]""")
-        L.append(r"\node[font=\large\bfseries] at (%.2f,-2.3) {Pregunta de enfoque: %s};" % (self.XC, self.pregunta))
-        L.append(r"\node[text=black!60] at (%.2f,-1.5) {%s};" % (self.XC, self.titulo))
+        L.append(r"\node[font=\Large\bfseries] at (%.2f,-2.5) {%s};" % (self.XC, self.titulo))
+        L.append(r"\node[font=\itshape] at (%.2f,-1.6) {\textbf{Pregunta de enfoque:} %s};" % (self.XC, self.pregunta))
         for cid, (lab, fam, gen) in C.items():
             x, y = POS[cid]
             f = r"\bfseries" if gen else ""
             L.append(r"\node[c=%s, font=\small%s, minimum width=%.2fcm, minimum height=%.2fcm] (%s) at (%.2f,%.2f) {%s};"
                      % (fam, f, W(lab) - 0.2, H(lab) - 0.15, cid, x, y, t(lab)))
+        for cid, lab, x, y in self.libres:
+            L.append(r"\node[c=white, font=\small, minimum width=%.2fcm, minimum height=%.2fcm] (%s) at (%.2f,%.2f) {%s};"
+                     % (W(lab) - 0.2, H(lab) - 0.15, cid, x, y, t(lab)))
         for i, (o, lab, ds, cruz, aj) in enumerate(P, 1):
             x, y = self.frase(o, ds, aj)
             e = ",cz" if cruz else ""
@@ -276,7 +295,8 @@ class Mapa:
         L.append(r"\draw[l,cz] (%.2f,%.2f) -- ++(1.6,0) node[right, font=\footnotesize, text=black] {enlace cruzado entre ramas};" % (x, self.YL))
         L.append(r"\node[font=\footnotesize, anchor=west] at (%.2f,%.2f) {\textbf{Negrita}: concepto genérico, que baja a un elemento propio de la situación de aprendizaje \quad \textcolor{urjc!85!black}{\itshape Cursiva roja}: por qué el diseño está alineado%s};" % (x + 6.2, self.YL, self.notas_leyenda))
         if self.leyenda_extra:
-            L.append(r"\node[font=\footnotesize, anchor=west] at (0,%.2f) {%s};" % (self.YL + 0.9, self.leyenda_extra))
+            L.append(r"\node[font=\footnotesize, anchor=north west, align=left] at (0,%.2f) {%s};"
+                     % (self.YL + 0.5, self.leyenda_extra.replace("\n", r"\\")))
         L.append(r"\end{tikzpicture}" "\n" r"\end{document}")
         return "\n".join(L) + "\n"
 
