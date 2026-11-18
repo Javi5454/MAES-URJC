@@ -4,6 +4,10 @@ Versión para entregar: selección de los elementos más representativos. Genera
   - Gomez_MapaSA_masterprof_2026_2027.cxl: se importa en CmapTools y desde allí se guarda como .cmap y se exporta a PDF.
   - Gomez_MapaSA_anotado.tex: el mismo mapa en TikZ, con glosas breves junto a los enlaces cruzados.
 """
+import contextlib
+import io
+import runpy
+import textwrap
 from pathlib import Path
 
 from mapa_motor import Mapa
@@ -11,6 +15,12 @@ from mapa_motor import Mapa
 HERE = Path(__file__).parent
 PREGUNTA = "¿Cómo se articula mi situación de aprendizaje para que el alumnado aprenda de forma competencial?"
 TITULO = "Medir lo que no se puede alcanzar: ¿dónde caben más paneles solares en nuestro instituto?"
+
+# Criterio redactado (indicación de la profesora): el de mayor peso en la calificación, que es el 1.1
+# (unos 15 puntos de 100 según §7.2 y las rúbricas R1 y R2). El texto se lee de las matrices de la SA.
+with contextlib.redirect_stdout(io.StringIO()):
+    MAT = runpy.run_path(str(HERE.parent / "Situación de aprendizaje" / "matrices.py"))
+TEXTO_11 = "«" + "\n".join(textwrap.wrap(MAT["CRIT"]["1.1"].rstrip("."), 34)) + "»"
 
 # id: (etiqueta, familia, genérico)
 C = {
@@ -42,6 +52,7 @@ C = {
     "ce":    ("Competencias\nespecíficas", "curr", True),
     "crit":  ("Criterios de\nevaluación", "curr", True),
     "c11":   ("Criterio 1.1", "curr", False),
+    "c11txt": (TEXTO_11, "curr", False),
     "c61":   ("Criterio 6.1", "curr", False),
     "c93":   ("Criterio 9.3", "curr", False),
     "ce1":   ("CE1 Modelizar", "curr", False),
@@ -57,12 +68,15 @@ C = {
     "coop":  ("Trabajo\ncooperativo", "acc", False),
     "roles": ("Roles\nrotatorios", "acc", False),
     "recu":  ("Recursos", "acc", True),
-    "clin":  ("Clinómetro\ny GeoGebra", "acc", False),
+    "clin":  ("Clinómetro", "acc", False),
+    "cinta": ("Cinta métrica", "acc", False),
+    "ggb":   ("GeoGebra", "acc", False),
+    "pvgis": ("PVGIS", "acc", False),
     "div":   ("Atención a la\ndiversidad", "acc", True),
     "ref":   ("Refuerzo por\ncriterio (S13)", "acc", False),
 }
 
-m = Mapa(C, TITULO, PREGUNTA, "Gomez_MapaSA_masterprof_2026_2027")
+m = Mapa(C, TITULO, PREGUNTA, "Gomez_MapaSA_masterprof_2026_2027", max_palabras=40)
 
 # ---------------- Disposición ----------------
 Y1, Y2 = 2.2, 4.4
@@ -80,11 +94,12 @@ m.pon("ce", 42.2, Y1); m.columna(["ce1", "ce6", "ce9"], 42.65, "R", 4.1, 1.4)
 m.pon("desc", 49.2, Y2); m.columna(["stem3", "cc4", "cps"], 49.65, "R", 6.2, 1.4)
 m.pon("met", 57.0, Y1); m.columna(["abr", "mag", "coop"], 56.55, "L", 4.1, 1.4)
 m.pon("roles", m.POS["coop"][0], 9.0)
-m.pon("recu", 60.2, Y2); m.pon("clin", 60.2, 6.1)
-m.pon("div", 63.6, Y2); m.pon("ref", 63.6, 6.1)
+m.pon("c11txt", 39.0, 0); m.pon("c11txt", 39.0, 10.35 + 0.15 + (TEXTO_11.count("\n") + 1) * 0.2)
+m.pon("recu", 60.2, Y2); m.columna(["clin", "cinta", "ggb", "pvgis"], 60.65, "R", 6.1, 1.05)
+m.pon("div", 65.2, Y2); m.pon("ref", 65.2, 6.1)
 m.XC = (m.POS["ctx"][0] + m.POS["div"][0]) / 2
 m.pon("sa", m.XC, 0)
-m.YL = 13.4
+m.YL = 15.8
 
 # ---------------- Proposiciones ----------------
 LISTA = ("lista",)
@@ -113,12 +128,13 @@ P = [
     ("ce", "incluyen, entre otras,", ["ce1", "ce6", "ce9"], False, ("lista", 0.86)),
     ("ce", "contribuyen a los", ["desc"], False, ("p", 46.6, 3.2)),
     ("crit", "incluyen, entre otros,", ["c11", "c61", "c93"], False, LISTA),
+    ("c11", "se formula como", ["c11txt"], False, ("p", 40.0, 8.2)),
     ("desc", "incluyen, entre otros,", ["stem3", "cc4", "cps"], False, LISTA),
     ("met", "combina", ["abr", "mag", "coop"], False, LISTA),
     ("met", "utiliza", ["recu"], False, None),
     ("met", "incluye", ["div"], False, None),
     ("coop", "se organiza en", ["roles"], False, None),
-    ("recu", "incluyen", ["clin"], False, None),
+    ("recu", "incluyen", ["clin", "cinta", "ggb", "pvgis"], False, LISTA),
     ("div", "se concreta en", ["ref"], False, None),
     # Enlaces cruzados entre ramas (discontinuos)
     ("vec", "se construyen en", ["f14"], True, ("cruce", "right", "left")),
@@ -138,10 +154,13 @@ m.P = P
 GLOSAS = [
     ("cada saber se aplica\nen una actividad", 10.3, 8.1),
     ("el producto es\nla evidencia", 24.6, 8.6),
-    ("cada criterio,\nsu instrumento", 34.9, 10.6),
+    ("cada criterio,\nsu instrumento", 33.2, 11.0),
     ("el cooperativo moviliza\nun descriptor", 53.6, 10.3),
 ]
 
 m.GLOSAS = GLOSAS
+m.leyenda_extra = ("Siglas: CE, competencia específica · STEM3, CC4 y CPSAA3.2, descriptores operativos del perfil de salida · "
+                   "R1 y R2, rúbricas; L1, lista de cotejo · F1–F4, fichas de GeoGebra · S13–S15, sesiones · "
+                   "ODS, Objetivos de Desarrollo Sostenible. El criterio 1.1, el de mayor peso en la calificación, va redactado.")
 m.notas_leyenda = r" \quad \emph{entre otros}: se muestra una selección; la relación completa está en las matrices de la situación de aprendizaje"
 m.escribir(HERE, "Gomez_MapaSA_masterprof_2026_2027.cxl", "Gomez_MapaSA_anotado.tex")

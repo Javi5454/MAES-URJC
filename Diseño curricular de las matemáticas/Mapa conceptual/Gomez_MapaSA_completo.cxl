@@ -12,13 +12,13 @@
       <concept id="ctx" label="Contexto"/>
       <concept id="ctx1" label="Ampliación solar&#10;del instituto"/>
       <concept id="sab" label="Saberes básicos"/>
-      <concept id="vec" label="Vectores (A)"/>
-      <concept id="tri" label="Trigonometría (B, D)"/>
-      <concept id="modz" label="Modelización (C, D)"/>
-      <concept id="triang" label="Resolución de&#10;triángulos (B)"/>
-      <concept id="rec" label="Rectas (C)"/>
-      <concept id="energ" label="Energía solar (C, F)"/>
-      <concept id="actit" label="Actitudes y&#10;aprendizaje (F)"/>
+      <concept id="vec" label="Vectores"/>
+      <concept id="tri" label="Trigonometría"/>
+      <concept id="modz" label="Modelización"/>
+      <concept id="triang" label="Resolución de&#10;triángulos"/>
+      <concept id="rec" label="Rectas"/>
+      <concept id="energ" label="Energía solar"/>
+      <concept id="actit" label="Actitudes y&#10;aprendizaje"/>
       <concept id="act" label="Actividades"/>
       <concept id="s1" label="Presentación del&#10;reto (S1)"/>
       <concept id="f14" label="Talleres GeoGebra&#10;F1–F4"/>
@@ -314,13 +314,13 @@
       <concept-appearance id="ctx" x="143" y="164" width="78" height="29" background-color="250,214,214,255" font-style="bold"/>
       <concept-appearance id="ctx1" x="143" y="294" width="131" height="46" background-color="250,214,214,255"/>
       <concept-appearance id="sab" x="286" y="202" width="124" height="29" background-color="210,226,250,255" font-style="bold"/>
-      <concept-appearance id="vec" x="357" y="340" width="104" height="29" background-color="210,226,250,255"/>
-      <concept-appearance id="tri" x="383" y="399" width="157" height="29" background-color="210,226,250,255"/>
-      <concept-appearance id="modz" x="380" y="458" width="150" height="29" background-color="210,226,250,255"/>
-      <concept-appearance id="triang" x="363" y="575" width="118" height="46" background-color="210,226,250,255"/>
-      <concept-appearance id="rec" x="350" y="634" width="91" height="29" background-color="210,226,250,255"/>
-      <concept-appearance id="energ" x="383" y="693" width="157" height="29" background-color="210,226,250,255"/>
-      <concept-appearance id="actit" x="367" y="752" width="124" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="vec" x="343" y="340" width="78" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="tri" x="360" y="399" width="111" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="modz" x="357" y="458" width="104" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="triang" x="360" y="575" width="111" height="46" background-color="210,226,250,255"/>
+      <concept-appearance id="rec" x="337" y="634" width="65" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="energ" x="360" y="693" width="111" height="29" background-color="210,226,250,255"/>
+      <concept-appearance id="actit" x="353" y="752" width="98" height="46" background-color="210,226,250,255"/>
       <concept-appearance id="act" x="758" y="202" width="98" height="29" background-color="214,238,214,255" font-style="bold"/>
       <concept-appearance id="s1" x="674" y="281" width="131" height="46" background-color="214,238,214,255"/>
       <concept-appearance id="f14" x="671" y="340" width="137" height="46" background-color="214,238,214,255"/>
@@ -447,13 +447,13 @@
       <linking-phrase-appearance id="lp37" x="2006" y="624" width="177" height="18"/>
       <linking-phrase-appearance id="lp38" x="2022" y="687" width="177" height="18"/>
       <linking-phrase-appearance id="lp39" x="2025" y="758" width="177" height="18"/>
-      <linking-phrase-appearance id="lp40" x="505" y="340" width="110" height="18"/>
-      <linking-phrase-appearance id="lp41" x="525" y="399" width="92" height="18"/>
-      <linking-phrase-appearance id="lp42" x="535" y="458" width="110" height="18"/>
-      <linking-phrase-appearance id="lp43" x="519" y="575" width="86" height="18"/>
-      <linking-phrase-appearance id="lp44" x="512" y="634" width="92" height="18"/>
-      <linking-phrase-appearance id="lp45" x="528" y="693" width="104" height="18"/>
-      <linking-phrase-appearance id="lp46" x="532" y="752" width="98" height="18"/>
+      <linking-phrase-appearance id="lp40" x="492" y="340" width="110" height="18"/>
+      <linking-phrase-appearance id="lp41" x="502" y="399" width="92" height="18"/>
+      <linking-phrase-appearance id="lp42" x="512" y="458" width="110" height="18"/>
+      <linking-phrase-appearance id="lp43" x="515" y="575" width="86" height="18"/>
+      <linking-phrase-appearance id="lp44" x="499" y="634" width="92" height="18"/>
+      <linking-phrase-appearance id="lp45" x="505" y="693" width="104" height="18"/>
+      <linking-phrase-appearance id="lp46" x="519" y="752" width="98" height="18"/>
       <linking-phrase-appearance id="lp47" x="837" y="556" width="104" height="18"/>
       <linking-phrase-appearance id="lp48" x="1146" y="377" width="147" height="18"/>
       <linking-phrase-appearance id="lp49" x="866" y="890" width="116" height="18"/>
