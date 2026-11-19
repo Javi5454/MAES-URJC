@@ -1,0 +1,314 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- Datos del documento ----------
+\newcommand{\titulo}{Análisis PNI de las competencias del profesor y del tutor}
+\newcommand{\tituloCorto}{Actividad 2}
+\newcommand{\asignatura}{Organización y Gestión del Centro}
+\newcommand{\autor}{Javier Gómez López}
+\newcommand{\enunciado}{%
+Una vez estudiadas las competencias del profesorado y de la figura del tutor en
+el tema 5, realiza un análisis de las competencias del profesor y del tutor a
+través de la estrategia \textbf{PNI: Positivo, Negativo, Interesante}.
+\begin{itemize}[itemsep=0pt]
+\item \textbf{P = positivo}: identifica los aspectos positivos de las dos figuras docentes y sus respectivas competencias.
+\item \textbf{N = negativo}: identifica los aspectos negativos de las dos figuras docentes y sus respectivas competencias.
+\item \textbf{I = interesante}: identifica los aspectos que encuentres interesantes respecto a las figuras docentes y sus competencias.
+\end{itemize}
+Redacta una conclusión que resulte de tu análisis (300 palabras máximo).
+}
+\newcommand{\master}{MÁSTER UNIVERSITARIO EN FORMACIÓN DEL PROFESORADO-ESPECIALIDAD EN MATEMÁTICAS -- Universidad Rey Juan Carlos}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[margin=2.5cm,headheight=14pt]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{etoolbox}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage[most]{tcolorbox}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Estilo ----------
+\definecolor{acento}{RGB}{176,0,32}   % rojo URJC
+\definecolor{gris}{RGB}{90,90,90}
+\definecolor{verde}{RGB}{46,125,50}
+\definecolor{azul}{RGB}{21,101,192}
+\definecolor{naranja}{RGB}{230,120,0}
+
+\titleformat{\section}{\Large\bfseries\color{acento}}{\thesection.}{0.6em}{}
+\titleformat{\subsection}{\large\bfseries\color{gris}}{\thesubsection.}{0.6em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}\asignatura}
+\fancyhead[R]{\small\color{gris}\tituloCorto}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrule}{{\color{acento}\hrule height 0.6pt}}
+
+% Lista compacta para las celdas de la tabla PNI
+\newlist{pni}{itemize}{1}
+\setlist[pni]{label=--, leftmargin=1em, itemsep=2pt, topsep=2pt,
+  parsep=0pt, before=\vspace*{-0.6\baselineskip}, after=\vspace*{0.5\baselineskip}}
+\newcolumntype{C}{>{\raggedright\arraybackslash}p{0.305\linewidth}}
+\newcommand{\figura}[1]{%
+  \multicolumn{3}{l}{\cellcolor{acento!8}\textbf{\color{acento}#1}}\\*[2pt]}
+
+\begin{document}
+
+% ---------- Cabecera ----------
+\thispagestyle{empty}
+\begin{center}
+  {\small\color{gris}\MakeUppercase{\master}}\\[1.2em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[0.8em]
+  {\Huge\bfseries \titulo}\\[0.6em]
+  {\Large\color{gris} \asignatura}\\[0.6em]
+  {\color{acento}\rule{\linewidth}{1.2pt}}\\[1em]
+  {\large \autor}\\[0.3em]
+  {\small\color{gris}\today}
+\end{center}
+\vspace{1.5em}
+
+% ---------- Enunciado ----------
+\ifdefempty{\enunciado}{}{%
+  \begin{tcolorbox}[enhanced, breakable, colback=acento!4, colframe=acento,
+      boxrule=0pt, leftrule=3pt, arc=0pt, title=Enunciado de la tarea,
+      coltitle=acento, colbacktitle=acento!4, fonttitle=\bfseries]
+    \enunciado
+  \end{tcolorbox}
+  \vspace{1em}
+}
+
+% ---------- Contenido ----------
+\section{Las dos figuras en el tema 5}
+
+El tema 5 no presenta al profesorado como un profesional aislado, sino como
+miembro de una \textbf{estructura organizativa}. Los órganos de gobierno pueden
+ser unipersonales (director, jefe de estudios, secretario) o colegiados
+(Consejo Escolar y Claustro de profesores). Junto a ellos están los
+\textbf{órganos de coordinación docente}: equipos docentes, áreas de
+competencia, departamento de orientación, departamento de formación,
+evaluación e innovación educativa, equipo técnico de coordinación pedagógica
+(ETCP), tutor o tutora y departamentos de coordinación didáctica (T5,
+diap.~2--3).
+
+Las referencias del tipo \textbf{(T5, diap.~$n$)} remiten a la presentación
+del tema 5. Los puntos sin referencia son \textbf{valoraciones propias}.
+
+\begin{description}[leftmargin=0pt, style=nextline]
+  \item[El profesor] Participa en varios órganos a la vez:
+  \begin{itemize}[itemsep=0pt, topsep=2pt]
+    \item En el \emph{departamento de coordinación didáctica} elabora la
+    programación didáctica y hace su seguimiento, elabora, realiza y evalúa
+    las pruebas específicas, evalúa la práctica docente y los procesos de
+    enseñanza-aprendizaje y propone libros de texto y materiales (T5,
+    diap.~12).
+    \item En el \emph{equipo docente}, coordinado por el tutor, hace el
+    seguimiento global del grupo, evalúa de forma colegiada, establece
+    actuaciones para mejorar la convivencia y afronta los conflictos de manera
+    coordinada (T5, diap.~4).
+    \item A través de las \emph{áreas de competencia}, que agrupan los
+    departamentos, trabaja en equipo las programaciones con una visión
+    integrada y multidisciplinar (T5, diap.~5).
+  \end{itemize}
+  \item[El tutor o tutora] Cada grupo tiene uno, nombrado por el director a
+  propuesta del jefe de estudios de entre los profesores que imparten clase al
+  grupo. Desarrolla las actividades del Plan de Orientación y Acción Tutorial,
+  mantiene una relación permanente con las familias, coordina las adaptaciones
+  curriculares no significativas propuestas y elaboradas por el equipo docente
+  y coordina el proceso de evaluación continua (T5, diap.~11). Para el plan de
+  acción tutorial cuenta con el departamento de orientación, que colabora con
+  el equipo directivo en su elaboración y asesora al profesorado en la
+  atención a la diversidad y en la detección temprana de problemas de
+  aprendizaje (T5, diap.~7).
+\end{description}
+
+\section{Análisis PNI}
+
+La tabla separa las dos figuras para no mezclar lo que es propio de cada una,
+aunque en la práctica casi todo tutor es, a la vez, profesor del grupo.
+
+{\small
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{4pt}
+\begin{longtable}{|C|C|C|}
+\hline
+\rowcolor{verde!12}
+\multicolumn{1}{|c|}{\textbf{\color{verde}Positivo}} &
+\multicolumn{1}{c|}{\textbf{\color{acento}Negativo}} &
+\multicolumn{1}{c|}{\textbf{\color{azul}Interesante}} \\
+\hline
+\endhead
+\hline
+\endfoot
+\figura{Profesor}
+\begin{pni}
+  \item \textbf{Autonomía profesional}: en el departamento elabora la
+  programación, las pruebas y propone los libros y materiales (T5, diap.~12).
+  \item \textbf{Trabajo colegiado}: la evaluación se hace de manera colegiada
+  en el equipo docente (T5, diap.~4), lo que da una visión del alumno más
+  completa que la de una sola materia.
+  \item \textbf{Evaluación de la propia práctica}: el departamento de
+  coordinación didáctica evalúa la práctica docente y los procesos de
+  enseñanza-aprendizaje (T5, diap.~12).
+\end{pni}
+&
+\begin{pni}
+  \item \textbf{Acumulación de funciones}: enseñar, evaluar, atender a la
+  diversidad, gestionar conflictos y coordinarse en varios órganos a la vez,
+  con el mismo tiempo.
+  \item \textbf{Riesgo de compartimentos estancos}: el departamento reúne al
+  profesorado que imparte las mismas enseñanzas (T5, diap.~12), y la visión
+  multidisciplinar depende de que funcionen las áreas de competencia.
+\end{pni}
+&
+\begin{pni}
+  \item Las <<competencias>> del profesor aparecen en el tema como
+  \textbf{funciones dentro de órganos}: ser docente es una tarea colectiva.
+  Un mismo profesor pertenece a la vez a un departamento, a un área de
+  competencia, a varios equipos docentes y al Claustro.
+  \item El departamento de formación, evaluación e innovación evalúa al
+  claustro y el proceso de enseñanza, marca indicadores de calidad y propone
+  planes de mejora (T5, diap.~8): una \textbf{evaluación entre iguales}
+  dentro del propio centro.
+\end{pni}
+\\
+\begin{pni}
+  \item \textbf{Formación ajustada a necesidades}: el departamento de
+  formación, evaluación e innovación diagnostica las necesidades formativas
+  del profesorado y elabora los proyectos de formación (T5, diap.~8).
+  \item \textbf{Papel en la convivencia}: el equipo docente establece
+  actuaciones para mejorar la convivencia del grupo (T5, diap.~4).
+  \item \textbf{Voz en la línea pedagógica}: los jefes de departamento forman
+  parte del ETCP, que marca las pautas de las programaciones (T5, diap.~9).
+\end{pni}
+&
+\begin{pni}
+  \item La formación inicial suele ser muy disciplinar; competencias como la
+  gestión de conflictos o la detección de problemas se aprenden
+  <<sobre la marcha>>.
+  \item La evaluación de la práctica docente puede quedarse en un trámite
+  (memorias de fin de curso) si no se traduce en planes de mejora.
+  \item Las programaciones del departamento pueden heredarse año tras año y
+  frenar la innovación individual.
+\end{pni}
+&
+\begin{pni}
+  \item Ese mismo departamento investiga buenas prácticas y fomenta el
+  \textbf{trabajo cooperativo entre departamentos} (T5, diap.~8): la
+  innovación se plantea como tarea del centro, no solo individual.
+  \item Las áreas de competencia buscan potenciar métodos que ayuden a
+  alcanzar las \textbf{competencias} asignadas a cada área (T5, diap.~5): el trabajo
+  del profesor se organiza en torno a ellas.
+\end{pni}
+\\ \hline
+\noalign{\vspace{12pt}}
+\hline
+\figura{Tutor o tutora}
+\begin{pni}
+  \item \textbf{Adulto de referencia} para el grupo, elegido entre quienes le
+  dan clase (T5, diap.~11): conoce al grupo de primera mano.
+  \item \textbf{Visión global}: coordina la evaluación continua (T5,
+  diap.~11) y al equipo docente, que hace el seguimiento global del grupo
+  (T5, diap.~4). Hace de puente entre las materias.
+  \item \textbf{Puente con las familias}: relación permanente con padres,
+  madres o tutores legales (T5, diap.~11).
+  \item \textbf{Orientación}: desarrolla las actividades del Plan de
+  Orientación y Acción Tutorial (T5, diap.~11).
+  \item \textbf{No trabaja solo}: el departamento de orientación colabora en
+  el plan de acción tutorial y asesora al profesorado en la atención a la
+  diversidad (T5, diap.~7).
+  \item Coordina las adaptaciones curriculares no significativas (T5,
+  diap.~11): es una pieza clave de la \textbf{inclusión}.
+\end{pni}
+&
+\begin{pni}
+  \item \textbf{Tiempo escaso} para todo lo que se le pide: la hora de
+  tutoría, la atención a familias, las faltas, las actas y las
+  comunicaciones.
+  \item \textbf{Responsabilidad sin autoridad}: coordina al equipo docente
+  (T5, diap.~4), pero sus compañeros no dependen de él, por lo que necesita
+  su colaboración.
+  \item Falta formación para \textbf{casos complejos} (ansiedad, absentismo,
+  violencia, como en los casos del tema): debe saber detectar y derivar, pero
+  no puede resolverlo todo.
+  \item El nombramiento es por grupo y curso: si cambia cada año, el alumno
+  puede perder su \textbf{referencia}.
+\end{pni}
+&
+\begin{pni}
+  \item La tutoría no es tarea de un especialista: el tutor sale del propio
+  profesorado del grupo (T5, diap.~11). \textbf{Cualquier profesor puede ser
+  tutor.}
+  \item La acción tutorial es un \textbf{sistema}, no una persona: el tutor
+  desarrolla un plan que elaboran el equipo directivo y el departamento de
+  orientación (T5, diap.~7 y 11).
+  \item El tutor suele ser el \textbf{primero en detectar} los problemas que
+  afectan a la escolarización, como muestran los casos reales del tema (T5,
+  diap.~13--14).
+  \item El tutor es a la vez \textbf{igual y coordinador} de sus compañeros:
+  es un liderazgo pedagógico que no viene del cargo, sino de la relación.
+\end{pni}
+\\ \hline
+\figura{Ambas figuras}
+\begin{pni}
+  \item Se complementan: el profesor aporta el conocimiento de la materia y el
+  tutor la visión de la persona.
+\end{pni}
+&
+\begin{pni}
+  \item Si la coordinación falla, el alumno recibe mensajes contradictorios
+  de cada profesor.
+\end{pni}
+&
+\begin{pni}
+  \item Todos los órganos de coordinación del tema se apoyan en el
+  \textbf{trabajo en equipo}: ninguna de las dos figuras funciona aislada.
+\end{pni}
+\\
+\end{longtable}
+}
+
+\section{Conclusión}
+
+% Máximo 300 palabras
+El análisis muestra que las competencias del profesor y del tutor no se
+entienden por separado, sino dentro de la organización del centro. Lo más
+positivo es que el profesorado tiene autonomía para programar y evaluar su
+materia y, a la vez, participa en las decisiones pedagógicas a través del
+departamento, el área de competencia, el equipo docente y el Claustro. El
+tutor añade la mirada sobre la persona: coordina la evaluación continua y al
+equipo docente, desarrolla la acción tutorial y es el puente con las familias.
+
+El principal punto débil es el mismo en las dos figuras: se les pide mucho
+(atención a la diversidad, convivencia, coordinación, detección de
+situaciones de riesgo) sin que crezcan en la misma medida el tiempo y la
+formación específica. En el caso del tutor se suma una responsabilidad sin
+autoridad formal sobre sus compañeros y un nombramiento anual que no siempre
+garantiza la continuidad.
+
+Lo más interesante es que la tutoría no es una tarea de especialistas:
+cualquier profesor del grupo puede ser su tutor. Por eso, la acción tutorial
+funciona como un sistema en el que el tutor, el departamento de orientación,
+el equipo directivo y el equipo docente tienen que coordinarse. Si alguno
+falla, el alumno lo nota.
+
+Como futuro profesor de Matemáticas, saco dos ideas. La primera, que mi
+formación disciplinar es necesaria pero no suficiente: tendré que formarme de
+manera permanente en tutoría, convivencia e inclusión. La segunda, que el
+trabajo en equipo no es un añadido, sino la forma normal de ejercer la
+profesión. Un buen profesor de una materia que no se coordina con el resto del
+equipo docente difícilmente podrá ser un buen tutor.
+
+\vspace{1em}
+{\small\color{gris}\textbf{Fuente.} Tema 5 de la asignatura: \emph{El
+profesorado, los departamentos y los equipos educativos} (presentación).}
+
+\end{document}
