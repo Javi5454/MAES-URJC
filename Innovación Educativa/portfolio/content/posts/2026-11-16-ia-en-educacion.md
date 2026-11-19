@@ -1,10 +1,10 @@
 ---
-title: "Inteligencia artificial en el aula: copiloto, no piloto automático"
+title: "Séptima sesión: IA en el aula, copiloto y no piloto automático"
 date: 2026-11-16
 draft: false
 ---
 
-Sesión dedicada a la inteligencia artificial en educación, esta vez con Oriol. Y hay que decirlo desde el principio: fue una sesión muy divertida. Se notaba que a Oriol le apasiona el tema, y eso se contagia (otra vez las neuronas espejo de la sesión de neurodidáctica).
+Séptima sesión, dedicada a la inteligencia artificial en educación, esta vez con Oriol. Y hay que decirlo desde el principio: fue una sesión muy divertida. Se notaba que a Oriol le apasiona el tema, y eso se contagia (otra vez las neuronas espejo de la sesión de neurodidáctica).
 
 ## Lo que hemos visto
 

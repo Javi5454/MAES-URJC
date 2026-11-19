@@ -1,10 +1,10 @@
 ---
-title: "Jugar, ver vídeos y ponerse en el lugar del otro"
+title: "Sexta sesión: jugar, ver vídeos y ponerse en el lugar del otro"
 date: 2026-11-09
 draft: false
 ---
 
-Sesión para cerrar el tema 4 (recursos educativos en Educación Matemática) y abrir el tema 6, dedicado a los alumnos con dificultades en el aprendizaje de las matemáticas. Dos bloques muy distintos en apariencia, pero con una pregunta común de fondo: ¿cómo conseguimos que las matemáticas lleguen a **todos** los alumnos?
+Sexta sesión, para cerrar el tema 4 (recursos educativos en Educación Matemática) y abrir el tema 6, dedicado a los alumnos con dificultades en el aprendizaje de las matemáticas. Dos bloques muy distintos en apariencia, pero con una pregunta común de fondo: ¿cómo conseguimos que las matemáticas lleguen a **todos** los alumnos?
 
 ## Lo que hemos visto
 
