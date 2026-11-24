@@ -14,6 +14,8 @@
 \usepackage{xcolor}
 \usepackage{enumitem}
 \usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
@@ -40,17 +42,38 @@
 \begin{document}
 \color{titular}
 
-% ---------- Cabecera ----------
-{\fontsize{24}{29}\selectfont\bfseries\titulo\par}
+% ---------- Cabecera: título + modelo de sombra de la SA ----------
+\begin{minipage}[b]{0.72\linewidth}
+{\fontsize{22}{27}\selectfont\bfseries\titulo\par}
 \vspace{4pt}
 {\large\color{pistagris}\autor\ \textbullet\ \asignatura\ \textbullet\ Avance del trabajo (TFM)}\par
+\end{minipage}\hfill
+\begin{minipage}[b]{0.27\linewidth}\raggedleft
+% Adaptado de la figura «Modelo de sombra» de la situación de aprendizaje (06_reto_producto.tex)
+\begin{tikzpicture}[x=0.18cm,y=0.15cm,>=Stealth,font=\footnotesize]
+  \fill[pistagris!35] (-4,0) rectangle (0,12);
+  \draw[thick] (-4,0) rectangle (0,12);
+  \draw[thick] (-6.5,0) -- (29,0);
+  \coordinate (T) at (0,12); \coordinate (S) at (24.44,0);
+  \draw[urjc,thick,->] (-3.5,13.72) -- (T);
+  \draw[urjc,thick] (T) -- node[above right,pos=0.42,inner sep=1pt]{$T+t\,\vec v$} (S);
+  \draw[very thick,titular!80] (0,0) -- node[below,inner sep=2pt]{$L=H/\tan h$} (S);
+  \draw[<->] (-5.3,0) -- node[left,inner sep=1pt]{$H$} (-5.3,12);
+  \draw[very thick,blue!60!black] (25.2,0.3) -- (28.2,2.6);
+  \node[blue!60!black,above,inner sep=1pt] at (27.2,2.7) {panel};
+  \fill (T) circle (2pt);
+  \draw (20.4,0) arc (180:154:4.04);
+  \node at (19.4,1.0) {$h$};
+\end{tikzpicture}\\[-1pt]
+{\scriptsize\color{pistagris}El reto: modelo de la sombra}
+\end{minipage}
 \vspace{2pt}
 {\color{urjc}\rule{\linewidth}{1.2pt}}
 \vspace{6pt}
 
 % ---------- Problema y justificación | Objetivos e hipótesis | Estructura ----------
 \begin{minipage}[t]{0.315\linewidth}
-\begin{bloque}[height=11.6cm]{1 \textperiodcentered{} Problema y justificación}
+\begin{bloque}[height=11.3cm]{1 \textperiodcentered{} Problema y justificación}
 \begin{enumerate}
   \item \textbf{Relevancia práctica.} Vectores, trigonometría y rectas se enseñan por separado, y las carencias llegan a la universidad: en 1.º de Ingeniería fallan en trigonometría básica y no conectan los vectores con su gráfica \emph{(Mahadewsing et~al., 2024; Geewe et~al., 2024)}.
   \item \textbf{Conveniencia.} Metaanálisis recientes: GeoGebra tiene un efecto positivo, grande en geometría analítica \emph{(Juandi et~al., 2021; Alfonso-Castelló y Cabero-Fayos, 2026)}.
@@ -64,7 +87,7 @@
 \end{bloque}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.315\linewidth}
-\begin{bloque}[height=11.6cm]{2 \textperiodcentered{} Objetivos e hipótesis}
+\begin{bloque}[height=11.3cm]{2 \textperiodcentered{} Objetivos e hipótesis}
 \begin{destacado}
 \textbf{\color{urjc}Objetivo general.} Diseñar una propuesta de actividades para Matemáticas~I, fundamentada en la investigación, que use GeoGebra para integrar vectores, trigonometría y rectas en un reto real.
 \end{destacado}
@@ -78,12 +101,12 @@
 \end{enumerate}
 \vspace{4pt}
 \begin{destacado}
-\textbf{\color{urjc}Hipótesis de trabajo.} Si las tareas con GeoGebra se diseñan con esos criterios, el alumnado conectará mejor los tres contenidos y justificará mejor sus procedimientos.
+\textbf{\color{urjc}Hipótesis de trabajo.} Si las tareas con GeoGebra se diseñan con esos criterios, el alumnado conectará mejor los tres contenidos y justificará mejor lo que hace.
 \end{destacado}
 \end{bloque}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.345\linewidth}
-\begin{bloque}[height=11.6cm]{3 \textperiodcentered{} Estructura del TFM}
+\begin{bloque}[height=11.3cm]{3 \textperiodcentered{} Estructura del TFM}
 {\color{pistagris}Propuesta didáctica \textbullet\ 40--50 págs.}\par\vspace{4pt}
 \idx{1.}{\textbf{Introducción:} problema, justificación, objetivos e hipótesis}{}
 \begin{tcolorbox}[enhanced, colback=rosa, colframe=urjc, boxrule=0pt, leftrule=2.5pt, arc=0pt,

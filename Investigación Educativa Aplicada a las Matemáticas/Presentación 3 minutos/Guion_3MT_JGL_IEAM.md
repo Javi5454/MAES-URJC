@@ -4,9 +4,9 @@ Unas 420 palabras habladas, que salen a unos 2 minutos y 55 segundos a ritmo tra
 
 ---
 
-## 1. Gancho (0:00–0:15) · *título*
+## 1. Gancho (0:00–0:15) · *dibujo de arriba a la derecha*
 
-Imaginad que tenéis que decidir dónde instalar paneles solares en vuestro instituto sin que se hagan sombra. Para resolverlo hacen falta un vector, un ángulo y una recta: tres contenidos de 1.º de Bachillerato que casi nunca aparecen juntos.
+Imaginad que tenéis que decidir dónde instalar paneles solares en vuestro instituto sin que se hagan sombra. Para resolverlo *(recorre el dibujo)* hace falta el rayo de sol como recta con su vector, el ángulo del sol y la trigonometría para calcular la sombra: tres contenidos de 1.º de Bachillerato que casi nunca aparecen juntos.
 
 ## 2. Problema y justificación (0:15–1:15) · *columna 1*
 
