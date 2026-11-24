@@ -57,7 +57,7 @@ Scopus pidió volver a iniciar sesión el 24-11-2026, así que las búsquedas so
 - **Exclusión:** trabajos de nivel universitario o de ingeniería, salvo que aporten algo transferible. También se excluyen las aplicaciones a la física sin componente matemático, los congresos de baja calidad sin revisión y los trabajos duplicados.
 - **Idiomas:** inglés y español. Dialnet devuelve muchos trabajos en portugués, de Brasil, que se descartan por ahora.
 
-## Selección final: núcleo de 25 fuentes
+## Selección final: núcleo de 26 fuentes
 
 A petición del usuario, la bibliografía se reduce a unas 25 fuentes, una cantidad creíble de leer a fondo para un marco teórico de 10 a 15 páginas. Los criterios son tres:
 1. Entre una y cinco fuentes por eje.
@@ -71,10 +71,10 @@ A petición del usuario, la bibliografía se reduce a unas 25 fuentes, una canti
 | 3. Geometría dinámica | `laborde2000`, `marrades2000`, `morales2021` |
 | 4. Evidencia | `juandi2021`, `yohannes2023`, `zhang2025`, `alfonso2026`, `villalpando2022` (contraevidencia) |
 | 5. Trigonometría | `weber2005`, `fiallo2017`, `carriazo2024`, `martinezsierra2025` |
-| 6. Vectores | `barniol2014`, `heckler2015`, `quevedo2022`, `aliu2025` |
-| 7. Llegada a la universidad | `mahadewsing2024`, `geewe2024`, `caballero2025`, `guerra2025` |
+| 6. Vectores | `barniol2014`, `heckler2015`, `quevedo2022`, `aliu2025`, `geewe2024` (antecedente de tecnología con vectores) |
+| 7. Llegada a la universidad | `mahadewsing2024`, `garciasalmeron2021`, `caballero2025`, `guerra2025` |
 
-Las otras 22 fuentes localizadas y verificadas pasan a `bibliografia_reserva.bib`. La tabla siguiente recoge todas las localizadas, las del núcleo y las de reserva.
+Las otras 21 fuentes localizadas y verificadas pasan a `bibliografia_reserva.bib`. La tabla siguiente recoge todas las localizadas, las del núcleo y las de reserva.
 
 ## Todas las fuentes localizadas por eje (núcleo y reserva)
 
@@ -114,7 +114,7 @@ Las otras 22 fuentes localizadas y verificadas pasan a `bibliografia_reserva.bib
 | | `guntur2021` | Scopus S8 | Bachillerato (Indonesia): realidad aumentada frente a módulo convencional con GeoGebra (GeoGebra es el control). Sirve de contraste |
 | | `quevedo2022` | Dialnet D2 | 1.º de Bachillerato (Ecuador): dificultades con el concepto, la representación y las propiedades de los vectores. Fundamenta una estrategia con GeoGebra y aprendizaje cooperativo, sin datos de aplicación |
 | | `villalpando2022` | Dialnet D2 | **Contraevidencia:** objeto de aprendizaje en GeoGebra sobre vectores en R²; sin diferencias significativas con el grupo de control. Nivel por confirmar |
-| 7. Las dificultades persisten en la universidad | `geewe2024` | WoS W4 | 1.º de Ingeniería: no conectan el álgebra de vectores con su representación gráfica |
+| 7. Las dificultades persisten en la universidad | `geewe2024` | WoS W4 | Prueba un prototipo de realidad aumentada con vectores. La dificultad de 1.º de Ingeniería para conectar álgebra y gráfica es la **motivación** del artículo, no un resultado medido: citar con verbo prudente. En el núcleo se recoloca en el eje 6 |
 | | `mahadewsing2024` | WoS W4 | 1.º de Ingeniería: muchos errores de cálculo vienen de álgebra y trigonometría básicas |
 | | `hodds2023` | WoS W4 | Competencias matemáticas de entrada a la universidad (Reino Unido, tras la COVID-19) |
 | | `mayerhofer2025` | WoS W4 | Transición Secundaria-universidad: cursos puente para reducir las carencias previas |
@@ -129,6 +129,8 @@ Las otras 22 fuentes localizadas y verificadas pasan a `bibliografia_reserva.bib
 | | `nguyen2003` | WoS W3 | **Clásico, se mantiene por la contundencia del dato:** de 2031 universitarios, más de 1/4 (física con cálculo) y más de 1/2 (física algebraica) no sabían sumar vectores en 2D |
 
 ## Pendiente de revisar
+
+- **Cambio de cita en la justificación (24-11-2026):** `geewe2024` deja de usarse como prueba de la dificultad con vectores en la universidad, porque esa dificultad es su motivación y no un resultado medido. Lo sustituye `garciasalmeron2021`, que aporta un dato medido (test de comprensión de vectores a 111 universitarios). Geewe se queda en el eje 6 como antecedente.
 
 - **Eje 7, prioridad a lo reciente:** a petición del usuario se han descartado `knight1995`, `mikula2014` y `gomezchacon2009` por antiguos. Solo `nguyen2003` se mantiene como clásico. `kamber2018`, `nieto2017` y `castro2018` se conservan por ser de Secundaria o del contexto español. Cuando Scopus vuelva a estar accesible, repetir W4 allí para buscar más trabajos de 2020–2026.
 - **`castro2018` y `caballero2025`:** falta confirmar la editorial.

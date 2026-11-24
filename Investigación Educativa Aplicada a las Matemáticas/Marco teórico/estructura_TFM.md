@@ -53,7 +53,7 @@ Al ser una propuesta que todavía no se aplica, la hipótesis funciona como en e
 | 1.4 Objetivos e hipótesis de trabajo | | |
 | 1.5 Estructura del trabajo | | |
 | **2. Marco teórico** | **10–15** | |
-| 2.1 Método de búsqueda y selección. Primero las fuentes terciarias (WoS, Scopus, Dialnet) y de ahí las primarias. Cadenas, criterios (relevancia temática, actualidad, diversidad de enfoques) y selección final de 25 fuentes | 1–2 | OE1 |
+| 2.1 Método de búsqueda y selección. Primero las fuentes terciarias (WoS, Scopus, Dialnet) y de ahí las primarias. Cadenas, criterios (relevancia temática, actualidad, diversidad de enfoques) y selección final de 26 fuentes | 1–2 | OE1 |
 | 2.2 Conceptos clave: geometría dinámica, GeoGebra, artefacto e instrumento, registro de representación, vector y razón trigonométrica | 1–2 | OE1 |
 | 2.3 Enfoques teóricos y metodológicos, en qué se diferencian y cómo se complementan | 3–4 | OE1 |
 | 2.3.1 Enfoque instrumental y orquestación (Artigue, 2002; Trouche, 2004; Drijvers, 2015; Clark-Wilson et al., 2020) | | |
@@ -61,8 +61,8 @@ Al ser una propuesta que todavía no se aplica, la hipótesis funciona como en e
 | 2.3.3 Geometría dinámica: arrastrar, conjeturar y justificar (Laborde, 2000; Marrades y Gutiérrez, 2000; Morales et al., 2021) | | |
 | 2.4 Dificultades descritas por otros autores | 2–3 | OE2 |
 | 2.4.1 Trigonometría: del triángulo al círculo unidad (Weber, 2005; Fiallo y Gutiérrez, 2017; Martínez-Sierra y Villadiego, 2025) | | |
-| 2.4.2 Vectores: la representación con flechas y sus errores (Barniol y Zavala, 2014; Heckler y Scaife, 2015; Quevedo y Cedeño, 2022) | | |
-| 2.4.3 Las dificultades persisten al llegar a la universidad, lo que muestra un aprendizaje insuficiente en ESO y Bachillerato (Geewe et al., 2024; Mahadewsing et al., 2024; Caballero et al., 2025; Guerra et al., 2025) | | |
+| 2.4.2 Vectores: la representación con flechas y sus errores (Barniol y Zavala, 2014; Heckler y Scaife, 2015; Quevedo y Cedeño, 2022; Geewe et al., 2024, como antecedente del uso de la tecnología con vectores) | | |
+| 2.4.3 Las dificultades persisten al llegar a la universidad, lo que muestra un aprendizaje insuficiente en ESO y Bachillerato (Mahadewsing et al., 2024; García Salmerón y Rodríguez, 2021; Caballero et al., 2025; Guerra et al., 2025) | | |
 | 2.5 Experiencias previas y evidencia | 2–3 | OE1 |
 | 2.5.1 Revisiones y metaanálisis (Juandi et al., 2021; Yohannes y Chen, 2023; Zhang et al., 2025; Alfonso-Castelló y Cabero-Fayos, 2026) | | |
 | 2.5.2 Estudios en aula (Carriazo et al., 2024; Aliu et al., 2025; Martínez-Sierra y Villadiego, 2025) y contraevidencia (Villalpando y Pantoja, 2022) | | |
@@ -101,10 +101,10 @@ En 4.3, el diseño previsto para evaluar la propuesta es un estudio **mixto cuas
 Para evitar los errores típicos:
 - cada apartado termina con un párrafo que lo conecta con la pregunta de investigación;
 - el apartado 2.6 integra lo anterior de forma crítica, no como un resumen;
-- solo se cita lo que ya está verificado en `bibliografia.bib`, el núcleo de 25 fuentes: es una cantidad creíble de leer a fondo para un marco teórico de 10 a 15 páginas.
+- solo se cita lo que ya está verificado en `bibliografia.bib`, el núcleo de 26 fuentes: es una cantidad creíble de leer a fondo para un marco teórico de 10 a 15 páginas.
 
 ## Cómo se aprovecha lo que ya está hecho
 
-- **Apartados 2.1 y 2.3–2.5:** salen de `registro_busquedas.md` y `bibliografia.bib`, el núcleo de 25 fuentes. Hay 22 más en `bibliografia_reserva.bib` por si algún apartado necesita refuerzo.
+- **Apartados 2.1 y 2.3–2.5:** salen de `registro_busquedas.md` y `bibliografia.bib`, el núcleo de 26 fuentes. Hay 21 más en `bibliografia_reserva.bib` por si algún apartado necesita refuerzo.
 - **Apartado 3:** se adapta de la situación de aprendizaje de Diseño Curricular (`Diseño curricular de las matemáticas/Situación de aprendizaje/`). Cada decisión debe apoyarse en un criterio del apartado 2.6.
 - **El trabajo de IEAM** (entrega el 8 de enero) cubre los apartados 1 y 2 y un esbozo del 3: introducción, marco teórico y propuesta final, como piden las orientaciones.
