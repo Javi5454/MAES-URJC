@@ -12,6 +12,7 @@ Aquí voy recogiendo las actividades, materiales y reflexiones de cada asignatur
 MAES-URJC/
 ├── Didáctica de las Matemáticas/   # Actividades de la asignatura, por bloque o profesorado
 ├── Innovación Educativa/           # Portfolio de clase: web propia con una reflexión por sesión
+├── Investigación Educativa Aplicada a las Matemáticas/  # Marco teórico del TFM y presentación «tesis en 3 minutos»
 └── rag-normativa/                  # RAG local con citas sobre la LOMLOE y los decretos de Madrid
 ```
 

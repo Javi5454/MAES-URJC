@@ -1,0 +1,110 @@
+\documentclass[11pt]{article}
+
+% ---------- Datos ----------
+\newcommand{\titulo}{GeoGebra como eje de la enseñanza de la geometría analítica\\y la trigonometría en Matemáticas~I}
+\newcommand{\asignatura}{Investigación Educativa Aplicada a las Matemáticas}
+\newcommand{\autor}{Javier Gómez López}
+
+% ---------- Paquetes ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage[paperwidth=33.867cm,paperheight=19.05cm,margin=1.1cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\renewcommand{\familydefault}{\sfdefault}
+
+% ---------- Colores (los de la SA) ----------
+\definecolor{urjc}{HTML}{C8102E}
+\definecolor{rosa}{HTML}{FBE9EB}
+\definecolor{titular}{HTML}{3C3C3B}
+\definecolor{pistagris}{HTML}{7F7F7F}
+
+\setlist[enumerate]{leftmargin=1.5em,itemsep=2pt,topsep=2pt,label={\color{urjc}\bfseries\arabic*.}}
+
+\newtcolorbox{bloque}[2][]{enhanced, colback=white, colframe=urjc, boxrule=0.6pt,
+  arc=2pt, left=7pt, right=7pt, top=5pt, bottom=5pt, fontupper=\normalsize,
+  title={#2}, fonttitle=\Large\bfseries, colbacktitle=urjc, coltitle=white, #1}
+\newtcolorbox{destacado}{enhanced, colback=rosa, colframe=rosa, arc=2pt,
+  left=5pt, right=5pt, top=3pt, bottom=3pt}
+
+% Entrada del índice: número, texto, objetivo asociado
+\newcommand{\idx}[3]{\par\noindent\makebox[2.1em][l]{\color{urjc}\bfseries #1}%
+  \parbox[t]{\dimexpr\linewidth-2.1em-3.2em\relax}{\raggedright #2}\hfill{\small\bfseries\color{urjc}#3}\par\vspace{2.5pt}}
+
+\begin{document}
+\color{titular}
+
+% ---------- Cabecera ----------
+{\fontsize{24}{29}\selectfont\bfseries\titulo\par}
+\vspace{4pt}
+{\large\color{pistagris}\autor\ \textbullet\ \asignatura\ \textbullet\ Avance del trabajo (TFM)}\par
+\vspace{2pt}
+{\color{urjc}\rule{\linewidth}{1.2pt}}
+\vspace{6pt}
+
+% ---------- Problema y justificación | Objetivos e hipótesis | Estructura ----------
+\begin{minipage}[t]{0.315\linewidth}
+\begin{bloque}[height=11.6cm]{1 \textperiodcentered{} Problema y justificación}
+\begin{enumerate}
+  \item \textbf{Relevancia práctica.} Vectores, trigonometría y rectas se enseñan por separado, y las carencias llegan a la universidad: en 1.º de Ingeniería fallan en trigonometría básica y no conectan los vectores con su gráfica \emph{(Mahadewsing et~al., 2024; Geewe et~al., 2024)}.
+  \item \textbf{Conveniencia.} Metaanálisis recientes: GeoGebra tiene un efecto positivo, grande en geometría analítica \emph{(Juandi et~al., 2021; Alfonso-Castelló y Cabero-Fayos, 2026)}.
+  \item \textbf{Valor teórico.} Apenas hay estudios de vectores con GeoGebra en Bachillerato \emph{(Aliu et~al., 2025)}.
+  \item \textbf{Utilidad metodológica.} GeoGebra no funciona por sí solo: faltan criterios de diseño de tareas \emph{(Drijvers, 2015; Villalpando y Pantoja, 2022)}.
+\end{enumerate}
+\vspace{4pt}
+\begin{destacado}
+\textbf{\color{urjc}Pregunta de investigación.} ¿Qué criterios de diseño deben cumplir las tareas con GeoGebra para que el alumnado de 1.º de Bachillerato integre vectores, trigonometría y rectas y justifique sus procedimientos?
+\end{destacado}
+\end{bloque}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.315\linewidth}
+\begin{bloque}[height=11.6cm]{2 \textperiodcentered{} Objetivos e hipótesis}
+\begin{destacado}
+\textbf{\color{urjc}Objetivo general.} Diseñar una propuesta de actividades para Matemáticas~I, fundamentada en la investigación, que use GeoGebra para integrar vectores, trigonometría y rectas en un reto real.
+\end{destacado}
+\vspace{2pt}
+\textbf{Objetivos específicos}
+\begin{enumerate}[label={\color{urjc}\bfseries OE\arabic*}, leftmargin=2.5em]
+  \item Revisar la investigación sobre GeoGebra y la geometría dinámica en Secundaria y Bachillerato.
+  \item Identificar las dificultades descritas en trigonometría y vectores.
+  \item Derivar criterios de diseño de tareas con GeoGebra desde el enfoque instrumental.
+  \item Concretarlos en el reto \emph{¿dónde caben más paneles solares en nuestro instituto?} y en su evaluación.
+\end{enumerate}
+\vspace{4pt}
+\begin{destacado}
+\textbf{\color{urjc}Hipótesis de trabajo.} Si las tareas con GeoGebra se diseñan con esos criterios, el alumnado conectará mejor los tres contenidos y justificará mejor sus procedimientos.
+\end{destacado}
+\end{bloque}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.345\linewidth}
+\begin{bloque}[height=11.6cm]{3 \textperiodcentered{} Estructura del TFM}
+{\color{pistagris}Propuesta didáctica \textbullet\ 40--50 págs.}\par\vspace{4pt}
+\idx{1.}{\textbf{Introducción:} problema, justificación, objetivos e hipótesis}{}
+\begin{tcolorbox}[enhanced, colback=rosa, colframe=urjc, boxrule=0pt, leftrule=2.5pt, arc=0pt,
+  left=4pt, right=4pt, top=4pt, bottom=1pt]
+\idx{2.}{\textbf{Marco teórico} (10--15 págs.)}{}
+\idx{2.1}{Método de búsqueda: WoS, Scopus y Dialnet (25 fuentes)}{OE1}
+\idx{2.2}{Conceptos clave}{OE1}
+\idx{2.3}{Enfoques teóricos: instrumental, registros de representación, geometría dinámica}{OE1}
+\idx{2.4}{Dificultades: trigonometría y vectores}{OE2}
+\idx{2.5}{Experiencias previas: metaanálisis y contraevidencia}{OE1}
+\idx{2.6}{Síntesis: criterios de diseño e hipótesis}{OE3}
+\end{tcolorbox}
+\vspace{3pt}
+\idx{3.}{\textbf{Propuesta didáctica:} reto de los paneles, 20 sesiones, evaluación}{OE4}
+\idx{4.}{\textbf{Conclusiones}, limitaciones y prospectiva: cómo contrastar la hipótesis en el aula}{}
+{\color{pistagris}Referencias \textbullet\ Anexos}
+\end{bloque}
+\end{minipage}
+
+\vfill
+{\color{urjc}\rule{\linewidth}{0.6pt}}\par
+\vspace{2pt}
+{\small\color{pistagris}Fecha preferida de presentación: \textbf{30 de noviembre}\hfill Máster en Formación del Profesorado (Matemáticas) \textbullet\ URJC \textbullet\ Curso 2026-27}
+\end{document}
